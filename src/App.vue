@@ -1,27 +1,20 @@
 <template>
-  <About />
+  <div>
+    <linked-in-profile-badge />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import 'open-props/style';
+import 'open-props/normalize';
 
-import About from './components/About.vue';
+import LinkedInProfileBadge from './components/LinkedInProfileBadge/LinkedInProfileBadge.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    About,
+    LinkedInProfileBadge,
   },
 });
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
