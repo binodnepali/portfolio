@@ -15,6 +15,7 @@
     "vue": "^3.0.5"
   },
   "devDependencies": {
+    "@babel/types": "^7.16.8",
     "@vitejs/plugin-vue": "^1.2.3",
     "@vue/compiler-sfc": "^3.0.5",
     "postcss-jit-props": "^1.0.4",
@@ -23,7 +24,7 @@
     "vite": "^2.3.5",
     "vue-tsc": "^0.0.24"
   },
-  "license": "MIT License",
+  "license": "MIT",
   "author": {
     "name": "Binod Nepali",
     "email": "nepalibinod9@gmail.com",
