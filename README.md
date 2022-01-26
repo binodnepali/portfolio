@@ -2,7 +2,7 @@
 
 ## Project Setup
 
-----
+---
 
 In the project directory, you can run following commands.
 
