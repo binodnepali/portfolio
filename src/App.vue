@@ -27,3 +27,9 @@ export default defineComponent({
   },
 })
 </script>
+
+<style>
+#app {
+  font-family: 'Noto Sans', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+</style>
