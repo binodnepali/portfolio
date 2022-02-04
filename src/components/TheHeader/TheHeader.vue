@@ -21,6 +21,10 @@ header {
   color: white;
 }
 
+nav ul > li {
+  list-style: none;
+}
+
 nav a {
   color: white;
   text-decoration: none;
