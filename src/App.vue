@@ -2,19 +2,8 @@
   <div>
     <the-header />
     <main>
-      <section>
-        <h2>Hello there, It's me Binod 👋</h2>
-        <h3>I am a fulltime Frontend Developer and Single 🤣</h3>
-      </section>
-      <hr />
-      <section>
-        <h2>Skills</h2>
-        <tech-skill
-          v-for="(techSkill, i) in techSkills"
-          :key="i"
-          :tech-skill="techSkill"
-        />
-      </section>
+      <my-bio />
+      <my-tech-skill />
     </main>
     <the-footer />
   </div>
@@ -25,30 +14,16 @@ import { defineComponent } from 'vue'
 
 import TheHeader from './components/TheHeader/TheHeader.vue'
 import TheFooter from './components/TheFooter/TheFooter.vue'
-import TechSkill from './components/TechSkill/TechSkill.vue'
+import MyBio from './components/MyBio/MyBio.vue'
+import MyTechSkill from './components/MyTechSkill/MyTechSkill.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
     TheHeader,
     TheFooter,
-    TechSkill,
+    MyBio,
+    MyTechSkill,
   },
-  data: () => ({
-    techSkills: [
-      {
-        title: 'Foundation',
-        skills: ['HTML', 'CSS', 'Javascript', 'Typescript'],
-      },
-      {
-        title: 'Frontend',
-        skills: ['React', 'Vue'],
-      },
-      {
-        title: 'Fullstack',
-        skills: ['Next.js', 'Nuxt.js'],
-      },
-    ],
-  }),
 })
 </script>

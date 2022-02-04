@@ -21,7 +21,7 @@ header {
   color: white;
 }
 
-nav ul > li {
+nav ul {
   list-style: none;
 }
 
