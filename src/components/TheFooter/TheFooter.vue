@@ -25,7 +25,6 @@ footer {
   align-items: center;
   background-color: var(--indigo-9);
   color: white;
-  display: flex;
   min-height: var(--size-fluid-5);
 }
 </style>
