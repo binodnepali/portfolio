@@ -2005,11 +2005,6 @@ pify@^3.0.0:
   resolved "https://registry.yarnpkg.com/pify/-/pify-3.0.0.tgz#e5a4acd2c101fdf3d9a4d07f0dbc4db49dd28176"
   integrity sha1-5aSs0sEB/fPZpNB/DbxNtJ3SgXY=
 
-postcss-jit-props@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/postcss-jit-props/-/postcss-jit-props-1.0.4.tgz#69d6b8247c41ece9425d16c1f13fe2d1029b675c"
-  integrity sha512-48epA7CbBP7bfdVFhSZ6nODeHVappG3Jb1imtsKZeajOgbzN25X1QkABNN2k+UEdLdjHIsOsphRcO2JKsmbJzw==
-
 postcss@^8.1.10, postcss@^8.4.5:
   version "8.4.5"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.5.tgz#bae665764dfd4c6fcc24dc0fdf7e7aa00cc77f95"

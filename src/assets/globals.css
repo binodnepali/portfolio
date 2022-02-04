@@ -1,2 +1,2 @@
-@import 'open-props/style';
-@import 'open-props/normalize';
+@import 'open-props/postcss/style';
+@import 'open-props/postcss/normalize';

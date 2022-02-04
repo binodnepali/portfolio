@@ -52,9 +52,3 @@ export default defineComponent({
   }),
 })
 </script>
-
-<style>
-main {
-  margin: var(--size-5);
-}
-</style>
