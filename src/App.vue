@@ -29,7 +29,9 @@ export default defineComponent({
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 #app {
-  font-family: 'Noto Sans', 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: Lato, 'Noto Sans', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 </style>
