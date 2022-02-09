@@ -2,6 +2,7 @@
   <div>
     <the-header />
     <main>
+      <p class="banner">I am working on...</p>
       <my-bio />
       <my-tech-skill />
     </main>
@@ -29,9 +30,15 @@ export default defineComponent({
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap');
 
 #app {
   font-family: Lato, 'Noto Sans', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.banner {
+  font-style: italic;
+  color: red;
+  margin: 1rem;
 }
 </style>
