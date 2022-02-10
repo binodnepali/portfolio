@@ -32,6 +32,10 @@ export default defineComponent({
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap');
 
+:root {
+  --primary-color: #ff9800;
+}
+
 #app {
   font-family: Lato, 'Noto Sans', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
