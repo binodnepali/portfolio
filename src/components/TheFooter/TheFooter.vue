@@ -23,8 +23,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--indigo-9);
-  color: white;
-  min-height: var(--size-fluid-5);
+  background-color: white;
+  color: var(--primary-color);
+  padding: var(--size-3) 0;
 }
 </style>
