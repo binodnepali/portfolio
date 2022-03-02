@@ -1,6 +1,0 @@
-.vscode
-.firebase
-.husky
-dist
-node_modules
-public
