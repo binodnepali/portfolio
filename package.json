@@ -1,5 +1,9 @@
 {
   "private": true,
+  "engineStrict": true,
+  "engines": {
+    "node": ">=14"
+  },
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",

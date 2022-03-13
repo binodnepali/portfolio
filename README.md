@@ -1,29 +1,49 @@
-# Nuxt 3 Minimal Starter
+# Portfolio
 
-We recommend to look at the [documentation](https://v3.nuxtjs.org).
+A project which contains my [portfolio website](https://binodnepali.me/) development source codes. This project is build using [Nuxt 3](https://v3.nuxtjs.org/), [OpenProps](https://open-props.style/) and [TailwindCSS](https://tailwindcss.com/).
+
+## Before setup
+
+Make sure you have installed [Node.js](https://nodejs.org/en/) version 14 or higher.
 
 ## Setup
 
-Make sure to install the dependencies
+### Install app dependencies
+
+> Make sure to install the dependencies
 
 ```bash
+npm install
+# or
 yarn install
 ```
 
-## Development
+### Run app in development
 
-Start the development server on http://localhost:3000
+> Start the development server on http://localhost:3000
 
 ```bash
+npm run dev
+# or
 yarn dev
 ```
 
-## Production
+### Build app for production
 
-Build the application for production:
+> Build the application for production
 
 ```bash
+npm run build
+# or
 yarn build
 ```
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
+### Start app after build
+
+> Start the development server on http://localhost:3000
+
+```bash
+npm run start
+# or
+yarn start
+```
