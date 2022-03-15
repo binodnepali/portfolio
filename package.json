@@ -12,5 +12,9 @@
   "devDependencies": {
     "nuxt3": "latest",
     "open-props": "^1.3.9"
+  },
+  "dependencies": {
+    "D": "^1.0.0",
+    "sass": "^1.49.9"
   }
 }
