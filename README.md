@@ -1,6 +1,6 @@
 # Portfolio
 
-A project which contains my [portfolio website](https://binodnepali.me/) development source codes. This project is build using [Nuxt 3](https://v3.nuxtjs.org/), [OpenProps](https://open-props.style/) and [TailwindCSS](https://tailwindcss.com/).
+A project which contains my [portfolio website](https://binodnepali.me/) development source codes. This project is build using [Nuxt 3](https://v3.nuxtjs.org/) and [OpenProps](https://open-props.style/)
 
 ## Before setup
 
