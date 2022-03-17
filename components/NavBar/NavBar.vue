@@ -1,42 +1,79 @@
 <template>
-  <nav class="nav">
+  <nav class="nav nav--light" :class="!isDark ? 'nav--light' : 'nav--dark'">
     <div class="nav-left nav-left__item--pointer">
-      <img src="/logo.png" height="56" width="56" alt="logo" />
+      <icon-button
+        :icon="{
+          src: !isDark ? '/logo-light.png' : '/logo-dark.png',
+          height: 56,
+          width: 56,
+          alt: 'Logo',
+        }"
+        :handleOnClick="() => {}"
+      />
     </div>
     <div class="nav-right">
-      <a href="https://www.linkedin.com/in/binodnepali" target="_blank">
-        <img
-          class="nav-right__item nav-right__item--white nav-right__item--pointer"
-          src="assets/icons/linkedin.svg"
-          height="36"
-          width="36"
-          alt="linkedin"
-        />
-      </a>
-      <a href="https://github.com/binodnepali" target="_blank">
-        <img
-          class="nav-right__item nav-right__item--white nav-right__item--pointer"
-          src="assets/icons/github.svg"
-          height="36"
-          width="36"
-          alt="github"
-        />
-      </a>
-      <img
-        class="nav-right__item nav-right__item--white nav-right__item--pointer"
-        src="assets/icons/light_mode_black_48dp.svg"
-        height="36"
-        width="36"
-        alt="theme mode"
+      <icon-link
+        class="nav-right__item"
+        href="https://www.linkedin.com/in/binodnepali"
+        target="_blank"
+        :icon="{
+          src: !isDark
+            ? 'assets/icons/light/linkedin.svg'
+            : 'assets/icons/dark/linkedin.svg',
+          height: 36,
+          width: 36,
+          alt: 'linkedin',
+        }"
+      />
+      <icon-link
+        class="nav-right__item"
+        href="https://github.com/binodnepali"
+        target="_blank"
+        :icon="{
+          src: !isDark
+            ? 'assets/icons/light/github.svg'
+            : 'assets/icons/dark/github.svg',
+          height: 36,
+          width: 36,
+          alt: 'github',
+        }"
+      />
+      <icon-button
+        class="nav-right__item"
+        :icon="{
+          src: !isDark
+            ? 'assets/icons/light/light_mode.svg'
+            : 'assets/icons/dark/dark_mode.svg',
+          height: 36,
+          width: 36,
+          alt: 'theme mode',
+        }"
+        :handleOnClick="handleOnThemeMode"
       />
     </div>
   </nav>
 </template>
+<script setup lang="ts">
+import { ref } from 'vue';
+
+import '@/components/IconButton/IconButton.vue';
+import '@/components/IconLink/IconLink.vue';
+
+const isDark = ref(false);
+const handleOnThemeMode = (event) => {
+  isDark.value = event;
+};
+</script>
 <style lang="scss" scoped>
 .nav {
-  background-color: var(--orange-5);
   display: flex;
   min-height: var(--size-8);
+}
+.nav--light {
+  background-color: var(--primary-color);
+}
+.nav--dark {
+  background-color: var(--primary-dark-color);
 }
 .nav-left {
   flex-grow: 1;

@@ -1,2 +1,7 @@
 @import 'open-props/style';
 @import 'open-props/normalize';
+
+:root {
+  --primary-color: var(--orange-6);
+  --primary-dark-color: var(--gray-9);
+}
