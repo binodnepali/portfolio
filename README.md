@@ -1,6 +1,8 @@
 # Portfolio
 
-A project which contains my [portfolio website](https://binodnepali.me/) development source codes. This project is build using [Nuxt 3](https://v3.nuxtjs.org/) and [OpenProps](https://open-props.style/)
+Project which contains my [portfolio website](https://binodnepali.me/) development source codes. This project is build using [Nuxt 3](https://v3.nuxtjs.org/) and [OpenProps](https://open-props.style/).
+
+This project uses [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) & [SCSS/SASS](https://sass-lang.com/) for styling website.
 
 ## Before setup
 
@@ -10,8 +12,6 @@ Make sure you have installed [Node.js](https://nodejs.org/en/) version 14 or hig
 
 ### Install app dependencies
 
-> Make sure to install the dependencies
-
 ```bash
 npm install
 # or
@@ -20,17 +20,15 @@ yarn install
 
 ### Run app in development
 
-> Start the development server on http://localhost:3000
-
 ```bash
 npm run dev
 # or
 yarn dev
 ```
 
-### Build app for production
+> Start development server on <http://localhost:3000>
 
-> Build the application for production
+### Build app for production
 
 ```bash
 npm run build
@@ -38,12 +36,12 @@ npm run build
 yarn build
 ```
 
-### Start app after build
-
-> Start the development server on http://localhost:3000
+### Preview for production
 
 ```bash
 npm run start
 # or
 yarn start
 ```
+
+> Start preview server on <http://localhost:3000>
