@@ -1,7 +1,7 @@
 <template>
   <button
-    :class="!isDark ? 'button--light' : 'button--dark'"
-    @click="handleOnThemeMode"
+    :class="!dark ? 'button--light' : 'button--dark'"
+    @click="handleOnClick"
   >
     <img
       :src="icon.src"
@@ -12,28 +12,19 @@
   </button>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue';
-
 import { Icon } from '../../types/Icon';
 
 interface Props {
   icon: Icon;
   dark?: boolean;
-  handleOnClick?: (isDark: boolean) => {};
+  handleOnClick?: () => void;
 }
-const { dark, handleOnClick } = defineProps<Props>();
-
-const isDark = ref(dark);
-const handleOnThemeMode = () => {
-  isDark.value = !isDark.value;
-  handleOnClick(isDark.value);
-};
+defineProps<Props>();
 </script>
-<style lang="scss" scoped>
-.button--light {
-  background: var(--primary-color);
-}
-.button--dark {
-  background: var(--primary-dark-color);
-}
+<style lang="sass" scoped>
+.button--light
+  background: var(--primary-color)
+
+.button--dark
+  background: var(--primary-dark-color)
 </style>

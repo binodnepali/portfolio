@@ -1,6 +1,6 @@
 <template>
-  <nav class="nav nav--light" :class="!isDark ? 'nav--light' : 'nav--dark'">
-    <div class="nav-left nav-left__item--pointer">
+  <nav class="nav" :class="!isDark ? 'nav--light' : 'nav--dark'">
+    <div class="nav-left">
       <icon-button
         :icon="{
           src: !isDark ? '/logo-light.png' : '/logo-dark.png',
@@ -8,7 +8,7 @@
           width: 56,
           alt: 'Logo',
         }"
-        :handleOnClick="() => {}"
+        :dark="isDark"
       />
     </div>
     <div class="nav-right">
@@ -40,6 +40,7 @@
       />
       <icon-button
         class="nav-right__item"
+        :dark="isDark"
         :icon="{
           src: !isDark
             ? 'assets/icons/light/light_mode.svg'
@@ -60,37 +61,27 @@ import '@/components/IconButton/IconButton.vue';
 import '@/components/IconLink/IconLink.vue';
 
 const isDark = ref(false);
-const handleOnThemeMode = (event) => {
-  isDark.value = event;
+const handleOnThemeMode = () => {
+  isDark.value = !isDark.value;
 };
 </script>
-<style lang="scss" scoped>
-.nav {
-  display: flex;
-  min-height: var(--size-8);
-}
-.nav--light {
-  background-color: var(--primary-color);
-}
-.nav--dark {
-  background-color: var(--primary-dark-color);
-}
-.nav-left {
-  flex-grow: 1;
-}
-.nav-left__item--pointer {
-  cursor: pointer;
-}
-.nav-right {
-  display: flex;
-}
-.nav-right__item {
-  margin: var(--size-2);
-}
-.nav-right__item--white {
-  filter: brightness(0) invert(1);
-}
-.nav-right__item--pointer {
-  cursor: pointer;
-}
+<style lang="sass" scoped>
+.nav
+  display: flex
+  min-height: var(--size-8)
+
+.nav--light
+  background-color: var(--primary-color)
+
+.nav--dark
+  background-color: var(--primary-dark-color)
+
+.nav-left
+  flex-grow: 1
+
+.nav-right
+  display: flex
+
+.nav-right__item
+  margin: var(--size-2)
 </style>

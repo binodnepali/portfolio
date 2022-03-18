@@ -10,6 +10,7 @@
 </template>
 <script setup lang="ts">
 import { Icon } from '../../types/Icon';
+
 interface Props {
   href: string;
   target: string;
@@ -17,4 +18,3 @@ interface Props {
 }
 defineProps<Props>();
 </script>
-<style lang="scss" scoped></style>
