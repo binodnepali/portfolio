@@ -1,5 +1,6 @@
 {
   "private": true,
+  "version": "1.0.0",
   "engineStrict": true,
   "engines": {
     "node": ">=14"
