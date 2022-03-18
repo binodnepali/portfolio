@@ -1,6 +1,6 @@
 # Portfolio
 
-Project which contains my [portfolio website](https://binodnepali.me/){:target="_blank" rel="noopener"} development source codes. This project is build using [Nuxt 3](https://v3.nuxtjs.org/) and [OpenProps](https://open-props.style/).
+Project which contains my [portfolio website](https://binodnepali.me/) development source codes. This project is build using [Nuxt 3](https://v3.nuxtjs.org/) and [OpenProps](https://open-props.style/).
 
 This project uses [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) & [SCSS/SASS](https://sass-lang.com/) for styling website.
 
