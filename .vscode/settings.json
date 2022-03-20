@@ -1,0 +1,7 @@
+{
+  "cssvar.files": [
+    "./node_modules/open-props/open-props.min.css",
+    "./styles/global.css"
+  ],
+  "cssvar.extensions": ["css", "vue", "sass", "scss"]
+}

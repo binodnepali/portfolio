@@ -1,16 +1,7 @@
-#Project
 node_modules
-dist
-dist-ssr
-*.local
-
-#Firebase 
+*.log
+.nuxt
+nuxt.d.ts
+.output
+.env
 .firebase
-.firebaserc
-firebase.json
-
-#Ide setup
-.vscode
-
-#Rest
-.DS_Store

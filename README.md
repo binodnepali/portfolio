@@ -1,29 +1,58 @@
-# Getting Started
+# Portfolio
 
-## Project Setup
+Project which contains my [portfolio website](https://binodnepali.me/) development source codes. This project is build using [Nuxt 3](https://v3.nuxtjs.org/) and [OpenProps](https://open-props.style/).
 
-----
+This project uses [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) & [SCSS/SASS](https://sass-lang.com/) for styling website.
 
-In the project directory, you can run following commands.
+## Before setup
+
+Make sure you have installed [Node.js](https://nodejs.org/en/) version 14 or higher.
+
+## Setup
 
 ### Install app dependencies
 
-    npm install
+```bash
+npm install
+# or
+yarn install
+```
 
-### Run app in development mode
+### Run app in development
 
-    npm run dev
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> Start development server on <http://localhost:3000>
 
-### Build app in production mode
+### Build app for production
 
-    npm run build
+```bash
+npm run build
+# or
+yarn build
+```
 
-### Preview app for production mode in your machine
+### Preview for production
 
-    npm run serve
+```bash
+npm run start
+# or
+yarn start
+```
 
-Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
+> Start preview server on <http://localhost:3000>
 
-Note: Please run project in the development mode so that you won't encounter CORS problem. Otherwise, just update production API endpoints url in .env.production file.
+### Deploy to firbase hosting
+
+```bash
+NITRO_PRESET=firebase yarn build
+firebase deploy
+```
+
+### Reference
+
+* Deployment in firebase hosting - [Learn more](https://v3.nuxtjs.org/docs/deployment/firebase)
