@@ -1,9 +1,12 @@
 <template>
   <div>
-    <nav-bar />
+    <layout-default>
+      <nav-bar />
+    </layout-default>
   </div>
 </template>
 
 <script setup>
-import '@/components/NavBar/NavBar.vue';
+import LayoutDefault from '@/layouts/LayoutDefault.vue';
+import NavBar from '@/components/NavBar/NavBar.vue';
 </script>

@@ -18,8 +18,8 @@
         target="_blank"
         :icon="{
           src: !isDark
-            ? 'assets/icons/light/linkedin.svg'
-            : 'assets/icons/dark/linkedin.svg',
+            ? '/icons/light/linkedin.svg'
+            : '/icons/dark/linkedin.svg',
           height: 36,
           width: 36,
           alt: 'linkedin',
@@ -30,9 +30,7 @@
         href="https://github.com/binodnepali"
         target="_blank"
         :icon="{
-          src: !isDark
-            ? 'assets/icons/light/github.svg'
-            : 'assets/icons/dark/github.svg',
+          src: !isDark ? '/icons/light/github.svg' : '/icons/dark/github.svg',
           height: 36,
           width: 36,
           alt: 'github',
@@ -43,8 +41,8 @@
         :dark="isDark"
         :icon="{
           src: !isDark
-            ? 'assets/icons/light/light_mode.svg'
-            : 'assets/icons/dark/dark_mode.svg',
+            ? '/icons/light/light_mode.svg'
+            : '/icons/dark/dark_mode.svg',
           height: 36,
           width: 36,
           alt: 'theme mode',
