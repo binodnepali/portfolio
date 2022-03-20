@@ -46,7 +46,7 @@ yarn start
 
 > Start preview server on <http://localhost:3000>
 
-### Deploy to firbase hosting
+### Deploy to firebase hosting
 
 ```bash
 NITRO_PRESET=firebase yarn build
