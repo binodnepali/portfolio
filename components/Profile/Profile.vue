@@ -8,10 +8,16 @@
       alt="profile"
     />
     <div class="card-text">
-      <p class="card-text__item">Binod Nepali</p>
-      <p class="card-text__item">27 years old | Nepalese</p>
-      <p class="card-text__item">Frontend Software Engineer | adidas</p>
-      <p class="card-text__item">Sittard-Geleen, Netherlands</p>
+      <p class="card-text__item card-text__item--title">Binod Nepali</p>
+      <p class="card-text__item card-text__item--subtitle1">
+        27 years old | Nepalese
+      </p>
+      <p class="card-text__item card-text__item--subtitle">
+        Frontend Software Engineer @ adidas
+      </p>
+      <p class="card-text__item card-text__item--subtitle">
+        Sittard-Geleen, Netherlands
+      </p>
     </div>
   </div>
 </template>
@@ -30,4 +36,16 @@
 
 .card-text__item
   margin: var(--size-2)  0
+
+.card-text__item--title
+  font-weight: var(--font-weight-7)
+  font-size: var(--font-size-4)
+
+.card-text__item--subtitle
+  font-weight: var(--font-weight-4)
+  font-size: var(--font-size-2)
+
+.card-text__item--subtitle1
+  font-weight: var(--font-weight-1)
+  font-size: var(--font-size-2)
 </style>
