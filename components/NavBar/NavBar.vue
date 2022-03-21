@@ -27,7 +27,7 @@
       />
       <icon-link
         class="nav-right__item"
-        href="https://github.com/binodnepali"
+        href="https://github.com/binodnepali/portfolio"
         target="_blank"
         :icon="{
           src: !isDark ? '/icons/light/github.svg' : '/icons/dark/github.svg',
