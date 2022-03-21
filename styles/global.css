@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 @import 'open-props/style';
 @import 'open-props/normalize';
 
 :root {
   --primary-color: var(--orange-6);
   --primary-dark-color: var(--gray-9);
+  --font-sans: Lato, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+    Cantarell, Noto Sans, sans-serif;
 }
