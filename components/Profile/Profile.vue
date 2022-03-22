@@ -8,7 +8,7 @@
       alt="profile"
     />
     <div class="card-content">
-      <p class="card-content__item card-content__item--title">Binod Nepali</p>
+      <h3 class="card-content__item card-content__item--title">Binod Nepali</h3>
       <p class="card-content__item card-content__item--subtitle1">
         27 years old | Nepalese
       </p>

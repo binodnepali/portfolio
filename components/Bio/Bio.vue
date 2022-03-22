@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card-content">
-      <p class="card-content__title">Bio</p>
+      <h3 class="card-content__title">Bio</h3>
       <p class="card-content__body">
         I am a full-time Frontend Software Engineer and fond of working with
         Javascript frameworks. I mostly love working with React (a UI library),
