@@ -67,6 +67,7 @@ const handleOnThemeMode = () => {
 .nav
   display: flex
   min-height: var(--size-8)
+  box-shadow: var(--shadow-3)
 
 .nav--light
   background-color: var(--primary-color)
