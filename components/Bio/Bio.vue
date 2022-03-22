@@ -1,8 +1,8 @@
 <template>
   <div class="card">
     <div class="card-content">
-      <p class="card-text__title">Bio</p>
-      <p class="card-text__subtitle">
+      <p class="card-content__title">Bio</p>
+      <p class="card-content__subtitle">
         I am a full-time Frontend Software Engineer and fond of working with
         Javascript frameworks. I mostly love working with React (a UI library),
         Vue, Next.js and Nuxt.js frameworks. I am also quite familiar (working)
@@ -21,11 +21,11 @@
 .card-content
   padding: var(--size-4)
 
-.card-text__title
+.card-content__title
   font-weight: var(--font-weight-7)
   font-size: var(--font-size-4)
 
-.card-text__subtitle
+.card-content__subtitle
   font-weight: var(--font-weight-4)
   font-size: var(--font-size-2)
 </style>
