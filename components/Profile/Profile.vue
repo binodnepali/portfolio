@@ -7,15 +7,15 @@
       width="240"
       alt="profile"
     />
-    <div class="card-text">
-      <p class="card-text__item card-text__item--title">Binod Nepali</p>
-      <p class="card-text__item card-text__item--subtitle1">
+    <div class="card-content">
+      <p class="card-content__item card-content__item--title">Binod Nepali</p>
+      <p class="card-content__item card-content__item--subtitle1">
         27 years old | Nepalese
       </p>
-      <p class="card-text__item card-text__item--subtitle">
+      <p class="card-content__item card-content__item--subtitle">
         Frontend Software Engineer @ adidas
       </p>
-      <p class="card-text__item card-text__item--subtitle">
+      <p class="card-content__item card-content__item--subtitle">
         Sittard-Geleen, Netherlands
       </p>
     </div>
@@ -31,21 +31,21 @@
   margin-left: auto
   margin-right: auto
 
-.card-text
+.card-content
   text-align: center
 
-.card-text__item
+.card-content__item
   margin: var(--size-2)  0
 
-.card-text__item--title
+.card-content__item--title
   font-weight: var(--font-weight-7)
   font-size: var(--font-size-4)
 
-.card-text__item--subtitle
+.card-content__item--subtitle
   font-weight: var(--font-weight-4)
   font-size: var(--font-size-2)
 
-.card-text__item--subtitle1
-  font-weight: var(--font-weight-1)
+.card-content__item--subtitle1
+  font-weight: var(--font-weight-3)
   font-size: var(--font-size-2)
 </style>
