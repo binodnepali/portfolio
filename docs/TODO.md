@@ -5,8 +5,9 @@ This section includes my todo list for my portfolio project.
 ## Dev Task
 
 * [ ] Add prettier, eslint & stylelint support
-* [ ] Add profile component
-* [ ] Add bio component
+* [ ] Add navbar component - WIP
+* [ ] Add profile component - WIP
+* [ ] Add bio component - WIP
 * [ ] Research and add profile component content from LinkedIn API
 * [ ] Research and add bio component content from LinkedIn API
 * [ ] Add cypress test for home page
@@ -18,3 +19,5 @@ This section includes my todo list for my portfolio project.
 ```vue
 < component :src = 'assets/image.svg' / >
 ```
+
+* [ ] Integrating postcss-custom-media plugin in nuxt3 
