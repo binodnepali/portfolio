@@ -53,12 +53,25 @@
   </nav>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 import '@/components/IconButton/IconButton.vue';
 import '@/components/IconLink/IconLink.vue';
 
-const isDark = ref(false);
+interface Props {
+  dark?: boolean;
+}
+const props = withDefaults(defineProps<Props>(), {
+  dark: false,
+});
+
+const isDark = ref(props.dark);
+watch(
+  () => props.dark,
+  (newVal) => {
+    isDark.value = newVal;
+  }
+);
 const handleOnThemeMode = () => {
   isDark.value = !isDark.value;
 };

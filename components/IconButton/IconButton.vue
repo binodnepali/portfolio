@@ -12,7 +12,7 @@
   </button>
 </template>
 <script setup lang="ts">
-import { Icon } from '../../types/Icon';
+import { Icon } from '@/types/Icon';
 
 interface Props {
   icon: Icon;

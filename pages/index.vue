@@ -1,7 +1,7 @@
 <template>
   <div>
     <layout-default>
-      <nav-bar />
+      <nav-bar :dark="isDark" />
     </layout-default>
     <main>
       <div class="profile-container">
@@ -19,6 +19,10 @@ import LayoutDefault from '@/layouts/LayoutDefault.vue';
 import NavBar from '@/components/NavBar/NavBar.vue';
 import Profile from '@/components/Profile/Profile.vue';
 import Bio from '@/components/Bio/Bio.vue';
+
+import { useTheme } from '@/composables/useTheme';
+
+const { isDark } = useTheme();
 </script>
 
 <style lang="sass" scoped>
