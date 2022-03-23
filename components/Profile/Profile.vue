@@ -21,6 +21,24 @@
     </div>
   </div>
 </template>
+<script setup lang="ts">
+import { ref, watch } from 'vue';
+
+interface Props {
+  dark?: boolean;
+}
+const props = withDefaults(defineProps<Props>(), {
+  dark: false,
+});
+
+const isDark = ref(props.dark);
+watch(
+  () => props.dark,
+  (newVal) => {
+    isDark.value = newVal;
+  }
+);
+</script>
 <style lang="sass" scoped>
 .card
   width: 400px
