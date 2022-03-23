@@ -4,7 +4,8 @@ This section includes my todo list for my portfolio project.
 
 ## Dev Task
 
-* [ ] Add prettier, eslint & stylelint support
+* [ ] Setup prettier, eslint & stylelint
+* [ ] Setup standard version to make automatically CHANGELOG document
 * [ ] Add navbar component - WIP
 * [ ] Add profile component - WIP
 * [ ] Add bio component - WIP
