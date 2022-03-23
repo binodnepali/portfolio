@@ -20,4 +20,4 @@ This section includes my todo list for my portfolio project.
 < component :src = 'assets/image.svg' / >
 ```
 
-* [ ] Integrating postcss-custom-media plugin in nuxt3 
+* [ ] Integrating postcss-custom-media plugin in nuxt3
