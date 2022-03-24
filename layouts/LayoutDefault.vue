@@ -10,18 +10,17 @@
       </Head>
       <Body lang="en-GB" />
     </Html>
-    <header>
-      <nav-bar :dark="isDark" />
-    </header>
-    <main>
-      <slot />
-    </main>
+    <ThemeProvider>
+      <header>
+        <NavBar />
+      </header>
+      <main>
+        <slot />
+      </main>
+    </ThemeProvider>
   </div>
 </template>
 <script setup lang="ts">
 import NavBar from '@/components/NavBar/NavBar.vue';
-
-import { useTheme } from '@/composables/useTheme';
-
-const { isDark } = useTheme();
+import ThemeProvider from '@/components/ThemeProvider/ThemeProvider.vue';
 </script>
