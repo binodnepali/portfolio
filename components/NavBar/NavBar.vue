@@ -53,10 +53,12 @@
   </nav>
 </template>
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { ref, watch, inject } from 'vue';
 
 import '@/components/IconButton/IconButton.vue';
 import '@/components/IconLink/IconLink.vue';
+
+import { themeKey, ThemeInjectionKey } from '@/constants/ProviderKeys';
 
 interface Props {
   dark?: boolean;
@@ -75,6 +77,8 @@ watch(
 const handleOnThemeMode = () => {
   isDark.value = !isDark.value;
 };
+
+const { theme } = inject<ThemeInjectionKey>(themeKey);
 </script>
 <style lang="sass" scoped>
 .nav

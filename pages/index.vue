@@ -10,6 +10,10 @@
 <script setup>
 import Profile from '@/components/Profile/Profile.vue';
 import Bio from '@/components/Bio/Bio.vue';
+
+definePageMeta({
+  layout: 'layout-default',
+});
 </script>
 
 <style lang="sass" scoped>

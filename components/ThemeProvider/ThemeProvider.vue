@@ -2,7 +2,7 @@
   <slot />
 </template>
 <script setup lang="ts">
-import { provide, ref } from 'vue';
+import { provide, ref, watch } from 'vue';
 
 import { useTheme } from '@/composables/useTheme';
 
@@ -11,6 +11,11 @@ import { ThemeMode } from '@/types/ThemeMode';
 import { themeKey } from '@/constants/ProviderKeys';
 
 const { isDark } = useTheme();
+
+watch(isDark, (newVal) => {
+  theme.value = newVal ? ThemeMode.Dark : ThemeMode.Light;
+});
+
 const theme = ref(isDark.value ? ThemeMode.Dark : ThemeMode.Light);
 
 const updateTheme = (isDark: Boolean) => {
