@@ -15,7 +15,7 @@
         <NavBar />
       </header>
       <main>
-        <slot />
+        <slot name="main" />
       </main>
     </ThemeProvider>
   </div>

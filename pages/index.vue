@@ -1,19 +1,20 @@
 <template>
-  <div class="profile-container">
-    <profile />
-  </div>
-  <div class="bio-container">
-    <bio />
-  </div>
+  <layout-default>
+    <template #main>
+      <div class="profile-container">
+        <profile />
+      </div>
+      <div class="bio-container">
+        <bio />
+      </div>
+    </template>
+  </layout-default>
 </template>
 
 <script setup>
 import Profile from '@/components/Profile/Profile.vue';
 import Bio from '@/components/Bio/Bio.vue';
-
-definePageMeta({
-  layout: 'layout-default',
-});
+import LayoutDefault from '@/layouts/LayoutDefault.vue';
 </script>
 
 <style lang="sass" scoped>

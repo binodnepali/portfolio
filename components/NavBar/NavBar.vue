@@ -10,6 +10,7 @@
         }"
         :dark="isDark"
       />
+      {{ theme }}
     </div>
     <div class="nav-right">
       <icon-link
@@ -67,6 +68,8 @@ const props = withDefaults(defineProps<Props>(), {
   dark: false,
 });
 
+const { theme, updateTheme } = inject<ThemeInjectionKey>(themeKey);
+
 const isDark = ref(props.dark);
 watch(
   () => props.dark,
@@ -76,9 +79,8 @@ watch(
 );
 const handleOnThemeMode = () => {
   isDark.value = !isDark.value;
+  updateTheme(isDark.value);
 };
-
-const { theme } = inject<ThemeInjectionKey>(themeKey);
 </script>
 <style lang="sass" scoped>
 .nav
