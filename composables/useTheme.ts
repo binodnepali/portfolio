@@ -1,26 +1,14 @@
-import { ref, onMounted, onUnmounted } from 'vue';
+import { inject, computed } from 'vue';
+
+import { themeKey, ThemeInjectionKey } from '@/constants/ProviderKeys';
+import { ThemeMode } from '@/types/ThemeMode';
 
 export function useTheme() {
-  const isDark = ref(false);
+  const { theme, updateTheme } = inject<ThemeInjectionKey>(themeKey);
 
-  const mediaQueryListEventChange = (
-    mediaQueryListEvent: MediaQueryListEvent
-  ) => {
-    isDark.value = mediaQueryListEvent.matches;
-  };
-
-  onMounted(() => {
-    isDark.value =
-      window.matchMedia('(prefers-color-scheme: dark)').matches || false;
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', mediaQueryListEventChange);
+  const isDark = computed(() => {
+    return theme.value === ThemeMode.Dark;
   });
-  onUnmounted(() =>
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .removeEventListener('change', mediaQueryListEventChange)
-  );
 
-  return { isDark };
+  return { isDark, updateTheme };
 }

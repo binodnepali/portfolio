@@ -4,6 +4,6 @@ import { ThemeMode } from '@/types/ThemeMode';
 
 export type ThemeInjectionKey = {
   theme: Ref<ThemeMode>;
-  updateTheme: (isDark: boolean) => void;
+  updateTheme: (themeMode: ThemeMode) => void;
 };
 export const themeKey = Symbol() as InjectionKey<ThemeInjectionKey>;

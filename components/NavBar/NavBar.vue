@@ -10,7 +10,6 @@
         }"
         :dark="isDark"
       />
-      {{ theme }}
     </div>
     <div class="nav-right">
       <icon-link
@@ -37,49 +36,50 @@
           alt: 'github',
         }"
       />
+
       <icon-button
+        v-if="!isDark"
         class="nav-right__item"
         :dark="isDark"
         :icon="{
-          src: !isDark
-            ? '/icons/light/light_mode.svg'
-            : '/icons/dark/dark_mode.svg',
+          src: '/icons/dark/dark_mode.svg',
           height: 36,
           width: 36,
           alt: 'theme mode',
         }"
-        :handleOnClick="handleOnThemeMode"
+        :handleOnClick="handleOnThemeDarkMode"
+      />
+      <icon-button
+        v-else
+        class="nav-right__item"
+        :dark="isDark"
+        :icon="{
+          src: '/icons/light/light_mode.svg',
+          height: 36,
+          width: 36,
+          alt: 'theme mode',
+        }"
+        :handleOnClick="handleOnThemeLightMode"
       />
     </div>
   </nav>
 </template>
 <script setup lang="ts">
-import { ref, watch, inject } from 'vue';
+import { ThemeMode } from '@/types/ThemeMode';
 
 import '@/components/IconButton/IconButton.vue';
 import '@/components/IconLink/IconLink.vue';
 
-import { themeKey, ThemeInjectionKey } from '@/constants/ProviderKeys';
+import { useTheme } from '@/composables/useTheme';
 
-interface Props {
-  dark?: boolean;
-}
-const props = withDefaults(defineProps<Props>(), {
-  dark: false,
-});
+const { isDark, updateTheme } = useTheme();
 
-const { theme, updateTheme } = inject<ThemeInjectionKey>(themeKey);
+const handleOnThemeLightMode = () => {
+  updateTheme(ThemeMode.Light);
+};
 
-const isDark = ref(props.dark);
-watch(
-  () => props.dark,
-  (newVal) => {
-    isDark.value = newVal;
-  }
-);
-const handleOnThemeMode = () => {
-  isDark.value = !isDark.value;
-  updateTheme(isDark.value);
+const handleOnThemeDarkMode = () => {
+  updateTheme(ThemeMode.Dark);
 };
 </script>
 <style lang="sass" scoped>
