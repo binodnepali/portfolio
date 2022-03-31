@@ -1,23 +1,20 @@
 <template>
-  <layout-default>
+  <AppLayout>
     <template #main>
-      <layout-main>
-        <div class="profile-container">
-          <profile />
-        </div>
-        <div class="bio-container">
-          <bio />
-        </div>
-      </layout-main>
+      <div class="profile-container">
+        <profile />
+      </div>
+      <div class="bio-container">
+        <bio />
+      </div>
     </template>
-  </layout-default>
+  </AppLayout>
 </template>
 
 <script setup>
+import AppLayout from '@/layouts/AppLayout.vue';
 import Profile from '@/components/Profile/Profile.vue';
 import Bio from '@/components/Bio/Bio.vue';
-import LayoutDefault from '@/layouts/LayoutDefault.vue';
-import LayoutMain from '../layouts/LayoutMain.vue';
 </script>
 
 <style lang="sass" scoped>

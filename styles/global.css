@@ -7,4 +7,6 @@
   --primary-dark-color: var(--gray-9);
   --font-sans: Lato, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
     Cantarell, Noto Sans, sans-serif;
+  --shadow-strength: 1%;
+  --shadow-color: 220 3% 15%;
 }

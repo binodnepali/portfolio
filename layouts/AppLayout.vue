@@ -14,11 +14,14 @@
       <header>
         <NavBar />
       </header>
-      <slot name="main" />
+      <MainLayout>
+        <slot name="main" />
+      </MainLayout>
     </ThemeProvider>
   </div>
 </template>
 <script setup lang="ts">
-import NavBar from '@/components/NavBar/NavBar.vue';
 import ThemeProvider from '@/components/ThemeProvider/ThemeProvider.vue';
+import NavBar from '@/components/NavBar/NavBar.vue';
+import MainLayout from '@/layouts/MainLayout.vue';
 </script>

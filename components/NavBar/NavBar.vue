@@ -93,6 +93,8 @@ const handleOnThemeDarkMode = () => {
 
 .nav--dark
   background-color: var(--primary-dark-color)
+  border-bottom: var(--border-size-1) solid var(--gray-8)
+  box-shadow: 100px 60px
 
 .nav-left
   flex-grow: 1
