@@ -7,8 +7,8 @@ This section includes my todo list for my portfolio project.
 * [ ] Setup prettier, eslint & stylelint
 * [ ] Setup standard version to make automatically CHANGELOG document
 * [x] Add navbar component
-* [ ] Add profile component - WIP
-* [ ] Add bio component - WIP
+* [x] Add profile component
+* [x] Add bio component
 * [ ] Research and add profile component content from LinkedIn API
 * [ ] Research and add bio component content from LinkedIn API
 * [ ] Add cypress test for home page
