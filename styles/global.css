@@ -9,4 +9,5 @@
     Cantarell, Noto Sans, sans-serif;
   --shadow-strength: 1%;
   --shadow-color: 220 3% 15%;
+  --header-height: 64px;
 }
