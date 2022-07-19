@@ -38,7 +38,7 @@
       />
 
       <icon-button
-        v-if="!isDark"
+        v-if="isDark"
         class="nav-right__item"
         :dark="isDark"
         :icon="{
@@ -75,11 +75,11 @@ import { useTheme } from '@/composables/useTheme';
 const { isDark, updateTheme } = useTheme();
 
 const handleOnThemeLightMode = () => {
-  updateTheme(ThemeMode.Light);
+  updateTheme(ThemeMode.Dark);
 };
 
 const handleOnThemeDarkMode = () => {
-  updateTheme(ThemeMode.Dark);
+  updateTheme(ThemeMode.Light);
 };
 </script>
 <style lang="sass" scoped>
