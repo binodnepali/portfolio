@@ -1,4 +1,7 @@
+#dependencies
 node_modules
+.yarn
+
 *.log
 .nuxt
 nuxt.d.ts

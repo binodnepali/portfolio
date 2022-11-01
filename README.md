@@ -1,28 +1,52 @@
 # Portfolio
 
-Project which contains my [portfolio website](https://binodnepali.me/) development source codes. This project is build using [Nuxt 3](https://v3.nuxtjs.org/) and [OpenProps](https://open-props.style/).
+My [portfolio website](https://binodnepali.me/) build using [Nuxt 3](https://v3.nuxtjs.org/) and [OpenProps](https://open-props.style/). And It also makes use of [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) & [SCSS/SASS](https://sass-lang.com/) for styling website.
 
-This project uses [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) & [SCSS/SASS](https://sass-lang.com/) for styling website.
+## Before getting started
 
-## Before setup
+Make sure you have installed [Node.js 16.11.0 or higher](https://nodejs.org/en/) on your machine. You can use [nvm](https://github.com/nvm-sh/nvm) to manage multiple node version on your machine.
 
-Make sure you have installed [Node.js](https://nodejs.org/en/) version 14 or higher.
+## Getting started
+
+You can setup this project using npm or yarn package managers.
+
+> I would recommend to installed or enabled [yarn 3.1.1 or higher](https://yarnpkg.com/getting-started) package manager on your machine.
+
+### Clone repo
+
+```bash
+# https
+git clone https://github.com/binodnepali/portfolio.git
+
+# ssh
+git clone git@github.com:binodnepali/portfolio.git
+```
+
+### Navigate to cloned repo
+
+```bash
+cd portfolio
+```
 
 ## Setup
 
 ### Install app dependencies
 
 ```bash
+# npm
 npm install
-# or
+
+# yarn
 yarn install
 ```
 
 ### Run app in development
 
 ```bash
+# npm
 npm run dev
-# or
+
+# yarn
 yarn dev
 ```
 
@@ -31,16 +55,20 @@ yarn dev
 ### Build app for production
 
 ```bash
+# npm
 npm run build
-# or
+
+# yarn
 yarn build
 ```
 
 ### Preview for production
 
 ```bash
+# npm
 npm run start
-# or
+
+# yarn
 yarn start
 ```
 
@@ -49,6 +77,11 @@ yarn start
 ### Deploy to firebase hosting
 
 ```bash
+# npm
+NITRO_PRESET=firebase npm run build
+firebase deploy
+
+# yarn
 NITRO_PRESET=firebase yarn build
 firebase deploy
 ```
