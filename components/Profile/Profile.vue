@@ -1,16 +1,10 @@
 <template>
   <div class="card" :class="{ 'card--dark': isDark }">
-    <img
-      class="card-img"
-      src="/profile.webp"
-      height="240"
-      width="240"
-      alt="profile"
-    />
+    <img class="card-img" src="/profile.webp" height="240" width="240" alt="profile" />
     <div class="card-content">
       <h3 class="card-content__item card-content__item--title">Binod Nepali</h3>
       <p class="card-content__item card-content__item--subtitle1">
-        27 years old | Nepalese
+        {{ age }} years old | Nepalese
       </p>
       <p class="card-content__item card-content__item--subtitle">
         Frontend Software Engineer @ adidas
@@ -25,6 +19,8 @@
 import { useTheme } from '@/composables/useTheme';
 
 const { isDark } = useTheme();
+
+const age = new Date().getFullYear() - 1995;
 </script>
 <style lang="sass" scoped>
 .card
