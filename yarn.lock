@@ -1473,7 +1473,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/compiler-sfc@npm:3.2.41":
+"@vue/compiler-sfc@npm:3.2.41, @vue/compiler-sfc@npm:^3.2.20":
   version: 3.2.41
   resolution: "@vue/compiler-sfc@npm:3.2.41"
   dependencies:
@@ -5963,6 +5963,7 @@ __metadata:
     nuxt: 3.0.0-rc.12
     open-props: ^1.3.9
     sass: ^1.49.9
+    vite-svg-loader: ^3.6.0
   languageName: unknown
   linkType: soft
 
@@ -7793,6 +7794,16 @@ __metadata:
     vti:
       optional: true
   checksum: eed0b1a07563ca5b0567bbb39348a46208282f2c10c47d86d5c4d334c04bde30a1ce80566359588bdbae61339a8ee4ca609b9d4d779d50c6233d3efa8eb36220
+  languageName: node
+  linkType: hard
+
+"vite-svg-loader@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "vite-svg-loader@npm:3.6.0"
+  dependencies:
+    "@vue/compiler-sfc": ^3.2.20
+    svgo: ^2.7.0
+  checksum: 1ee96ce9de04b728c9d6b53f7bb8228b5e6ceb3a7c72fd341da333a8c027d5e9f7e928cbd923dd3b2b3adff4ec764f2a0b98551592e8820e409d66d51fc0c421
   languageName: node
   linkType: hard
 

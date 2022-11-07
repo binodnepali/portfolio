@@ -1,10 +1,10 @@
 <template>
   <AppLayout>
     <template #main>
-      <div class="profile-container">
+      <div class="profile">
         <profile />
       </div>
-      <div class="bio-container">
+      <div class="bio">
         <bio />
       </div>
     </template>
@@ -18,11 +18,11 @@ import Bio from '@/components/Bio/Bio.vue';
 </script>
 
 <style lang="sass" scoped>
-.profile-container
+.profile
   display: flex
   justify-content: center
 
-.bio-container
+.bio
   display: flex
   justify-content: center
   margin-top: var(--size-4)

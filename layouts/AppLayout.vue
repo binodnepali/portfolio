@@ -9,18 +9,17 @@
         />
       </Head>
     </Html>
-    <ThemeProvider>
-      <header>
-        <NavBar />
-      </header>
-      <MainLayout>
-        <slot name="main" />
-      </MainLayout>
-    </ThemeProvider>
+
+    <header>
+      <NavBar />
+    </header>
+
+    <MainLayout>
+      <slot name="main" />
+    </MainLayout>
   </div>
 </template>
 <script setup lang="ts">
-import ThemeProvider from '@/components/ThemeProvider/ThemeProvider.vue';
 import NavBar from '@/components/NavBar/NavBar.vue';
 import MainLayout from '@/layouts/MainLayout.vue';
 </script>

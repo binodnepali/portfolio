@@ -1,107 +1,54 @@
 <template>
-  <nav class="nav" :class="!isDark ? 'nav--light' : 'nav--dark'">
-    <div class="nav-left">
-      <icon-button
-        :icon="{
-          src: !isDark ? '/logo-light.png' : '/logo-dark.png',
-          height: 56,
-          width: 56,
-          alt: 'Logo',
-        }"
-        :dark="isDark"
-      />
+  <nav class="nav">
+    <div class="navLeft">
+      <NuxtLink to="/" class="navLeftItem"> B.N </NuxtLink>
     </div>
-    <div class="nav-right">
-      <icon-link
-        class="nav-right__item"
-        href="https://www.linkedin.com/in/binodnepali"
+    <div class="navRight">
+      <NuxtLink
+        to="https://www.linkedin.com/in/binodnepali"
         target="_blank"
-        :icon="{
-          src: !isDark
-            ? '/icons/light/linkedin.svg'
-            : '/icons/dark/linkedin.svg',
-          height: 36,
-          width: 36,
-          alt: 'linkedin',
-        }"
-      />
-      <icon-link
-        class="nav-right__item"
-        href="https://github.com/binodnepali/portfolio"
-        target="_blank"
-        :icon="{
-          src: !isDark ? '/icons/light/github.svg' : '/icons/dark/github.svg',
-          height: 36,
-          width: 36,
-          alt: 'github',
-        }"
-      />
+        class="navRightItem"
+      >
+        <LinkedInIcon width="24" height="24" />
+      </NuxtLink>
 
-      <icon-button
-        v-if="isDark"
-        class="nav-right__item"
-        :dark="isDark"
-        :icon="{
-          src: '/icons/dark/dark_mode.svg',
-          height: 36,
-          width: 36,
-          alt: 'theme mode',
-        }"
-        :handleOnClick="handleOnThemeDarkMode"
-      />
-      <icon-button
-        v-else
-        class="nav-right__item"
-        :dark="isDark"
-        :icon="{
-          src: '/icons/light/light_mode.svg',
-          height: 36,
-          width: 36,
-          alt: 'theme mode',
-        }"
-        :handleOnClick="handleOnThemeLightMode"
-      />
+      <NuxtLink
+        to="https://github.com/binodnepali/portfolio"
+        target="_blank"
+        class="navRightItem"
+      >
+        <GithubIcon width="24" height="24" />
+      </NuxtLink>
+
+      <button class="navRightItem">
+        <LightModeIcon width="24" height="24" />
+      </button>
     </div>
   </nav>
 </template>
 <script setup lang="ts">
-import { ThemeMode } from '@/types/ThemeMode';
-
-import '@/components/IconButton/IconButton.vue';
-import '@/components/IconLink/IconLink.vue';
-
-import { useTheme } from '@/composables/useTheme';
-
-const { isDark, updateTheme } = useTheme();
-
-const handleOnThemeLightMode = () => {
-  updateTheme(ThemeMode.Dark);
-};
-
-const handleOnThemeDarkMode = () => {
-  updateTheme(ThemeMode.Light);
-};
+import GithubIcon from '@/assets/github.svg?component';
+import LinkedInIcon from '@/assets/linkedin.svg?component';
+import LightModeIcon from '@/assets/lightMode.svg?component';
 </script>
 <style lang="sass" scoped>
 .nav
   display: flex
+  align-items: center
   min-height: var(--size-8)
   box-shadow: var(--shadow-3)
 
-.nav--light
-  background-color: var(--primary-color)
-
-.nav--dark
-  background-color: var(--primary-dark-color)
-  border-bottom: var(--border-size-1) solid var(--gray-8)
-  box-shadow: 100px 60px
-
-.nav-left
+.navLeft
   flex-grow: 1
 
-.nav-right
+.navLeftItem
+  margin: 0 var(--size-2)
+  text-decoration: none
+  font-size: 36px
+
+.navRight
   display: flex
 
-.nav-right__item
+.navRightItem
   margin: var(--size-2)
 </style>
