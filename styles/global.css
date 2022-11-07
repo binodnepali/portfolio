@@ -3,12 +3,55 @@
 @import 'open-props/normalize';
 @import 'open-props/buttons';
 
+html {
+  /* light */
+  --brand-light: var(--cyan-6);
+
+  /* dark */
+  --brand-dark: var(--cyan-3);
+  --link-dark: var(--gray-0);
+}
+
 :root {
-  --primary-color: var(--orange-6);
-  --primary-dark-color: var(--gray-9);
+  color-scheme: light;
+
+  --brand: var(--brand-light);
   --font-sans: Lato, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
     Cantarell, Noto Sans, sans-serif;
-  --shadow-strength: 1%;
-  --shadow-color: 220 3% 15%;
   --header-height: 64px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --brand: var(--brand-dark);
+    --link: var(--link-dark);
+
+    --text-1: var(--gray-1);
+    --text-2: var(--gray-4);
+    --surface-1: var(--gray-9);
+    --surface-2: var(--gray-8);
+    --surface-3: var(--gray-7);
+    --surface-4: var(--gray-6);
+  }
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+
+  --brand: var(--brand-light);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --brand: var(--brand-dark);
+  --link: var(--link-dark);
+  --text-1: var(--gray-1);
+  --text-2: var(--gray-4);
+  --surface-1: var(--gray-9);
+  --surface-2: var(--gray-8);
+  --surface-3: var(--gray-7);
+  --surface-4: var(--gray-6);
 }
