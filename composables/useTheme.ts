@@ -1,7 +1,7 @@
-import { ThemeMode } from '~~/types/ThemeMode';
+import { ThemeMode } from '@/types/ThemeMode';
 
 export function useTheme() {
-  const dark = ref(ThemeMode.Dark);
+  const theme = ref(ThemeMode.Light);
 
   const updateDataTheme = (themeMode: ThemeMode) => {
     const html = document.querySelector('html');
@@ -9,24 +9,24 @@ export function useTheme() {
   };
 
   const updateTheme = (themeMode: ThemeMode) => {
-    dark.value = themeMode;
+    theme.value = themeMode;
     updateDataTheme(themeMode);
   };
 
   const mediaQueryListEventChange = (
     mediaQueryListEvent: MediaQueryListEvent
   ) => {
-    dark.value = mediaQueryListEvent?.matches
+    theme.value = mediaQueryListEvent?.matches
       ? ThemeMode.Dark
       : ThemeMode.Light;
-    updateDataTheme(dark.value);
+    updateDataTheme(theme.value);
   };
 
   onMounted(() => {
-    dark.value = window.matchMedia('(prefers-color-scheme: dark)')?.matches
+    theme.value = window.matchMedia('(prefers-color-scheme: dark)')?.matches
       ? ThemeMode.Dark
       : ThemeMode.Light;
-    updateDataTheme(dark.value);
+    updateDataTheme(theme.value);
     window
       .matchMedia('(prefers-color-scheme: dark)')
       .addEventListener('change', mediaQueryListEventChange);
@@ -39,8 +39,8 @@ export function useTheme() {
   );
 
   return {
-    isDark: computed(() => dark.value === ThemeMode.Dark),
-    isLight: computed(() => dark.value === ThemeMode.Light),
+    isDark: computed(() => theme.value === ThemeMode.Dark),
+    isLight: computed(() => theme.value === ThemeMode.Light),
     updateTheme,
   };
 }
