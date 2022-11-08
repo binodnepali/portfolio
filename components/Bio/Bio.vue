@@ -16,7 +16,6 @@
 <style lang="sass" scoped>
 .card
  width: 640px
- box-shadow: var(--shadow-3)
 
 .cardContent
   padding: var(--size-4)

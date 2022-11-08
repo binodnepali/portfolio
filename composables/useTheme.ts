@@ -8,9 +8,11 @@ export function useTheme() {
     html?.setAttribute('data-theme', themeMode);
   };
 
-  const updateTheme = (themeMode: ThemeMode) => {
-    theme.value = themeMode;
-    updateDataTheme(themeMode);
+  const updateTheme = () => {
+    const newTheme =
+      theme.value === ThemeMode.Light ? ThemeMode.Dark : ThemeMode.Light;
+    theme.value = newTheme;
+    updateDataTheme(newTheme);
   };
 
   const mediaQueryListEventChange = (

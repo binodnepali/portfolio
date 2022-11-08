@@ -27,7 +27,6 @@ const age = new Date().getFullYear() - 1995;
 <style lang="sass" scoped>
 .card
   width: 400px
-  box-shadow: var(--shadow-3)
   padding: var(--size-2)
 
 .cardImg

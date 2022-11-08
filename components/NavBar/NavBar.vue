@@ -23,18 +23,12 @@
       <button
         class="navRightItem themeToggle"
         title="toggles light & dark"
-        @click="() => updateTheme(ThemeMode.Dark)"
-        v-if="isLight"
+        @click="() => updateTheme()"
       >
-        <LightModeIcon width="24" height="24" />
-      </button>
-      <button
-        class="navRightItem themeToggle"
-        title="toggles light & dark"
-        @click="() => updateTheme(ThemeMode.Light)"
-        v-else
-      >
-        <DarkModeIcon width="24" height="24" />
+        <Transition mode="out-in" name="fadeModeIcon">
+          <LightModeIcon v-if="isLight" width="24" height="24" />
+          <DarkModeIcon v-else width="24" height="24" />
+        </Transition>
       </button>
     </div>
   </nav>
@@ -46,7 +40,6 @@ import LightModeIcon from '@/assets/lightMode.svg?component';
 import DarkModeIcon from '@/assets/darkMode.svg?component';
 
 import { useTheme } from '@/composables/useTheme';
-import { ThemeMode } from '~~/types/ThemeMode';
 
 const { isLight, updateTheme } = useTheme();
 </script>
@@ -55,7 +48,6 @@ const { isLight, updateTheme } = useTheme();
   display: flex
   align-items: center
   min-height: var(--size-8)
-  box-shadow: var(--shadow-3)
 
 .navLeft
   flex-grow: 1
@@ -76,5 +68,17 @@ const { isLight, updateTheme } = useTheme();
     margin: var(--size-2)
 
 .themeToggle
- background: none
+  background: none
+
+.fadeModeIcon-enter-from,.fadeModeIcon-leave-to
+  opacity: 0
+
+.fadeModeIcon-enter-active
+  transition: opacity 0.3s ease-out
+
+.fadeModeIcon-leave-active
+  transition: opacity 0.3s ease-in
+
+.fadeModeIcon-enter-to,.fadeModeIcon-leave-from
+  opacity: 1
 </style>
