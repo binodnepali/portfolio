@@ -1,7 +1,7 @@
 <template>
   <nav class="nav">
     <div class="navLeft">
-      <NuxtLink to="/" class="navLeftItem logo"> B.N </NuxtLink>
+      <NuxtLink to="/" class="navLeftItem"> B.N </NuxtLink>
     </div>
     <div class="navRight">
       <NuxtLink
@@ -57,9 +57,12 @@ const { isLight, updateTheme } = useTheme();
     text-decoration: none
     font-size: 36px
 
+  a
+    color: var(--brand)
+    text-decoration: none
 
-.logo
-  color: var(--brand)
+  a[href]:visited
+    color: var(--brand)
 
 .navRight
   display: flex

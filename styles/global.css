@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 @import 'open-props/style';
+
 @import 'open-props/normalize';
 @import 'open-props/buttons';
 
 html {
-  /* light */
   --brand-light: var(--cyan-6);
   --link-light: var(--gray-7);
   --text-1-light: var(--gray-9);
@@ -14,7 +14,6 @@ html {
   --surface-3-light: var(--gray-3);
   --surface-4-light: var(--gray-4);
 
-  /* dark */
   --brand-dark: var(--cyan-3);
   --link-dark: var(--gray-0);
   --text-1-dark: var(--gray-1);
@@ -42,12 +41,22 @@ html {
   --header-height: 64px;
 }
 
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a[href]:visited {
+  color: var(--link-visited);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
 
     --brand: var(--brand-dark);
     --link: var(--link-dark);
+    --link-visited: var(--link-dark);
     --text-1: var(--text-1-dark);
     --text-2: var(--text-2-dark);
     --surface-1: var(--surface-1-dark);
