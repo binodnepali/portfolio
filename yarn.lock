@@ -3701,6 +3701,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"globalyzer@npm:0.1.0":
+  version: 0.1.0
+  resolution: "globalyzer@npm:0.1.0"
+  checksum: 419a0f95ba542534fac0842964d31b3dc2936a479b2b1a8a62bad7e8b61054faa9b0a06ad9f2e12593396b9b2621cac93358d9b3071d33723fb1778608d358a1
+  languageName: node
+  linkType: hard
+
 "globby@npm:^13.1.2":
   version: 13.1.2
   resolution: "globby@npm:13.1.2"
@@ -3711,6 +3718,13 @@ __metadata:
     merge2: ^1.4.1
     slash: ^4.0.0
   checksum: c148fcda0c981f00fb434bb94ca258f0a9d23cedbde6fb3f37098e1abde5b065019e2c63fe2aa2fad4daf2b54bf360b4d0423d85fb3a63d09ed75a2837d4de0f
+  languageName: node
+  linkType: hard
+
+"globrex@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "globrex@npm:0.1.2"
+  checksum: adca162494a176ce9ecf4dd232f7b802956bb1966b37f60c15e49d2e7d961b66c60826366dc2649093cad5a0d69970cfa8875bd1695b5a1a2f33dcd2aa88da3c
   languageName: node
   linkType: hard
 
@@ -5666,6 +5680,7 @@ __metadata:
     firebase-functions-test: ^0.3.3
     nuxt: 3.0.0-rc.12
     open-props: ^1.3.9
+    postcss-jit-props: ^1.0.7
     sass: ^1.49.9
     vite-svg-loader: ^3.6.0
   languageName: unknown
@@ -5764,6 +5779,17 @@ __metadata:
   peerDependencies:
     postcss: ^8.0.0
   checksum: e5048072514f33520348c0c5aaedb5db92da72188e72a7367c26a8d851b9cf92e56aeda30d9c7b4ed1a34f84a58959da1b4b27b4aa23d41fc0ce36efe00bf1d1
+  languageName: node
+  linkType: hard
+
+"postcss-jit-props@npm:^1.0.7":
+  version: 1.0.7
+  resolution: "postcss-jit-props@npm:1.0.7"
+  dependencies:
+    tiny-glob: ^0.2.9
+  peerDependencies:
+    postcss: ^8.2.8
+  checksum: 290d4e86737fff563aca42d9251bd584f6509b25e442e15f4bb1bb304e647099a7077db9911a0c0cf3a7eb42a429485fa5da11d28b5019d9c9427ccf6081d6c4
   languageName: node
   linkType: hard
 
@@ -7038,6 +7064,16 @@ __metadata:
   version: 2.3.8
   resolution: "through@npm:2.3.8"
   checksum: a38c3e059853c494af95d50c072b83f8b676a9ba2818dcc5b108ef252230735c54e0185437618596c790bbba8fcdaef5b290405981ffa09dce67b1f1bf190cbd
+  languageName: node
+  linkType: hard
+
+"tiny-glob@npm:^0.2.9":
+  version: 0.2.9
+  resolution: "tiny-glob@npm:0.2.9"
+  dependencies:
+    globalyzer: 0.1.0
+    globrex: ^0.1.2
+  checksum: aea5801eb6663ddf77ebb74900b8f8bd9dfcfc9b6a1cc8018cb7421590c00bf446109ff45e4b64a98e6c95ddb1255a337a5d488fb6311930e2a95334151ec9c6
   languageName: node
   linkType: hard
 
