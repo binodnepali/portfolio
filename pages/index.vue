@@ -12,9 +12,9 @@
 </template>
 
 <script setup>
-import AppLayout from '@/layouts/AppLayout.vue';
-import Profile from '@/components/Profile/Profile.vue';
-import Bio from '@/components/Bio/Bio.vue';
+import AppLayout from '@/layouts/AppLayout.vue'
+import Profile from '@/components/Profile/Profile.vue'
+import Bio from '@/components/Bio/Bio.vue'
 </script>
 
 <style lang="sass" scoped>
