@@ -1,5 +1,7 @@
 # Portfolio
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 My [portfolio website](https://binodnepali.me/) build using [Nuxt 3](https://v3.nuxtjs.org/) and [OpenProps](https://open-props.style/). And It also makes use of [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) & [SCSS/SASS](https://sass-lang.com/) for styling website.
 
 ## Before getting started
@@ -74,6 +76,82 @@ yarn start
 
 > Start preview server on <http://localhost:3000>
 
+### Lint
+
+```bash
+# yarn
+yarn lint
+
+# npm
+npm run lint
+```
+
+### Lint fix
+
+```bash
+# yarn
+yarn lint:fix
+
+# npm
+npm run lint:fix
+```
+
+### Lint style
+
+```bash
+# yarn
+yarn lint:style
+
+# npm
+npm run lint:style
+```
+
+### Lint style fix
+
+```bash
+# yarn
+yarn lint:style:fix
+
+# npm
+npm run lint:style:fix
+```
+
+### Commit
+
+Open interactive terminal to write conventional commit message
+
+```bash
+# yarn
+yarn commit
+
+# npm
+npm run commit
+```
+
+### First release
+
+Create a first release tag and generates change log based on commit history
+
+```bash
+# yarn
+yarn release:first
+
+# npm
+npm run release:first
+```
+
+### Release
+
+Create a release tag and generates change log based on commit history
+
+```bash
+# yarn
+yarn release
+
+# npm
+npm run release
+```
+
 ### Deploy to firebase hosting
 
 ```bash
@@ -88,4 +166,10 @@ firebase deploy
 
 ### Reference
 
-* Deployment in firebase hosting - [Learn more](https://v3.nuxtjs.org/docs/deployment/firebase)
+* Prettier - [Learn more](https://prettier.io/)
+* ESLint - [Learn more](https://eslint.org/)
+* Stylelint - [Learn more](https://stylelint.io/)
+* Lint staged - [Learn more](https://github.com/okonet/lint-staged)
+* Commitlint - [Learn more](https://commitlint.js.org/#/)
+* Commitizen - [Learn more](https://commitizen.github.io/cz-cli/)
+* Deployment in firebase hosting - [Learn more](https://nitro.unjs.io/deploy/providers/firebase)
