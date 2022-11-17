@@ -1,87 +1,97 @@
 <template>
   <nav class="nav">
-    <div class="navLeft">
-      <NuxtLink to="/" class="navLeftItem"> B.N </NuxtLink>
+    <div class="nav-left">
+      <NuxtLink to="/" class="nav-left-item"> B.N </NuxtLink>
     </div>
-    <div class="navRight">
+    <div class="nav-right">
       <NuxtLink
         to="https://www.linkedin.com/in/binodnepali"
         target="_blank"
-        class="navRightItem"
+        class="nav-right-item"
       >
         <LinkedInIcon width="24" height="24" />
       </NuxtLink>
 
-      <NuxtLink
-        to="https://github.com/binodnepali/portfolio"
-        target="_blank"
-        class="navRightItem"
-      >
-        <GithubIcon width="24" height="24" />
-      </NuxtLink>
-
       <button
-        class="navRightItem themeToggle"
+        class="theme-toggle"
         title="toggles light & dark"
         @click="() => updateTheme()"
       >
-        <Transition mode="out-in" name="fadeModeIcon">
+        <Transition mode="out-in" name="fade-mode-icon">
           <LightModeIcon v-if="isLight" width="24" height="24" />
           <DarkModeIcon v-else width="24" height="24" />
         </Transition>
       </button>
+
+      <NuxtLink
+        to="https://github.com/binodnepali/portfolio"
+        target="_blank"
+        class="nav-right-item"
+      >
+        <GithubIcon width="24" height="24" />
+      </NuxtLink>
     </div>
   </nav>
 </template>
 <script setup lang="ts">
-import GithubIcon from '@/assets/github.svg?component';
-import LinkedInIcon from '@/assets/linkedin.svg?component';
-import LightModeIcon from '@/assets/lightMode.svg?component';
-import DarkModeIcon from '@/assets/darkMode.svg?component';
+import GithubIcon from '@/assets/github.svg?component'
+import LinkedInIcon from '@/assets/linkedin.svg?component'
+import LightModeIcon from '@/assets/lightMode.svg?component'
+import DarkModeIcon from '@/assets/darkMode.svg?component'
 
-import { useTheme } from '@/composables/useTheme';
+import { useTheme } from '@/composables/useTheme'
 
-const { isLight, updateTheme } = useTheme();
+const { isLight, updateTheme } = useTheme()
 </script>
-<style lang="sass" scoped>
-.nav
-  display: flex
-  align-items: center
-  min-height: var(--size-8)
+<style lang="scss" scoped>
+.nav {
+  display: flex;
+  min-height: var(--size-8);
+  align-items: center;
+}
 
-.navLeft
-  flex-grow: 1
+.nav-left {
+  flex-grow: 1;
 
-  &Item
-    margin: 0 var(--size-2)
-    text-decoration: none
-    font-size: 36px
+  &-item {
+    margin: 0 var(--size-2);
+    font-size: 36px;
+    text-decoration: none;
+  }
 
-  a
-    color: var(--brand)
-    text-decoration: none
+  a {
+    color: var(--brand);
+  }
+}
 
-  a[href]:visited
-    color: var(--brand)
+.nav-right {
+  display: flex;
+  align-items: center;
 
-.navRight
-  display: flex
+  &-item {
+    margin: 0 var(--size-3);
+  }
+}
 
-  &Item
-    margin: var(--size-2)
+.theme-toggle {
+  background: none;
+}
 
-.themeToggle
-  background: none
+.fade-mode-icon-enter-from,
+.fade-mode-icon-leave-to {
+  opacity: 0;
+}
 
-.fadeModeIcon-enter-from,.fadeModeIcon-leave-to
-  opacity: 0
+.fade-mode-icon-enter-active {
+  transition: opacity 0.3s ease-out;
+}
 
-.fadeModeIcon-enter-active
-  transition: opacity 0.3s ease-out
+.fade-mode-icon-leave-active {
+  transition: opacity 0.3s ease-in;
+}
 
-.fadeModeIcon-leave-active
-  transition: opacity 0.3s ease-in
-
-.fadeModeIcon-enter-to,.fadeModeIcon-leave-from
-  opacity: 1
+.fade-mode-icon-enter-to,
+.fade-mode-icon-leave-from {
+  opacity: 1;
+}
 </style>

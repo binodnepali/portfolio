@@ -20,10 +20,10 @@ import Bio from '@/components/Bio/Bio.vue'
 <style lang="scss" scoped>
 .profile {
   display: flex;
+  width: auto;
+  height: 100%;
   justify-content: center;
   color: #fff;
-  height: 100%;
-  width: auto;
 }
 
 .bio {
