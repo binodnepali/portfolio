@@ -171,4 +171,4 @@ yarn deploy:firebase
 * Commitlint - [Learn more](https://commitlint.js.org/#/)
 * Commitizen - [Learn more](https://commitizen.github.io/cz-cli/)
 * Deployment in firebase hosting - [Learn more](https://nitro.unjs.io/deploy/providers/firebase)
-  >Recommend to install firebase-tools@10.0.0 or firebase-tools@11.8.0
+  >Recommend to install `npm install -g firebase-tools@10.8.0`
