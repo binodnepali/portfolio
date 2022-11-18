@@ -30,7 +30,8 @@
     "prepare": "husky install",
     "commit": "git-cz",
     "release": "standard-version",
-    "release:first": "yarn release --first-release"
+    "release:first": "yarn release --first-release",
+    "deploy:firebase": "NITRO_PRESET=firebase yarn build && firebase deploy"
   },
   "config": {
     "commitizen": {

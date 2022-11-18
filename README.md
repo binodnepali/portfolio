@@ -156,12 +156,10 @@ npm run release
 
 ```bash
 # npm
-NITRO_PRESET=firebase npm run build
-firebase deploy
+npm run deploy:firebase
 
 # yarn
-NITRO_PRESET=firebase yarn build
-firebase deploy
+yarn deploy:firebase
 ```
 
 ### Reference
@@ -173,3 +171,4 @@ firebase deploy
 * Commitlint - [Learn more](https://commitlint.js.org/#/)
 * Commitizen - [Learn more](https://commitizen.github.io/cz-cli/)
 * Deployment in firebase hosting - [Learn more](https://nitro.unjs.io/deploy/providers/firebase)
+  >Recommend to install firebase-tools@10.0.0 or firebase-tools@11.8.0
