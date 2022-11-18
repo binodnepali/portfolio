@@ -2,10 +2,10 @@
   <AppLayout>
     <template #main>
       <div class="profile">
-        <profile />
+        <my-profile />
       </div>
       <div class="bio">
-        <bio />
+        <my-bio />
       </div>
     </template>
   </AppLayout>
@@ -13,8 +13,8 @@
 
 <script setup>
 import AppLayout from '@/layouts/AppLayout.vue'
-import Profile from '@/components/Profile/Profile.vue'
-import Bio from '@/components/Bio/Bio.vue'
+import MyProfile from '@/components/MyProfile/MyProfile.vue'
+import MyBio from '@/components/MyBio/MyBio.vue'
 </script>
 
 <style lang="scss" scoped>
@@ -23,7 +23,6 @@ import Bio from '@/components/Bio/Bio.vue'
   width: auto;
   height: 100%;
   justify-content: center;
-  color: #fff;
 }
 
 .bio {
