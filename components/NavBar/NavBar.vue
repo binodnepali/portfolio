@@ -12,6 +12,10 @@
         <LinkedInIcon width="24" height="24" />
       </NuxtLink>
 
+      <NuxtLink href="mailto:nepalibinod9@gmail.com">
+        <EmailIcon class="email-icon" />
+      </NuxtLink>
+
       <button
         class="theme-toggle"
         title="toggles light & dark"
@@ -34,6 +38,7 @@
   </nav>
 </template>
 <script setup lang="ts">
+import EmailIcon from '@material-design-icons/svg/filled/email.svg?component'
 import GithubIcon from '@/assets/github.svg?component'
 import LinkedInIcon from '@/assets/linkedin.svg?component'
 import LightModeIcon from '@/assets/lightMode.svg?component'
@@ -74,7 +79,14 @@ const { isLight, updateTheme } = useTheme()
 }
 
 .theme-toggle {
+  margin-left: var(--size-3);
   background: none;
+}
+
+.email-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentcolor;
 }
 
 .fade-mode-icon-enter-from,

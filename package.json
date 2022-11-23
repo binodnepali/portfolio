@@ -42,6 +42,7 @@
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
     "@commitlint/cz-commitlint": "^17.2.0",
+    "@material-design-icons/svg": "latest",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "commitizen": "^4.2.5",
     "eslint": "^8.27.0",
