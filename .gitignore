@@ -1,11 +1,2 @@
-#dependencies
-node_modules
-.yarn
-
-*.log
-.nuxt
-nuxt.d.ts
-.output
-.env
-.firebase
+#misc
 .DS_Store

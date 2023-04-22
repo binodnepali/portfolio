@@ -1,7 +1,5 @@
 {
-  "cssvar.files": [
-    "./node_modules/open-props/open-props.min.css",
-    "./styles/global.css"
-  ],
-  "cssvar.extensions": ["css", "vue", "sass", "scss"]
+  "deno.enable": true,
+  "deno.lint": true,
+  "editor.defaultFormatter": "denoland.vscode-deno"
 }

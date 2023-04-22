@@ -2,19 +2,13 @@
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-My [portfolio website](https://binodnepali.me/) build using [Nuxt 3](https://v3.nuxtjs.org/) and [OpenProps](https://open-props.style/). And It also makes use of [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) & [SCSS/SASS](https://sass-lang.com/) for styling website.
+My [portfolio website](https://binodnepali.me/) build using [fresh](https://fresh.deno.dev/) a full stack framework for [deno](https://deno.land/) and [Twind](https://twind.dev/) a solution for js in [tailwind](https://tailwindcss.com/).
 
 ## Before getting started
 
-Make sure you have installed [Node.js 16.11.0 or higher](https://nodejs.org/en/) on your machine. You can use [nvm](https://github.com/nvm-sh/nvm) to manage multiple node version on your machine.
+Make sure you have installed [deno 1.32.5](https://deno.land/manual@v1.32.5/introduction) in your machine.
 
-## Getting started
-
-You can setup this project using npm or yarn package managers.
-
-> I would recommend to installed or enabled [yarn 3.1.1 or higher](https://yarnpkg.com/getting-started) package manager on your machine.
-
-### Clone repo
+### Cloning repo
 
 ```bash
 # https
@@ -30,145 +24,18 @@ git clone git@github.com:binodnepali/portfolio.git
 cd portfolio
 ```
 
-## Setup
+### Usage
 
-### Install app dependencies
+Start the project:
 
-```bash
-# npm
-npm install
-
-# yarn
-yarn install
+```
+deno task start
 ```
 
-### Run app in development
+This will watch the project directory and restart as necessary.
 
-```bash
-# npm
-npm run dev
+### Available routes
 
-# yarn
-yarn dev
-```
-
-> Start development server on <http://localhost:3000>
-
-### Build app for production
-
-```bash
-# npm
-npm run build
-
-# yarn
-yarn build
-```
-
-### Preview for production
-
-```bash
-# npm
-npm run start
-
-# yarn
-yarn start
-```
-
-> Start preview server on <http://localhost:3000>
-
-### Lint
-
-```bash
-# yarn
-yarn lint
-
-# npm
-npm run lint
-```
-
-### Lint fix
-
-```bash
-# yarn
-yarn lint:fix
-
-# npm
-npm run lint:fix
-```
-
-### Lint style
-
-```bash
-# yarn
-yarn lint:style
-
-# npm
-npm run lint:style
-```
-
-### Lint style fix
-
-```bash
-# yarn
-yarn lint:style:fix
-
-# npm
-npm run lint:style:fix
-```
-
-### Commit
-
-Open interactive terminal to write conventional commit message
-
-```bash
-# yarn
-yarn commit
-
-# npm
-npm run commit
-```
-
-### First release
-
-Create a first release tag and generates change log based on commit history
-
-```bash
-# yarn
-yarn release:first
-
-# npm
-npm run release:first
-```
-
-### Release
-
-Create a release tag and generates change log based on commit history
-
-```bash
-# yarn
-yarn release
-
-# npm
-npm run release
-```
-
-### Deploy to firebase hosting
-
-```bash
-# npm
-npm run deploy:firebase
-
-# yarn
-yarn deploy:firebase
-```
-
-### Reference
-
-* Prettier - [Learn more](https://prettier.io/)
-* ESLint - [Learn more](https://eslint.org/)
-* Stylelint - [Learn more](https://stylelint.io/)
-* Lint staged - [Learn more](https://github.com/okonet/lint-staged)
-* Commitlint - [Learn more](https://commitlint.js.org/#/)
-* Commitizen - [Learn more](https://commitizen.github.io/cz-cli/)
-* Deployment in firebase hosting - [Learn more](https://nitro.unjs.io/deploy/providers/firebase)
-  >Recommend to install `npm install -g firebase-tools@10.8.0`
+1. http://localhost:8000/ - home page
+2. http://localhost:8000/YOUR-NAME - dynamic page example
+3. http://localhost:8000/api/intro - api route example
