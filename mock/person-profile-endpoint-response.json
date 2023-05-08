@@ -1,0 +1,643 @@
+{
+  "public_identifier": "binodnepali",
+  "profile_pic_url": "https://s3.us-west-000.backblazeb2.com/proxycurl/person/binodnepali/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20230425%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20230425T203124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ddd35d02dbc8ad20969bf09b6757ca388222e4d62a844b740ca52c469ccee5df",
+  "background_cover_image_url": null,
+  "first_name": "Binod",
+  "last_name": "Nepali",
+  "full_name": "Binod Nepali",
+  "follower_count": null,
+  "occupation": "Software Developer at adidas",
+  "headline": "Frontend Software Engineer | React | Next.js | Vue | Nuxt.js | Cypress | Playwright | Jest/Vitest | Write code | Test code | Refactor with confidence | Ship with confidence",
+  "summary": "I am a full-time software developer, working in web development for more than four years. Mostly work with React, Next.js,  Vue, and Nuxt.js.\nExperience in starting a project from scratch and maintaining & improving existing projects.\nCapable of working in a team and independently.",
+  "country": "NL",
+  "country_full_name": "Netherlands",
+  "city": "Sittard",
+  "state": "Limburg",
+  "experiences": [
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 11,
+        "year": 2021
+      },
+      "ends_at": null,
+      "company": "adidas",
+      "company_linkedin_profile_url": "https://www.linkedin.com/company/adidas/",
+      "title": "Software Developer",
+      "description": "As a software developer, responsible for developing and maintaining a high-traffic web application built using React & Nextjs.\n\nMy day-to-day task involves the followings.\n1. Develop a feature\n2. Fix bugs\n3. Refactor and improve the codebase\n4. Involve in technical decision\n5. Seek help in a team and support team members\n\nCurrent Tech stacks\n1. React + Nextjs with typescript - Frontend Web Application\n2. Fastify with typescript - Backend for Frontend (BFF)\n\nTools\n1. Git and Bitbucket\n2. Jira\n3. Confluence",
+      "location": "Amsterdam, North Holland, Netherlands",
+      "logo_url": "https://s3.us-west-000.backblazeb2.com/proxycurl/company/adidas/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20230425%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20230425T203124Z&X-Amz-Expires=1800&X-Amz-SignedHeaders=host&X-Amz-Signature=c1647197713b255f4769959d2318c5d97f7c8d1b8e211355d50315fb394793a6"
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 3,
+        "year": 2021
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 10,
+        "year": 2021
+      },
+      "company": "Smart Servant",
+      "company_linkedin_profile_url": "https://www.linkedin.com/company/smartservant/",
+      "title": "Full Stack Developer",
+      "description": "Worked as a full-stack developer focused on developing IoT solutions for delivery and room service robots. Developed a progressive web app (PWA) where a user interacts with the robots and nodejs backend API which handles interaction between the app and the robots.\nDeliverables\n1. Progressive Web App (PWA) build with Vue (frontend framework) and vuetify (design components library)\n2. Backend API build with nodejs and express",
+      "location": "De Maas 8, Best, the Netherlands",
+      "logo_url": "https://media.licdn.com/dms/image/C4E0BAQFPM_dTj28WuQ/company-logo_400_400/0/1623921801125?e=1689811200&v=beta&t=2lck4bT3FYROagWSYCCM-5fri-fLG8LpLyI57Tb5eeQ"
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 9,
+        "year": 2020
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 2,
+        "year": 2021
+      },
+      "company": "No1Robotics B.V",
+      "company_linkedin_profile_url": "https://www.linkedin.com/company/no1robotics/",
+      "title": "Full Stack Developer",
+      "description": "Migration and Improvements of Geriatrie Project: The project aims to migrate “Geriatrie Pepper” web app into Geriatrie android application with some improvements in design. And decoupling “Geriatrie Admin” from a pepper robot platform and rewriting of “Geriatrie Admin” web app into Geriatrie Content Management System (CMS) by making responsive design and improving designs. \nThe project uses the following technologies.\n1.\tAndroid Studio with kotlin language to develop an android application\n2.\tGoogle Material Design Components\n3.\tFrontend framework Vue.js with Vuetify.js (design components library) to build an interactive user interface for CMS\n4.\tFirebase as an application backend\n5.\tGoogle Cloud Platform\n6.\tBit cloud to share the common user interface components across projects\n7.\tJira Software and Confluence as the project management tool",
+      "location": "De Maas 8, Best",
+      "logo_url": "https://media.licdn.com/dms/image/C560BAQHxgcD0Vxiu1g/company-logo_400_400/0/1578487845162?e=1689811200&v=beta&t=tl7Jc33FY0b2sAK5JwjtwNCy7o8iw82VDGougNyKVRw"
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 6,
+        "year": 2020
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 8,
+        "year": 2020
+      },
+      "company": "No1Robotics B.V",
+      "company_linkedin_profile_url": "https://www.linkedin.com/company/no1robotics/",
+      "title": "Full Stack Developer",
+      "description": "Migration, Improvements and Extensions of KinderPoli (PiPo) Project: The project aims to migrate “PiPo Pepper” web app into KinderPoli android application with some improvements in the design and addition of new functionalities. And decoupling “PiPo Admin” from pepper robot platform and rewriting of “PiPo Admin” web app into KinderPoli Content Management System (CMS) by making responsive design with some new functionalities.\nThe project uses the following technologies.\n1. Android Studio with kotlin language to develop an android application\n2. Google Material Design Components\n3. Frontend framework Vue.js with Vuetify.js (design components library) to build an interactive user interface for CMS\n4. Firebase as an application backend\n5. Google Cloud Platform\n6. Bit cloud to share the common user interface components across projects\n7. Jira Software and Confluence as project management tool",
+      "location": "Best, North Brabant, Netherlands",
+      "logo_url": "https://media.licdn.com/dms/image/C560BAQHxgcD0Vxiu1g/company-logo_400_400/0/1578487845162?e=1689811200&v=beta&t=tl7Jc33FY0b2sAK5JwjtwNCy7o8iw82VDGougNyKVRw"
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 1,
+        "year": 2020
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 5,
+        "year": 2020
+      },
+      "company": "No1Robotics B.V",
+      "company_linkedin_profile_url": "https://www.linkedin.com/company/no1robotics/",
+      "title": "Full Stack Developer",
+      "description": "Migration, Improvements and Extensions of Geriatrie Project: The project aims to migrate “Geriatrie” app, which was developed during the Graduation Project, improving development workflow & designs and adding some new functionalities.\nThe project uses the following technologies.\n1.\tFrontend framework Vue.js with Bootstrap-Vue (design components library) to build an interactive user interface\n2.\tFirebase as an application backend\n3.\tGoogle Cloud Platform\n4.\tTrello as a project management tool",
+      "location": "Best, North Brabant, Netherlands",
+      "logo_url": "https://media.licdn.com/dms/image/C560BAQHxgcD0Vxiu1g/company-logo_400_400/0/1578487845162?e=1689811200&v=beta&t=tl7Jc33FY0b2sAK5JwjtwNCy7o8iw82VDGougNyKVRw"
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 2,
+        "year": 2019
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 12,
+        "year": 2019
+      },
+      "company": "No1Robotics B.V",
+      "company_linkedin_profile_url": "https://www.linkedin.com/company/no1robotics/",
+      "title": "Full Stack Developer",
+      "description": "Project PiPo: The project aims to develop two web apps. First, “PiPo Pepper” an app which is used by a health care professional during a training session about pee and poo problems to a kid.  Second, “PiPo Admin” an app which is used by the health care professional to manage the contents that are used during the training session.\nThe project uses the following technologies\n1.\tFrontend framework Vue.js with Bootstrap-Vue (design components library) to build an interactive user interface\n2.\tFirebase as an application backend\n3.\tGoogle Cloud Platform\n4.\tTrello as project management tool",
+      "location": "Best, North Brabant, Netherlands",
+      "logo_url": "https://media.licdn.com/dms/image/C560BAQHxgcD0Vxiu1g/company-logo_400_400/0/1578487845162?e=1689811200&v=beta&t=tl7Jc33FY0b2sAK5JwjtwNCy7o8iw82VDGougNyKVRw"
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 9,
+        "year": 2018
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 1,
+        "year": 2019
+      },
+      "company": "No1Robotics B.V",
+      "company_linkedin_profile_url": "https://www.linkedin.com/company/no1robotics/",
+      "title": "Full Stack Developer",
+      "description": "Health care, Maxima Medisch Centrum (MMC) wants to put the social humanoid robot \"Pepper\" into their working environment to solve the problems of elderly people being frustrated during the stay in health care and their care professionals were not able to be with the patients more time to make them engaged.  \nTherefore, an assignment was to develop a web-based application for pepper robot which helps them to keep their patients (especially old people) entertained and engaged during the stay in health care by introducing pepper robot onto their working environment. The pepper will be a colleague of the health care professional and work with them together.",
+      "location": "oss, Netherlands",
+      "logo_url": "https://media.licdn.com/dms/image/C560BAQHxgcD0Vxiu1g/company-logo_400_400/0/1578487845162?e=1689811200&v=beta&t=tl7Jc33FY0b2sAK5JwjtwNCy7o8iw82VDGougNyKVRw"
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 9,
+        "year": 2017
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 1,
+        "year": 2018
+      },
+      "company": "Fontys University of Applied Sciences",
+      "company_linkedin_profile_url": "https://www.linkedin.com/school/fontys-hogescholen/",
+      "title": "Frontend and Backend Developer (PROEP- Distrubted System)",
+      "description": "The project aims at developing a distributed system for an organization of a restaurant which solves the problem of the restaurant such as managing their inventory and their employee's work schedule. The system consists of a desktop application (WPF) which is used by an inventory manager to update the stock, employees use to clock in/out and view their work schedule when they don`t have a mobile with them, mobile application (android) to clock in/out at work and view their work schedule and centrally hosted service (WCF) which manages request from those applications. During the project, we make use of Core Dot Net Framework library as well as popular framework MVVMCross5",
+      "location": "Eindhoven Area, Netherlands",
+      "logo_url": "https://media.licdn.com/dms/image/C560BAQHoPshjTmIrAg/company-logo_400_400/0/1519856033175?e=1689811200&v=beta&t=d89dQyUa56Igi2HksdIMVtO-lS0N8Abm7-YPjqBiMeo"
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 11,
+        "year": 2016
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 1,
+        "year": 2017
+      },
+      "company": "Fontys Hogescholen",
+      "company_linkedin_profile_url": "https://www.linkedin.com/school/fontys-hogescholen/",
+      "title": "Frontend and Backend Android App Developer (Locate User App)",
+      "description": "Developing an application which can show the location of the registered user. With the extra feature such as notification system (giving notification when any of the registered users is within the range of 10 meters), able to upload and update profile photo, able to change password as well as reset password.",
+      "location": "Eindhoven Area, Netherlands",
+      "logo_url": "https://media.licdn.com/dms/image/C560BAQHoPshjTmIrAg/company-logo_400_400/0/1519856033175?e=1689811200&v=beta&t=d89dQyUa56Igi2HksdIMVtO-lS0N8Abm7-YPjqBiMeo"
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 9,
+        "year": 2016
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 1,
+        "year": 2017
+      },
+      "company": "Fontys Hogescholen",
+      "company_linkedin_profile_url": "https://www.linkedin.com/school/fontys-hogescholen/",
+      "title": "Frontend and Backend C# Developer (Rail Road Simulation)",
+      "description": "Building up a desktop application “Rail Road Simulation” which can be used by Rail Road Company to simulate system before they construct Railway tracks. \nProject deliverables include Project Plan, User Requirement Specification, Test Plan, Test Report, Design Document which includes Class Diagram, Sequence Diagram and User Interface Design.",
+      "location": "Eindhoven Area, Netherlands",
+      "logo_url": "https://media.licdn.com/dms/image/C560BAQHoPshjTmIrAg/company-logo_400_400/0/1519856033175?e=1689811200&v=beta&t=d89dQyUa56Igi2HksdIMVtO-lS0N8Abm7-YPjqBiMeo"
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 9,
+        "year": 2016
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 11,
+        "year": 2016
+      },
+      "company": "Fontys Hogescholen",
+      "company_linkedin_profile_url": "https://www.linkedin.com/school/fontys-hogescholen/",
+      "title": "Frontend and Backend Android App Developer (FHICT Campanion App)",
+      "description": "Developing an application which can be used by the student to see their class schedule and credit achieved on those courses they were assigned.",
+      "location": "Eindhoven Area, Netherlands",
+      "logo_url": "https://media.licdn.com/dms/image/C560BAQHoPshjTmIrAg/company-logo_400_400/0/1519856033175?e=1689811200&v=beta&t=d89dQyUa56Igi2HksdIMVtO-lS0N8Abm7-YPjqBiMeo"
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 9,
+        "year": 2015
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 1,
+        "year": 2016
+      },
+      "company": "Fontys Hogescholen",
+      "company_linkedin_profile_url": "https://www.linkedin.com/school/fontys-hogescholen/",
+      "title": "Frontend and Backend (Web & C#)Developer (Culture Varient Program)",
+      "description": "Developing web and desktop applications for program organising organizations so that they can organize their cultural variant program in a digital way. They use interactive web application for their program advertisements and selling online tickets where as desktop applications for Entrance, Food Installs, Booking Camp Spot, Renting Camping Items, Balance top up and their event management.",
+      "location": "Eindhoven Area, Netherlands",
+      "logo_url": "https://media.licdn.com/dms/image/C560BAQHoPshjTmIrAg/company-logo_400_400/0/1519856033175?e=1689811200&v=beta&t=d89dQyUa56Igi2HksdIMVtO-lS0N8Abm7-YPjqBiMeo"
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 2,
+        "year": 2017
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 7,
+        "year": 2017
+      },
+      "company": "Bosch Security Systems",
+      "company_linkedin_profile_url": "https://www.linkedin.com/company/bosch-security-systems/",
+      "title": "Intern Backend C# developer (OMENO Platform)",
+      "description": "Developing a prototype algorithm for OMNEO platform which can differentiate network quality based on the amount of jitter accumulated in the network system.",
+      "location": "Breda Area, Netherlands",
+      "logo_url": "https://s3.us-west-000.backblazeb2.com/proxycurl/company/bosch-security-systems/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20230425%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20230425T203124Z&X-Amz-Expires=1800&X-Amz-SignedHeaders=host&X-Amz-Signature=82160cbfef9bdcf6ab0282da3363d05d47837dc1191dcf1bc1afb5fe62712611"
+    }
+  ],
+  "education": [
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 1,
+        "year": 2015
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 1,
+        "year": 2019
+      },
+      "field_of_study": "Information and communication Technology & Software",
+      "degree_name": "Bachelor's degree of Information and communication technology",
+      "school": "Fontys University of Applied Sciences",
+      "school_linkedin_profile_url": null,
+      "description": null,
+      "logo_url": "https://media.licdn.com/dms/image/C560BAQHoPshjTmIrAg/company-logo_400_400/0/1519856033175?e=1689811200&v=beta&t=d89dQyUa56Igi2HksdIMVtO-lS0N8Abm7-YPjqBiMeo",
+      "grade": null,
+      "activities_and_societies": null
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 1,
+        "year": 2012
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 1,
+        "year": 2014
+      },
+      "field_of_study": "Science",
+      "degree_name": "Secondary Education",
+      "school": "Manimukunda Higher Secondary School",
+      "school_linkedin_profile_url": null,
+      "description": null,
+      "logo_url": null,
+      "grade": null,
+      "activities_and_societies": null
+    }
+  ],
+  "languages": [
+    "Dutch",
+    "English",
+    "Nepali"
+  ],
+  "accomplishment_organisations": [],
+  "accomplishment_publications": [],
+  "accomplishment_honors_awards": [],
+  "accomplishment_patents": [],
+  "accomplishment_courses": [
+    {
+      "name": "Android Development 1",
+      "number": "ANRD1"
+    },
+    {
+      "name": "Android Development 2",
+      "number": "ANRD2"
+    },
+    {
+      "name": "Biology",
+      "number": "114"
+    },
+    {
+      "name": "Chemistry",
+      "number": "212"
+    },
+    {
+      "name": "Client Server Application",
+      "number": "CSA"
+    },
+    {
+      "name": "Communication 1",
+      "number": "COMM1"
+    },
+    {
+      "name": "Compulsory English",
+      "number": "004"
+    },
+    {
+      "name": "Compulsory Mathematics",
+      "number": "216"
+    },
+    {
+      "name": "Compulsory Nepali",
+      "number": "006"
+    },
+    {
+      "name": "Core Phase Project",
+      "number": "PROCP"
+    },
+    {
+      "name": "Cryptography",
+      "number": "CRY"
+    },
+    {
+      "name": "Data ware House",
+      "number": "DWH"
+    },
+    {
+      "name": "Database 1",
+      "number": "EDB1"
+    },
+    {
+      "name": "Database 2",
+      "number": "EDB2"
+    },
+    {
+      "name": "Database 3",
+      "number": "EDB3"
+    },
+    {
+      "name": "Database 4",
+      "number": "EDB4"
+    },
+    {
+      "name": "Design Pattern",
+      "number": "DPR"
+    },
+    {
+      "name": "Information Technology Infrastructure Library",
+      "number": "ITIL"
+    },
+    {
+      "name": "Integrated Development Environment",
+      "number": "IDE"
+    },
+    {
+      "name": "Internet Applications 1",
+      "number": "ITA1"
+    }
+  ],
+  "accomplishment_projects": [
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 12,
+        "year": 2022
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 12,
+        "year": 2022
+      },
+      "title": "Khajahuis website",
+      "description": "Website development for start up Nepalese restaurant in Eindhoven, the Netherlands.\n\nBuild using nuxt3 and tailwindcss.",
+      "url": null
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 8,
+        "year": 2021
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 1,
+        "year": 2023
+      },
+      "title": "Tapovumi Website",
+      "description": "Website development of saving and credit organization of Nepal.\n\nBuild using nuxt2 and vuetify2.",
+      "url": null
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 3,
+        "year": 2022
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 4,
+        "year": 2022
+      },
+      "title": "Stadspartij Website",
+      "description": "Website development for Sittard-Geleen city political party, the Netherlands.\n\nBuild using nextjs and material ui.",
+      "url": null
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 11,
+        "year": 2016
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 1,
+        "year": 2017
+      },
+      "title": "Locate User- Android App",
+      "description": "An android app which can show the location of the registered user. The app features include user registration, logging, notification system (gives notification when any of the registered users is within the range of 10 meter), upload profile photo and change password as well as reset password. In this project, GUI was design based on material design, to keep and to retrieve user information such as their location was achieved by using the google real time database server known as “Firebase”.",
+      "url": null
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 9,
+        "year": 2016
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 1,
+        "year": 2017
+      },
+      "title": "PROCP (Core Phase Project)- Rail Road Simulation Program",
+      "description": "The project aims building up a desktop application “Rail Road Simulation” which can be used by Rail Road Company to simulate system before they construct Railway tracks. The deliverables of this project include Project Plan, User Requirement Specification, Test Plan, Test Report, Design Document which includes Class Diagram, Sequence Diagram and User Interface Design.",
+      "url": null
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 9,
+        "year": 2016
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 10,
+        "year": 2016
+      },
+      "title": "FHICT Companion Android App",
+      "description": "The goal of the project was to develop an android mobile application which will show the class schedule and grades of a student.",
+      "url": null
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 5,
+        "year": 2016
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 7,
+        "year": 2016
+      },
+      "title": "Pipelines flow in a Network",
+      "description": "The project objective was to develop a simulation app for a flow of network which could be used by the oil transport company to simulate flow of oil through the pipelines. we did make design document which includes Class Diagram, Sequence Diagram and Graphical User Interface for the simulation app",
+      "url": null
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 2,
+        "year": 2016
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 4,
+        "year": 2016
+      },
+      "title": "User Interface Design for an App",
+      "description": "The project aim was to design new User Interface Design for any new application or existing application, new website or existing website. We did make a design for a new application “Drive Me”",
+      "url": null
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 9,
+        "year": 2015
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 1,
+        "year": 2016
+      },
+      "title": "PROP (Propaedeutic Phase Project)-Application used in social Event",
+      "description": "The main goal of the project was to organize digitalized social event and develop desktop applications that can be used in the event as well as building up the website for the digital advertisement and buying of tickets through the website. Applications were Entrance, Food and Drinks, Camping, Renting, Top up, Management. Applications were developed by using C# programming language and website was built by using Content Management System (CMS), Joomla",
+      "url": null
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 9,
+        "year": 2015
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 1,
+        "year": 2016
+      },
+      "title": "Personal Website",
+      "description": "The project goal was build up a personal website from the scratch where the user can sign up and login into the website by using purely html, CSS, JavaScript and PHP.",
+      "url": null
+    }
+  ],
+  "accomplishment_test_scores": [],
+  "volunteer_work": [],
+  "certifications": [],
+  "connections": null,
+  "people_also_viewed": [
+    {
+      "link": "https://www.linkedin.com/in/beatrizbremer",
+      "name": "Beatriz Bremer",
+      "summary": "Frontend Developer at adidas",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/jeanbauer",
+      "name": "Jean B.",
+      "summary": "Lead Software Engineer at Adidas",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/mohammad-klach",
+      "name": "Mohammad Klach",
+      "summary": "Freelancer",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/yan-savitski-50b237b4",
+      "name": "Yan Savitski",
+      "summary": "Senior Software Engineer",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/genli-nishioka-78218b210",
+      "name": "Genli Nishioka",
+      "summary": "Software Engineer - Typescript | NodeJS | NestJS | ReactJS",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/obaidghafoori",
+      "name": "Obaid Ghafoori",
+      "summary": "Software Engineer | Full Stack Developer at ASML | Changing the world one nanometer at a time.",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/roy-k-79751b105",
+      "name": "Roy K.",
+      "summary": "Frontend Developer",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/daan-korver-132425160",
+      "name": "Daan Korver",
+      "summary": "Creative Frontend Developer",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/andrtaw",
+      "name": "Andrew Tawking",
+      "summary": "Front-end developer. Vue | Nuxt | Node.js",
+      "location": null
+    },
+    {
+      "link": "https://www.linkedin.com/in/sushila-nepal-33b946142",
+      "name": "Sushila Nepal",
+      "summary": "Attended Bonn-Rhein-Sieg University of Applied Sciences",
+      "location": null
+    }
+  ],
+  "recommendations": [],
+  "activities": [],
+  "similarly_named_profiles": [],
+  "articles": [],
+  "groups": [],
+  "phone_numbers": [],
+  "social_networking_services": [],
+  "skills": [
+    "vitest",
+    "Playwright ",
+    "Express.js",
+    "fastify",
+    "Tailwind CSS",
+    "Material-UI",
+    "Cypress",
+    "React.js",
+    "Next.js",
+    "TypeScript",
+    "JavaScript",
+    "Vue.js",
+    "Android Development",
+    "Project Management",
+    "C#",
+    "Node.js",
+    "Firebase",
+    ".NET Framework",
+    "Google Cloud Platform (GCP)",
+    "Nuxt.js"
+  ],
+  "inferred_salary": {
+    "min": null,
+    "max": null
+  },
+  "gender": null,
+  "birth_date": null,
+  "industry": null,
+  "extra": {
+    "github_profile_id": null,
+    "twitter_profile_id": null,
+    "facebook_profile_id": null
+  },
+  "interests": [],
+  "personal_emails": [],
+  "personal_numbers": []
+}
