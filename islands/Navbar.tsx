@@ -29,9 +29,13 @@ export default function Navbar() {
   const [isDark, setIsDark] = useState(false);
 
   return (
-    <nav class="h-14 flex items-center px-4">
+    <nav class="h-14 bg- flex items-center px-4">
       <div class="flex flex-grow-1 items-center ">
-        <Link class="font-semibold text-xl text-primary" href="/" label="b.n">
+        <Link
+          class="font-semibold text-xl text-primary-on-light-500"
+          href="/"
+          label="b.n"
+        >
           B.N
         </Link>
       </div>
