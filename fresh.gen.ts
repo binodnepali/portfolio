@@ -4,6 +4,8 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $api_ical_year_ from "./routes/api/ical/[year].ts";
+import * as $api_ical_index from "./routes/api/ical/index.ts";
 import * as $api_profile from "./routes/api/profile.ts";
 import * as $index from "./routes/index.tsx";
 import * as $Navbar from "./islands/Navbar.tsx";
@@ -14,6 +16,8 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/api/ical/[year].ts": $api_ical_year_,
+    "./routes/api/ical/index.ts": $api_ical_index,
     "./routes/api/profile.ts": $api_profile,
     "./routes/index.tsx": $index,
   },
