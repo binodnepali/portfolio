@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.1](https://github-personal/binodnepali/portfolio/compare/v2.1.0...v2.1.1) (2026-05-29)
+
+
+### Bug Fixes
+
+* add retry logic to build step in deploy workflow to handle transient errors ([3190467](https://github-personal/binodnepali/portfolio/commit/3190467bf5426f10006d0af13899ca2d6af1af5f))
+
 ## [2.1.0](https://github-personal/binodnepali/portfolio/compare/v2.0.1...v2.1.0) (2026-05-29)
 
 
