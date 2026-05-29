@@ -24,7 +24,18 @@ jobs:
           deno-version: v1.x
 
       - name: Build step
-        run: "deno task build"
+        # Retry to ride out transient esm.sh/CDN hiccups (e.g. HTTP 522) while
+        # fetching remote dependencies during the build.
+        run: |
+          n=0
+          until [ "$n" -ge 3 ]; do
+            deno task build && exit 0
+            n=$((n + 1))
+            echo "Build attempt $n failed, retrying in 10s..."
+            sleep 10
+          done
+          echo "Build failed after $n attempts"
+          exit 1
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
