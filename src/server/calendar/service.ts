@@ -1,6 +1,7 @@
 // Orchestrates scraping, caching and ICS building for the calendar feeds.
-// Ported from the Node/Express server, swapping the in-memory Map cache for
-// Deno KV so scraped data persists across (ephemeral) Deno Deploy isolates.
+// Ported from the Node/Express server, using Deno KV so scraped data persists
+// across (ephemeral) Deno Deploy isolates, with a per-isolate in-memory
+// fallback for runtimes where the (unstable) KV API is unavailable.
 
 import { CalendarDay } from "../../types/CalendarDay.ts";
 import { getCurrentBsYear, scrapeMonth } from "./scrape.ts";
@@ -16,10 +17,63 @@ const CURRENT_YEAR_TTL_MS = 6 * 60 * 60 * 1000; // 6h
 export const MIN_YEAR = 1970;
 export const MAX_YEAR = 2200;
 
-let kvPromise: Promise<Deno.Kv> | null = null;
-function getKv(): Promise<Deno.Kv> {
-  if (!kvPromise) kvPromise = Deno.openKv();
+// --- Cache layer -----------------------------------------------------------
+// Prefer Deno KV (shared across isolates). If the runtime doesn't expose the
+// KV API, transparently fall back to a per-isolate in-memory TTL store so the
+// endpoints still work (just without cross-isolate persistence).
+
+let kvPromise: Promise<Deno.Kv | null> | null = null;
+function getKv(): Promise<Deno.Kv | null> {
+  if (!kvPromise) {
+    kvPromise = (async () => {
+      if (typeof Deno.openKv !== "function") {
+        console.warn("Deno KV unavailable; using in-memory cache fallback.");
+        return null;
+      }
+      try {
+        return await Deno.openKv();
+      } catch (err) {
+        console.warn("Failed to open Deno KV; using in-memory fallback:", err);
+        return null;
+      }
+    })();
+  }
   return kvPromise;
+}
+
+const memCache = new Map<string, { value: unknown; expiresAt: number }>();
+
+async function cacheGet<T>(key: (string | number)[]): Promise<T | null> {
+  const kv = await getKv();
+  if (kv) {
+    const res = await kv.get<T>(key);
+    return res.value ?? null;
+  }
+  const entry = memCache.get(JSON.stringify(key));
+  if (entry && entry.expiresAt > Date.now()) return entry.value as T;
+  return null;
+}
+
+async function cacheSet<T>(
+  key: (string | number)[],
+  value: T,
+  ttlMs: number,
+): Promise<void> {
+  const kv = await getKv();
+  if (kv) {
+    try {
+      await kv.set(key, value, { expireIn: ttlMs });
+    } catch (err) {
+      // Never let a cache-write failure (e.g. an unexpectedly large value)
+      // break the response; just serve the freshly scraped data.
+      console.warn(`Skipped caching ${JSON.stringify(key)}:`, err);
+    }
+    return;
+  }
+  memCache.set(JSON.stringify(key), {
+    value,
+    expiresAt: Date.now() + ttlMs,
+  });
 }
 
 // Dedupe concurrent scrapes for the same month within a single isolate.
@@ -33,12 +87,11 @@ async function getDaysForMonth(
   year: number,
   month: number,
 ): Promise<CalendarDay[]> {
-  const kv = await getKv();
   const key = ["calendar", "days", year, month];
 
-  const cached = await kv.get<CalendarDay[]>(key);
-  if (cached.value && cached.value.length > 0) {
-    return cached.value;
+  const cached = await cacheGet<CalendarDay[]>(key);
+  if (cached && cached.length > 0) {
+    return cached;
   }
 
   const inFlightKey = `${year}-${month}`;
@@ -50,13 +103,7 @@ async function getDaysForMonth(
       const days = await scrapeMonth(year, month);
       // Only cache non-empty results so a transient/empty scrape is retried.
       if (days.length > 0) {
-        try {
-          await kv.set(key, days, { expireIn: DAYS_TTL_MS });
-        } catch (err) {
-          // Never let a cache-write failure (e.g. an unexpectedly large
-          // value) break the response; just serve the freshly scraped data.
-          console.warn(`Skipped caching ${year}/${month}:`, err);
-        }
+        await cacheSet(key, days, DAYS_TTL_MS);
       }
       return days;
     } finally {
@@ -78,18 +125,17 @@ export async function getDaysForYear(year: number): Promise<CalendarDay[]> {
 }
 
 export async function getCurrentYear(): Promise<number> {
-  const kv = await getKv();
   const key = ["calendar", "currentYear"];
 
-  const cached = await kv.get<number>(key);
-  if (cached.value) return cached.value;
+  const cached = await cacheGet<number>(key);
+  if (cached) return cached;
 
   const year = await getCurrentBsYear();
   if (!year) {
     throw new Error("Could not determine the current Nepali year");
   }
 
-  await kv.set(key, year, { expireIn: CURRENT_YEAR_TTL_MS });
+  await cacheSet(key, year, CURRENT_YEAR_TTL_MS);
   return year;
 }
 
