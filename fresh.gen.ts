@@ -5,6 +5,9 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $admin_tailor from "./routes/admin/tailor.tsx";
+import * as $admin_variants from "./routes/admin/variants.tsx";
+import * as $api_admin_variants_slug_ from "./routes/api/admin/variants/[slug].ts";
+import * as $api_admin_variants_index from "./routes/api/admin/variants/index.ts";
 import * as $api_cv_export from "./routes/api/cv/export.ts";
 import * as $api_cv_export_slug_ from "./routes/api/cv/export/[slug].ts";
 import * as $api_cv_export_cover_letter_slug_ from "./routes/api/cv/export/cover-letter/[slug].ts";
@@ -15,6 +18,7 @@ import * as $api_profile from "./routes/api/profile.ts";
 import * as $calendar from "./routes/calendar.tsx";
 import * as $cv_slug_ from "./routes/cv/[slug].tsx";
 import * as $index from "./routes/index.tsx";
+import * as $AdminVariantsPanel from "./islands/AdminVariantsPanel.tsx";
 import * as $CopyCoverLetter from "./islands/CopyCoverLetter.tsx";
 import * as $CopyFeedUrl from "./islands/CopyFeedUrl.tsx";
 import * as $CoverLetterSavePdf from "./islands/CoverLetterSavePdf.tsx";
@@ -28,6 +32,9 @@ const manifest = {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
     "./routes/admin/tailor.tsx": $admin_tailor,
+    "./routes/admin/variants.tsx": $admin_variants,
+    "./routes/api/admin/variants/[slug].ts": $api_admin_variants_slug_,
+    "./routes/api/admin/variants/index.ts": $api_admin_variants_index,
     "./routes/api/cv/export.ts": $api_cv_export,
     "./routes/api/cv/export/[slug].ts": $api_cv_export_slug_,
     "./routes/api/cv/export/cover-letter/[slug].ts":
@@ -41,6 +48,7 @@ const manifest = {
     "./routes/index.tsx": $index,
   },
   islands: {
+    "./islands/AdminVariantsPanel.tsx": $AdminVariantsPanel,
     "./islands/CopyCoverLetter.tsx": $CopyCoverLetter,
     "./islands/CopyFeedUrl.tsx": $CopyFeedUrl,
     "./islands/CoverLetterSavePdf.tsx": $CoverLetterSavePdf,
