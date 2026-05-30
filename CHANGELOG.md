@@ -1,8 +1,14 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See
-[commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version)
-for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [2.5.0](https://github-personal/binodnepali/portfolio/compare/v2.4.0...v2.5.0) (2026-05-30)
+
+
+### Features
+
+* add admin variants management and navigation to tailor page ([48a5659](https://github-personal/binodnepali/portfolio/commit/48a56596d11d0782bdef7ca0162715c73145427a))
+* add cover letter functionality to CV generation ([9d5274b](https://github-personal/binodnepali/portfolio/commit/9d5274ba30c0e036dc638d903dda438a1ea3866b))
 
 ## [2.4.0](https://github-personal/binodnepali/portfolio/compare/v2.3.0...v2.4.0) (2026-05-30)
 
