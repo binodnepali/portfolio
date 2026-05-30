@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.2.0](https://github-personal/binodnepali/portfolio/compare/v2.1.3...v2.2.0) (2026-05-30)
+
+
+### Features
+
+* **calendar:** add event count to subscription feed and improve response handling ([46b0ca3](https://github-personal/binodnepali/portfolio/commit/46b0ca369855b837979354d5edf2d8355f4cee32))
+
 ## [2.1.3](https://github-personal/binodnepali/portfolio/compare/v2.1.2...v2.1.3) (2026-05-29)
 
 ## [2.1.2](https://github-personal/binodnepali/portfolio/compare/v2.1.1...v2.1.2) (2026-05-29)
