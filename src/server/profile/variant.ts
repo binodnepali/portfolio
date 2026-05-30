@@ -25,6 +25,10 @@ export interface ProfileCatalog {
   soft_skills: string[];
 }
 
+function isCvVisible(item: { include_in_cv?: boolean }): boolean {
+  return item.include_in_cv !== false;
+}
+
 export function buildProfileCatalog(profile: Profile): ProfileCatalog {
   return {
     experiences: profile.experiences.map((exp) => ({
@@ -33,14 +37,18 @@ export function buildProfileCatalog(profile: Profile): ProfileCatalog {
       subtitle: exp.description?.split("\n")[0]?.replace(/^-\s*/, "") ??
         undefined,
     })),
-    projects: profile.accomplishment_projects.map((p) => ({
-      id: projectId(p),
-      title: p.title,
-      subtitle: p.description?.split("\n")[0]?.replace(/^-\s*/, "") ??
-        undefined,
-    })),
-    skills: profile.skills.map((s) => s.name.trim()),
-    soft_skills: (profile.soft_skills ?? []).map((s) => s.name.trim()),
+    projects: profile.accomplishment_projects
+      .filter(isCvVisible)
+      .map((p) => ({
+        id: projectId(p),
+        title: p.title,
+        subtitle: p.description?.split("\n")[0]?.replace(/^-\s*/, "") ??
+          undefined,
+      })),
+    skills: profile.skills.filter(isCvVisible).map((s) => s.name.trim()),
+    soft_skills: (profile.soft_skills ?? []).filter(isCvVisible).map((s) =>
+      s.name.trim()
+    ),
   };
 }
 
@@ -115,9 +123,10 @@ function filterNamedSkills(
   items: Profile["skills"],
   skillNames: string[] | undefined,
 ): Profile["skills"] {
-  if (!skillNames || skillNames.length === 0) return items;
+  const eligible = items.filter(isCvVisible);
+  if (!skillNames || skillNames.length === 0) return eligible;
   const byName = new Map(
-    items.map((s) => [s.name.trim().toLowerCase(), s]),
+    eligible.map((s) => [s.name.trim().toLowerCase(), s]),
   );
   return skillNames
     .map((name) => byName.get(name.trim().toLowerCase()))
@@ -159,7 +168,7 @@ export function applyVariant(
   });
 
   profile.accomplishment_projects = filterByIds(
-    profile.accomplishment_projects,
+    profile.accomplishment_projects.filter(isCvVisible),
     variant.project_ids,
     projectId,
   ).map((project) => {

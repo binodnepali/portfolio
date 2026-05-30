@@ -5,6 +5,7 @@ export function buildTailorSystemPrompt(): string {
 
 Rules:
 - Use ONLY facts from the provided master profile catalog. Do not invent employers, dates, titles, or technologies.
+- The catalog lists only items eligible for the CV/print view. Do not reference projects, technical skills, or core strengths that are not in the catalog.
 - Pick the most relevant experiences, projects, and skills for the job description.
 - Rewrite summary, occupation (job headline for the CV), and bullet descriptions in warm, professional first person.
 - Use bullet lines starting with "- " (hyphen space) in description fields.
@@ -23,6 +24,8 @@ export function buildTailorUserPrompt(
   slug: string,
 ): string {
   return `Create a tailored ProfileVariant for slug "${slug}".
+
+The catalog below is pre-filtered for the CV. Every project id, skill, and core strength listed is safe to use.
 
 ## Master profile catalog
 
