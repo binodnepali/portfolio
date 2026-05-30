@@ -1,5 +1,5 @@
 import { BirthDate } from "../src/types/Profile.ts";
-import DownloadCv from "../islands/DownloadCv.tsx";
+import CvActions from "../islands/CvActions.tsx";
 import Section from "./cv/Section.tsx";
 
 function stripProtocol(url: string): string {
@@ -18,6 +18,7 @@ export default function BioSection(
     github_profile_id,
     linkedin_profile_id,
     summary,
+    exportHref,
   }: {
     job_start_date: BirthDate;
     profile_pic_url: string;
@@ -29,6 +30,7 @@ export default function BioSection(
     github_profile_id: string;
     linkedin_profile_id: string;
     summary: string;
+    exportHref: string;
   },
 ) {
   const yearOfExperience = new Date().getFullYear() - job_start_date.year;
@@ -83,7 +85,7 @@ export default function BioSection(
           </ul>
 
           <div class="mt-4">
-            <DownloadCv />
+            <CvActions exportHref={exportHref} />
           </div>
         </div>
       </div>

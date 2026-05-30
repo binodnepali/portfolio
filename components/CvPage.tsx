@@ -23,6 +23,10 @@ export default function CvPage(
     ? `${profile.full_name} — ${variant.label}`
     : `${profile.full_name} — ${profile.occupation}`;
 
+  const exportHref = variant
+    ? `/api/cv/export/${variant.slug}`
+    : "/api/cv/export";
+
   return (
     <>
       <Head>
@@ -61,6 +65,7 @@ export default function CvPage(
             github_profile_id={profile.extra.github_profile_id}
             linkedin_profile_id={profile.extra.linkedin_profile_id}
             summary={profile.summary}
+            exportHref={exportHref}
           />
 
           <ExperienceSection experiences={profile.experiences} />
