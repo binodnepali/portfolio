@@ -7,7 +7,7 @@ export default function EducationSection(
   if (educations.length === 0) return null;
 
   return (
-    <Section title="Education">
+    <Section title="Education" keepTogether>
       <div class="flex flex-col gap-4">
         {educations.map((education, i) => (
           <div class="cv-entry" key={i}>

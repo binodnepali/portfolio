@@ -36,7 +36,7 @@ export default function BioSection(
   const yearOfExperience = new Date().getFullYear() - job_start_date.year;
 
   return (
-    <header class="cv-section">
+    <header class="cv-section cv-bio">
       <div class="flex flex-col items-start gap-6 sm:flex-row">
         <img
           src={profile_pic_url}
@@ -85,7 +85,10 @@ export default function BioSection(
           </ul>
 
           <div class="mt-4">
-            <CvActions exportHref={exportHref} />
+            <CvActions
+              exportHref={exportHref}
+              pdfFileName={`${full_name.replace(/\s+/g, "-")}-CV`}
+            />
           </div>
         </div>
       </div>

@@ -3,25 +3,50 @@
 @tailwind utilities;
 
 @media print {
-  /* Force a clean, paper-friendly render regardless of dark mode. */
   html,
   body {
     background: #ffffff !important;
+    display: block !important;
+    min-height: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body.flex,
+  body.min-h-full {
+    display: block !important;
+    min-height: auto !important;
+  }
+
+  main {
+    display: block !important;
+    flex: none !important;
+    padding: 0 !important;
+  }
+
+  @page {
+    margin: 1.2cm 1.2cm 1cm;
+    size: auto;
   }
 
   .cv-sheet,
   .cv-sheet * {
     color: #111827 !important;
-    background: transparent !important;
     box-shadow: none !important;
     border-color: #d1d5db !important;
+  }
+
+  .cv-sheet,
+  .cv-sheet *:not(.cv-pill-list li) {
+    background: transparent !important;
   }
 
   .cv-sheet {
     max-width: 100% !important;
     width: 100% !important;
     margin: 0 !important;
-    padding: 1.4cm !important;
+    padding: 0 !important;
     border-radius: 0 !important;
   }
 
@@ -29,30 +54,169 @@
     text-decoration: none !important;
   }
 
-  /* Keep individual entries together, but let whole sections flow across
-     pages (avoiding it on tall sections forces a premature page break). */
+  /* Tighter vertical rhythm for print */
+  .cv-bio {
+    margin-top: 0 !important;
+  }
+
+  .cv-bio .cv-section {
+    margin-top: 0.65rem !important;
+  }
+
+  .cv-sheet > .cv-section {
+    margin-top: 0.75rem !important;
+  }
+
+  .cv-section-body {
+    margin-top: 0.35rem !important;
+  }
+
+  .cv-section-heading h2 {
+    margin: 0 !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Keep section titles with the start of their content */
+  .cv-section-heading {
+    break-inside: avoid;
+    break-after: avoid;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+
+  .cv-section-heading + .cv-section-body > :first-child {
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+
+  /* Short sections (skills, languages) stay on one page */
+  .cv-section-keep {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Each experience role / single-company block stays intact */
   .cv-entry {
     break-inside: avoid;
+    page-break-inside: avoid;
   }
 
-  /* Don't strand a section heading at the bottom of a page. */
-  .cv-section > h2 {
-    break-after: avoid;
+  .cv-company-group > .cv-entry + .cv-entry {
+    margin-top: 0.65rem;
   }
 
-  @page {
-    /* Chrome/Edge drop built-in headers & footers when page margin is zero. */
-    margin: 0;
-    size: auto;
+  .cv-experience-list > .cv-company-group + .cv-company-group {
+    margin-top: 0.75rem;
   }
 
-  html,
-  body {
+  /* Skill pills: avoid flex-wrap print glitches */
+  .cv-pill-list {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    display: block !important;
+    line-height: 1.75;
+  }
+
+  .cv-pill-list li {
+    display: inline !important;
+    border: none !important;
+    background: none !important;
+    padding: 0 !important;
     margin: 0 !important;
-    padding: 0 !important;
+    font-size: 0.8125rem !important;
   }
 
-  main {
-    padding: 0 !important;
+  .cv-pill-list li:not(:last-child)::after {
+    content: " · ";
+    color: #6b7280 !important;
   }
+
+  .cv-pill-list li.print\:hidden {
+    display: none !important;
+  }
+
+  .cv-pill-list li.print\:hidden::after {
+    content: none !important;
+  }
+}
+
+/* Same CV layout when generating a PDF in the browser (html2pdf.js). */
+html.cv-export-mode .print\:hidden {
+  display: none !important;
+}
+
+html.cv-export-mode .cv-sheet,
+html.cv-export-mode .cv-sheet * {
+  color: #111827 !important;
+  box-shadow: none !important;
+  border-color: #d1d5db !important;
+}
+
+html.cv-export-mode .cv-sheet,
+html.cv-export-mode .cv-sheet *:not(.cv-pill-list li) {
+  background: transparent !important;
+}
+
+html.cv-export-mode .cv-sheet {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+html.cv-export-mode .cv-sheet a {
+  text-decoration: none !important;
+}
+
+html.cv-export-mode .cv-bio {
+  margin-top: 0 !important;
+}
+
+html.cv-export-mode .cv-bio .cv-section {
+  margin-top: 0.65rem !important;
+}
+
+html.cv-export-mode .cv-sheet > .cv-section {
+  margin-top: 0.75rem !important;
+}
+
+html.cv-export-mode .cv-section-body {
+  margin-top: 0.35rem !important;
+}
+
+html.cv-export-mode .cv-section-heading h2 {
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+
+html.cv-export-mode .cv-company-group > .cv-entry + .cv-entry {
+  margin-top: 0.65rem;
+}
+
+html.cv-export-mode .cv-experience-list > .cv-company-group + .cv-company-group {
+  margin-top: 0.75rem;
+}
+
+html.cv-export-mode .cv-pill-list {
+  display: block !important;
+  line-height: 1.75;
+}
+
+html.cv-export-mode .cv-pill-list li {
+  display: inline !important;
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 0.8125rem !important;
+}
+
+html.cv-export-mode .cv-pill-list li:not(:last-child)::after {
+  content: " · ";
+  color: #6b7280 !important;
+}
+
+html.cv-export-mode .cv-pill-list li.print\:hidden::after {
+  content: none !important;
 }
