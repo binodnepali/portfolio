@@ -57,6 +57,10 @@ deno task preview
 deno task update
 ```
 
+Profile content lives in [`data/linkedin-profile.json`](data/linkedin-profile.json).
+Edit that file directly (or replace it from an external export) when you update
+your LinkedIn information.
+
 #### Generate release
 
 > Make sure you have npm version 5.2.0 or higher

@@ -457,6 +457,7 @@
         "year": 2017
       },
       "title": "Locate User- Android App",
+      "include_in_cv": false,
       "description": "An android app which can show the location of the registered user. The app features include user registration, logging, notification system (gives notification when any of the registered users is within the range of 10 meter), upload profile photo and change password as well as reset password. In this project, GUI was design based on material design, to keep and to retrieve user information such as their location was achieved by using the google real time database server known as “Firebase”.",
       "url": null
     },
@@ -472,6 +473,7 @@
         "year": 2017
       },
       "title": "PROCP (Core Phase Project)- Rail Road Simulation Program",
+      "include_in_cv": false,
       "description": "The project aims building up a desktop application “Rail Road Simulation” which can be used by Rail Road Company to simulate system before they construct Railway tracks. The deliverables of this project include Project Plan, User Requirement Specification, Test Plan, Test Report, Design Document which includes Class Diagram, Sequence Diagram and User Interface Design.",
       "url": null
     },
@@ -487,6 +489,7 @@
         "year": 2016
       },
       "title": "FHICT Companion Android App",
+      "include_in_cv": false,
       "description": "The goal of the project was to develop an android mobile application which will show the class schedule and grades of a student.",
       "url": null
     },
@@ -502,6 +505,7 @@
         "year": 2016
       },
       "title": "Pipelines flow in a Network",
+      "include_in_cv": false,
       "description": "The project objective was to develop a simulation app for a flow of network which could be used by the oil transport company to simulate flow of oil through the pipelines. we did make design document which includes Class Diagram, Sequence Diagram and Graphical User Interface for the simulation app",
       "url": null
     },
@@ -517,6 +521,7 @@
         "year": 2016
       },
       "title": "User Interface Design for an App",
+      "include_in_cv": false,
       "description": "The project aim was to design new User Interface Design for any new application or existing application, new website or existing website. We did make a design for a new application “Drive Me”",
       "url": null
     },
@@ -532,6 +537,7 @@
         "year": 2016
       },
       "title": "PROP (Propaedeutic Phase Project)-Application used in social Event",
+      "include_in_cv": false,
       "description": "The main goal of the project was to organize digitalized social event and develop desktop applications that can be used in the event as well as building up the website for the digital advertisement and buying of tickets through the website. Applications were Entrance, Food and Drinks, Camping, Renting, Top up, Management. Applications were developed by using C# programming language and website was built by using Content Management System (CMS), Joomla",
       "url": null
     },
@@ -547,31 +553,32 @@
         "year": 2016
       },
       "title": "Personal Website",
+      "include_in_cv": false,
       "description": "The project goal was build up a personal website from the scratch where the user can sign up and login into the website by using purely html, CSS, JavaScript and PHP.",
       "url": null
     }
   ],
   "skills": [
-    "vitest",
-    "Playwright ",
-    "Express.js",
-    "fastify",
-    "Tailwind CSS",
-    "Material-UI",
-    "Cypress",
-    "React.js",
-    "Next.js",
-    "TypeScript",
-    "JavaScript",
-    "Vue.js",
-    "Android Development",
-    "Project Management",
-    "C#",
-    "Node.js",
-    "Firebase",
-    ".NET Framework",
-    "Google Cloud Platform (GCP)",
-    "Nuxt.js"
+    { "name": "vitest" },
+    { "name": "Playwright" },
+    { "name": "Express.js" },
+    { "name": "fastify" },
+    { "name": "Tailwind CSS" },
+    { "name": "Material-UI" },
+    { "name": "Cypress" },
+    { "name": "React.js" },
+    { "name": "Next.js" },
+    { "name": "TypeScript" },
+    { "name": "JavaScript" },
+    { "name": "Vue.js" },
+    { "name": "Android Development", "include_in_cv": false },
+    { "name": "Project Management", "include_in_cv": false },
+    { "name": "C#", "include_in_cv": false },
+    { "name": "Node.js" },
+    { "name": "Firebase" },
+    { "name": ".NET Framework", "include_in_cv": false },
+    { "name": "Google Cloud Platform (GCP)" },
+    { "name": "Nuxt.js" }
   ],
   "gender": "Male",
   "birth_date": {

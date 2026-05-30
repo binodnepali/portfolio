@@ -26,95 +26,95 @@ export default function CalendarFeed(
 
       <Card>
         <div>
-        <h2 class="text-xl font-semibold mb-2">Subscribe</h2>
-        <p class="text-slate-600 dark:text-slate-300 mb-4">
-          Add this URL to your calendar app — it rolls over at Nepali new year,
-          so you never need to change it.
-        </p>
-        <div class="flex items-start gap-2 p-3 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
-          <code class="flex-1 text-sm break-all font-mono">
-            {links.subscribeUrl}
-          </code>
-          <CopyFeedUrl url={links.subscribeUrl} />
-        </div>
-        <div class="flex flex-wrap gap-3 mt-4">
-          <a
-            href={links.webcalUrl}
-            class="inline-block px-4 py-2 rounded-lg bg-teal-500 text-white font-semibold hover:bg-teal-600"
-          >
-            Subscribe (webcal)
-          </a>
-          <a
-            href={links.downloadUrl}
-            class="inline-block px-4 py-2 rounded-lg bg-slate-200 dark:bg-slate-700 font-semibold hover:opacity-90"
-          >
-            Download .ics
-          </a>
-        </div>
-        <ol class="mt-4 list-decimal list-inside space-y-1 text-sm text-slate-600 dark:text-slate-300">
-          <li>
-            <strong>Google Calendar:</strong>{" "}
-            Other calendars → From URL → paste the URL above.
-          </li>
-          <li>
-            <strong>Apple Calendar:</strong>{" "}
-            File → New Calendar Subscription → paste the URL.
-          </li>
-          <li>
-            <strong>Outlook:</strong>{" "}
-            Add calendar → Subscribe from web → paste the URL.
-          </li>
-        </ol>
-        </div>
-      </Card>
-
-      <Card>
-        <div>
-        <h2 class="text-xl font-semibold mb-4">Feed details</h2>
-        <dl class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div>
-            <dt class="text-xs uppercase tracking-wide text-slate-500">
-              Covers
-            </dt>
-            <dd class="text-lg font-semibold">{coverage}</dd>
+          <h2 class="text-xl font-semibold mb-2">Subscribe</h2>
+          <p class="text-slate-600 dark:text-slate-300 mb-4">
+            Add this URL to your calendar app — it rolls over at Nepali new
+            year, so you never need to change it.
+          </p>
+          <div class="flex items-start gap-2 p-3 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+            <code class="flex-1 text-sm break-all font-mono">
+              {links.subscribeUrl}
+            </code>
+            <CopyFeedUrl url={links.subscribeUrl} />
           </div>
-          <div>
-            <dt class="text-xs uppercase tracking-wide text-slate-500">
-              Events
-            </dt>
-            <dd class="text-lg font-semibold">
-              {meta.eventCount.toLocaleString("en-US")}
-            </dd>
+          <div class="flex flex-wrap gap-3 mt-4">
+            <a
+              href={links.webcalUrl}
+              class="inline-block px-4 py-2 rounded-lg bg-teal-500 text-white font-semibold hover:bg-teal-600"
+            >
+              Subscribe (webcal)
+            </a>
+            <a
+              href={links.downloadUrl}
+              class="inline-block px-4 py-2 rounded-lg bg-slate-200 dark:bg-slate-700 font-semibold hover:opacity-90"
+            >
+              Download .ics
+            </a>
           </div>
-          <div>
-            <dt class="text-xs uppercase tracking-wide text-slate-500">
-              Generated
-            </dt>
-            <dd class="text-lg font-semibold">{generated}</dd>
-          </div>
-        </dl>
-        </div>
-      </Card>
-
-      <Card>
-        <div>
-        <h2 class="text-xl font-semibold mb-2">Download a single year</h2>
-        <p class="text-slate-600 dark:text-slate-300 mb-4">
-          Prefer a one-off file instead of a live subscription?
-        </p>
-        <ul class="grid grid-cols-2 gap-2 sm:grid-cols-4">
-          {years.map((y) => (
-            <li key={y.year}>
-              <Link
-                href={y.url}
-                class="text-teal-500 hover:underline font-medium"
-              >
-                {y.year} BS
-              </Link>
-              <span class="text-xs text-slate-500 ml-1">.ics</span>
+          <ol class="mt-4 list-decimal list-inside space-y-1 text-sm text-slate-600 dark:text-slate-300">
+            <li>
+              <strong>Google Calendar:</strong>{" "}
+              Other calendars → From URL → paste the URL above.
             </li>
-          ))}
-        </ul>
+            <li>
+              <strong>Apple Calendar:</strong>{" "}
+              File → New Calendar Subscription → paste the URL.
+            </li>
+            <li>
+              <strong>Outlook:</strong>{" "}
+              Add calendar → Subscribe from web → paste the URL.
+            </li>
+          </ol>
+        </div>
+      </Card>
+
+      <Card>
+        <div>
+          <h2 class="text-xl font-semibold mb-4">Feed details</h2>
+          <dl class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <dt class="text-xs uppercase tracking-wide text-slate-500">
+                Covers
+              </dt>
+              <dd class="text-lg font-semibold">{coverage}</dd>
+            </div>
+            <div>
+              <dt class="text-xs uppercase tracking-wide text-slate-500">
+                Events
+              </dt>
+              <dd class="text-lg font-semibold">
+                {meta.eventCount.toLocaleString("en-US")}
+              </dd>
+            </div>
+            <div>
+              <dt class="text-xs uppercase tracking-wide text-slate-500">
+                Generated
+              </dt>
+              <dd class="text-lg font-semibold">{generated}</dd>
+            </div>
+          </dl>
+        </div>
+      </Card>
+
+      <Card>
+        <div>
+          <h2 class="text-xl font-semibold mb-2">Download a single year</h2>
+          <p class="text-slate-600 dark:text-slate-300 mb-4">
+            Prefer a one-off file instead of a live subscription?
+          </p>
+          <ul class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            {years.map((y) => (
+              <li key={y.year}>
+                <Link
+                  href={y.url}
+                  class="text-teal-500 hover:underline font-medium"
+                >
+                  {y.year} BS
+                </Link>
+                <span class="text-xs text-slate-500 ml-1">.ics</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </Card>
 

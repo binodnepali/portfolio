@@ -1,11 +1,7 @@
 import { FreshContext } from "$fresh/server.ts";
 
-import profileData from "../../data/linkedin-profile.json" with {
-  type: "json",
-};
+import { getProfile } from "../../src/server/profile/service.ts";
 
 export const handler = (_req: Request, _ctx: FreshContext): Response => {
-  return new Response(
-    JSON.stringify(profileData),
-  );
+  return Response.json(getProfile());
 };

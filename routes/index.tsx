@@ -1,21 +1,30 @@
+import { Head } from "$fresh/runtime.ts";
+import { Handlers, PageProps } from "$fresh/server.ts";
+
 import Navbar from "../islands/Navbar.tsx";
 import BioSection from "../components/Bio.tsx";
 import ExperienceSection from "../components/Experience.tsx";
 import EducationSection from "../components/Education.tsx";
+import ProjectsSection from "../components/Projects.tsx";
+import SkillsSection from "../components/Skills.tsx";
 import SiteFooter from "../components/SiteFooter.tsx";
+import { getProfile } from "../src/server/profile/service.ts";
+import { Profile } from "../src/types/Profile.ts";
 
-import data from "../data/linkedin-profile.json" with {
-  type: "json",
+export const handler: Handlers<Profile> = {
+  GET(_req, ctx) {
+    return ctx.render(getProfile());
+  },
 };
 
-// import { getProfile } from "../src/server/getProfile.ts";
-
-export default function Home() {
-  //const data = await getProfile();
-
+export default function Home({ data }: PageProps<Profile>) {
   return (
     <>
-      <header>
+      <Head>
+        <title>{`${data.full_name} — ${data.occupation}`}</title>
+      </Head>
+
+      <header class="print:hidden">
         <Navbar
           github_profile_id={data.extra.github_profile_id}
           linkedin_profile_id={data.extra.linkedin_profile_id}
@@ -23,29 +32,34 @@ export default function Home() {
         />
       </header>
 
-      <main className="container mx-auto px-4">
-        <div className="flex flex-col items-center">
-          <div className="flex flex-col gap-4 w-full md:w-3/5">
-            <BioSection
-              birth_date={data.birth_date}
-              job_start_date={data.job_start_date}
-              profile_pic_url={data.profile_pic_url}
-              full_name={data.full_name}
-              city={data.city}
-              country_full_name={data.country_full_name}
-              nationality={data.nationality}
-              occupation={data.occupation}
-              summary={data.summary}
-            />
+      <main class="flex-1 bg-slate-100 dark:bg-slate-900 py-8 print:bg-white print:py-0">
+        <article class="cv-sheet mx-auto w-full max-w-3xl rounded-lg bg-white p-8 shadow-lg dark:bg-slate-800 sm:p-10 print:max-w-full print:rounded-none print:p-0 print:shadow-none">
+          <BioSection
+            job_start_date={data.job_start_date}
+            profile_pic_url={data.profile_pic_url}
+            full_name={data.full_name}
+            occupation={data.occupation}
+            city={data.city}
+            country_full_name={data.country_full_name}
+            email={data.email}
+            github_profile_id={data.extra.github_profile_id}
+            linkedin_profile_id={data.extra.linkedin_profile_id}
+            summary={data.summary}
+          />
 
-            <ExperienceSection experiences={data.experiences} />
+          <ExperienceSection experiences={data.experiences} />
 
-            <EducationSection educations={data.education} />
-          </div>
-        </div>
+          <EducationSection educations={data.education} />
+
+          <ProjectsSection projects={data.accomplishment_projects} />
+
+          <SkillsSection skills={data.skills} />
+        </article>
       </main>
 
-      <SiteFooter />
+      <div class="print:hidden">
+        <SiteFooter />
+      </div>
     </>
   );
 }

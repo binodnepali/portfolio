@@ -20,7 +20,7 @@ export interface Profile {
   languages: string[];
   accomplishment_courses: AccomplishmentCourse[];
   accomplishment_projects: AccomplishmentProject[];
-  skills: string[];
+  skills: Skill[];
   gender: string;
   birth_date: BirthDate;
   extra: Extra;
@@ -31,12 +31,22 @@ export interface AccomplishmentCourse {
   number: string;
 }
 
+export interface Skill {
+  name: string;
+  // CV curation (optional, defaults to shown). Set to false to keep a skill on
+  // the website but exclude it from the downloaded/printed CV.
+  include_in_cv?: boolean;
+}
+
 export interface AccomplishmentProject {
   starts_at: BirthDate;
   ends_at: BirthDate;
   title: string;
   description: string;
   url: null;
+  // CV curation (optional, defaults to shown). Set to false to keep a project
+  // on the website but exclude it from the downloaded/printed CV.
+  include_in_cv?: boolean;
 }
 
 export interface BirthDate {

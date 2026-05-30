@@ -10,8 +10,8 @@ import * as $api_profile from "./routes/api/profile.ts";
 import * as $calendar from "./routes/calendar.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $CopyFeedUrl from "./islands/CopyFeedUrl.tsx";
+import * as $DownloadCv from "./islands/DownloadCv.tsx";
 import * as $Navbar from "./islands/Navbar.tsx";
-import * as $SeeMoreExperiences from "./islands/SeeMoreExperiences.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -26,8 +26,8 @@ const manifest = {
   },
   islands: {
     "./islands/CopyFeedUrl.tsx": $CopyFeedUrl,
+    "./islands/DownloadCv.tsx": $DownloadCv,
     "./islands/Navbar.tsx": $Navbar,
-    "./islands/SeeMoreExperiences.tsx": $SeeMoreExperiences,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

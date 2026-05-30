@@ -25,5 +25,5 @@
     "deno_dom": "https://deno.land/x/deno_dom@v0.1.45/deno-dom-wasm.ts"
   },
   "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
-  "nodeModulesDir": true
+  "nodeModulesDir": "auto"
 }

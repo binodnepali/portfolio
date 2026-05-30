@@ -1,75 +1,98 @@
 import { BirthDate } from "../src/types/Profile.ts";
+import DownloadCv from "../islands/DownloadCv.tsx";
+import Section from "./cv/Section.tsx";
+
+function stripProtocol(url: string): string {
+  return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+}
 
 export default function BioSection(
   {
-    birth_date,
     job_start_date,
     profile_pic_url,
     full_name,
-    nationality,
     occupation,
     city,
     country_full_name,
+    email,
+    github_profile_id,
+    linkedin_profile_id,
     summary,
   }: {
-    birth_date: BirthDate;
     job_start_date: BirthDate;
     profile_pic_url: string;
     full_name: string;
-    nationality: string;
     occupation: string;
     city: string;
     country_full_name: string;
+    email: string;
+    github_profile_id: string;
+    linkedin_profile_id: string;
     summary: string;
   },
 ) {
-  const age = new Date().getFullYear() - birth_date.year;
   const yearOfExperience = new Date().getFullYear() - job_start_date.year;
 
   return (
-    <section>
-      <div className="flex flex-col items-center justify-center gap-2 mt-4 mb-8">
+    <header class="cv-section">
+      <div class="flex flex-col items-start gap-6 sm:flex-row">
         <img
           src={profile_pic_url}
           loading="eager"
-          height="240"
-          width="240"
+          height="112"
+          width="112"
           alt={full_name}
+          class="print:hidden h-28 w-28 shrink-0 rounded-full object-cover"
         />
 
-        <h2 className="text-2xl font-semibold text-teal-500">
-          {full_name}
-        </h2>
+        <div class="flex-1">
+          <h1 class="text-3xl font-bold text-slate-900 dark:text-white">
+            {full_name}
+          </h1>
+          <p class="mt-1 text-lg text-slate-600 dark:text-slate-300">
+            {occupation}
+          </p>
 
-        <p className="text-lg text-slate-500 dark:text-slate-400">
-          {age} years old | {nationality}
-        </p>
+          <ul class="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-600 dark:text-slate-300">
+            <li>{`${city}, ${country_full_name}`}</li>
+            <li>
+              <a class="hover:text-teal-500" href={`mailto:${email}`}>
+                {email}
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-teal-500"
+                href={linkedin_profile_id}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {stripProtocol(linkedin_profile_id)}
+              </a>
+            </li>
+            <li>
+              <a
+                class="hover:text-teal-500"
+                href={github_profile_id}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {stripProtocol(github_profile_id)}
+              </a>
+            </li>
+          </ul>
 
-        <p
-          className="text-lg text-slate-500 dark:text-slate-400"
-          title="Frontend Software Engineer @ adidas"
-        >
-          {occupation}
-        </p>
-
-        <p
-          className="text-lg text-slate-500 dark:text-slate-400"
-          title="Sittard-Geleen, Netherlands"
-        >
-          {`${city}, ${country_full_name}`}
-        </p>
+          <div class="mt-4">
+            <DownloadCv />
+          </div>
+        </div>
       </div>
 
-      <div>
-        <h3 className="text-xl font-semibold text-teal-500">About me</h3>
-
-        <p className="text-base whitespace-pre-line">
-          {summary.replace(
-            "{{year_of_experience}}",
-            `${yearOfExperience}`,
-          )}
+      <Section title="Summary">
+        <p class="text-sm leading-relaxed whitespace-pre-line text-slate-700 dark:text-slate-200">
+          {summary.replace("{{year_of_experience}}", `${yearOfExperience}`)}
         </p>
-      </div>
-    </section>
+      </Section>
+    </header>
   );
 }
