@@ -4,6 +4,11 @@ import profileData from "../../../data/linkedin-profile.json" with {
   type: "json",
 };
 import { experienceId, projectId } from "./ids.ts";
+import {
+  listKvVariantSlugs,
+  loadVariantFromKv,
+  saveVariantToKv,
+} from "./variantStore.ts";
 
 const VARIANTS_DIR = new URL("../../../data/variants/", import.meta.url);
 
@@ -38,21 +43,20 @@ export function buildProfileCatalog(profile: Profile): ProfileCatalog {
 }
 
 export async function listVariantSlugs(): Promise<string[]> {
-  const slugs: string[] = [];
+  const slugs = new Set(await listKvVariantSlugs());
   try {
     for await (const entry of Deno.readDir(VARIANTS_DIR)) {
       if (entry.isFile && entry.name.endsWith(".json")) {
-        slugs.push(entry.name.replace(/\.json$/, ""));
+        slugs.add(entry.name.replace(/\.json$/, ""));
       }
     }
   } catch (err) {
-    if (err instanceof Deno.errors.NotFound) return [];
-    throw err;
+    if (!(err instanceof Deno.errors.NotFound)) throw err;
   }
-  return slugs.sort();
+  return [...slugs].sort();
 }
 
-export async function loadVariant(
+async function loadVariantFromFile(
   slug: string,
 ): Promise<ProfileVariant | null> {
   const path = new URL(`${slug}.json`, VARIANTS_DIR);
@@ -65,10 +69,32 @@ export async function loadVariant(
   }
 }
 
-export async function saveVariant(variant: ProfileVariant): Promise<void> {
+export async function loadVariant(
+  slug: string,
+): Promise<ProfileVariant | null> {
+  const fromKv = await loadVariantFromKv(slug);
+  if (fromKv) return fromKv;
+  return await loadVariantFromFile(slug);
+}
+
+async function saveVariantToFile(variant: ProfileVariant): Promise<void> {
   await Deno.mkdir(VARIANTS_DIR, { recursive: true });
   const path = new URL(`${variant.slug}.json`, VARIANTS_DIR);
   await Deno.writeTextFile(path, JSON.stringify(variant, null, 2) + "\n");
+}
+
+export async function saveVariant(
+  variant: ProfileVariant,
+): Promise<{ kv: boolean; file: boolean }> {
+  const kv = await saveVariantToKv(variant);
+  let file = false;
+  try {
+    await saveVariantToFile(variant);
+    file = true;
+  } catch (err) {
+    console.warn("[variants] file save skipped:", err);
+  }
+  return { kv, file };
 }
 
 function filterByIds<T>(

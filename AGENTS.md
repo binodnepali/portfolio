@@ -35,9 +35,10 @@ Run from the repo root:
 - `deno task check` — **run before finishing changes**:
   `deno fmt --check && deno lint && deno check` over `.ts`/`.tsx`.
 - `deno task manifest` — regenerate `fresh.gen.ts`.
-- `deno task tailor-cv` — generate a job-specific CV variant JSON via Gemini
-  (Genkit). Requires `GEMINI_API_KEY` in `.env`. Example:
-  `deno task tailor-cv -- --slug acme-senior-frontend --job ./job.txt`
+- `deno task tailor-cv` — generate a job-specific CV variant via Gemini.
+  Requires `GEMINI_API_KEY` in `.env`. Example:
+  `deno task tailor-cv -- --slug acme-senior-frontend --job ./jobs/acme.txt`
+  (the `--` after the task name is required so flags reach the script).
 
 When verifying your own edits, prefer scoping `deno fmt` / `deno lint` /
 `deno check` to the files you touched, since unrelated files (e.g.
@@ -47,24 +48,26 @@ When verifying your own edits, prefer scoping `deno fmt` / `deno lint` /
 
 - `routes/` — Fresh file-based routing.
   - `routes/index.tsx`, `_app.tsx`, `_404.tsx` — pages/layout.
-  - `routes/cv/[slug].tsx` — tailored CV pages (reads `data/variants/`).
+  - `routes/cv/[slug].tsx` — tailored CV preview pages.
+  - `routes/admin/tailor.tsx` — private upload UI (noindex; `X-API-Key` on GET).
   - `routes/calendar.tsx` — human-facing calendar page.
   - `routes/api/**` — API handlers exporting `handler` (e.g. `profile.ts`,
-    `ical/index.ts`, `ical/[year].ts`).
+    `cv/tailor.ts`, `ical/index.ts`, `ical/[year].ts`).
 - `islands/` — interactive client components (hydrated; only place
-  `useState`/event handlers belong).
+  `useState`/event handlers belong), e.g. `DownloadCv.tsx`, `TailorCvForm.tsx`.
 - `components/` — server-rendered presentational components; shared primitives
   in `components/ui/`, CV layout in `components/CvPage.tsx`, section helper in
-  `components/cv/Section.tsx`.
+  `components/cv/Section.tsx`, `TailorUnauthorized.tsx` for gated admin pages.
 - `scripts/` — CLI entrypoints (e.g. `scripts/tailor-cv.ts`).
 - `src/server/` — server-only logic (no JSX), e.g. `src/server/calendar/`
   (scraping, ICS building, caching) and `src/server/profile/` (profile loading,
-  variant merge, Genkit/Gemini tailoring).
+  variant merge, Gemini generation, KV store, API-key auth).
 - `src/types/` — shared TypeScript types/interfaces.
 - `src/utils/` — shared helpers (e.g. `src/utils/date.ts`).
 - `data/` — static JSON data.
   - `data/linkedin-profile.json` — master profile (source of truth).
-  - `data/variants/*.json` — job-specific CV variants (generated or hand-edited).
+  - `data/variants/*.json` — optional committed variants (fallback if not in KV).
+- `jobs/` — local job-description inputs for the CLI (gitignored).
 - `static/` — static assets served at the web root.
 
 `fresh.gen.ts` is auto-generated — never edit it by hand; it updates on
@@ -91,27 +94,61 @@ When verifying your own edits, prefer scoping `deno fmt` / `deno lint` /
   (or optional explicit `id` fields in JSON). Use `deno task tailor-cv -- --catalog`
   to list stable ids for LLM output.
 - Default CV: `/` via `routes/index.tsx` + `components/CvPage.tsx`.
-- Tailored CV: `/cv/<slug>` merges a variant from `data/variants/<slug>.json`
-  onto the master profile (`src/server/profile/variant.ts`). Tailored pages set
-  `noindex` and are not linked from the public nav.
+- Tailored CV: `/cv/<slug>` merges a saved variant onto the master profile
+  (`src/server/profile/variant.ts`). `loadVariant()` reads **Deno KV first**,
+  then `data/variants/<slug>.json`. Tailored pages set `noindex` and are not
+  linked from the public nav.
 - Print/PDF: `islands/DownloadCv.tsx` calls `window.print()`; styles in
   `static/styles.css` (`.cv-sheet`, `@media print`).
 
-## Tailor CV (Gemini + Genkit)
+## Tailor CV (Gemini)
 
-Local CLI only — **do not import Genkit from Fresh routes or other deployed
-server code**. Genkit (`genkit`, `@genkit-ai/google-genai`) is listed in
-`deno.json` for the tailor script; the production site reads pre-generated
-variant JSON files only.
+Generation uses the **Gemini REST API** (`fetch`) in
+`src/server/profile/generateVariant.ts` — edge-compatible, shared by the CLI and
+HTTP API.
 
-- Env: `GEMINI_API_KEY` (or `GOOGLE_API_KEY`), optional `GEMINI_MODEL`
-  (default `gemini-2.5-flash`). See `.env.sample`.
-- Flow: `scripts/tailor-cv.ts` → `src/server/profile/tailorLlm.ts` → Genkit
-  structured output → validate ids against catalog → write
-  `data/variants/<slug>.json`.
-- Flags: `--catalog`, `--dry-run`, `--job <file>`, `--job-text "..."`.
-- Commit generated variants when they should be live on deploy (Deno Deploy
-  serves them as static bundled JSON at build time).
+### Environment
+
+| Variable | Purpose |
+|----------|---------|
+| `GEMINI_API_KEY` | Google AI Studio key (or `GOOGLE_API_KEY`) |
+| `GEMINI_MODEL` | Optional; default `gemini-2.5-flash` |
+| `TAILOR_CV_API_KEY` | Base64 text for HTTP/admin auth. Generate: `openssl rand -base64 32` |
+
+Set all required vars in `.env` locally and in the Deno Deploy dashboard for
+production.
+
+### CLI
+
+`scripts/tailor-cv.ts` → validate ids against catalog → save to Deno KV and
+`data/variants/<slug>.json` (file write may fail on Deploy; KV is primary in prod).
+
+Flags: `--catalog`, `--dry-run`, `--job <file>`, `--job-text "..."`.
+
+### HTTP API — `POST /api/cv/tailor`
+
+- Header: `X-API-Key` (same base64 value as `TAILOR_CV_API_KEY`).
+- Body: `multipart/form-data` with `file` (`.txt` / `.md`, max 128KB) and
+  optional `slug`.
+- Returns `201` with `{ slug, label, previewUrl, storedInKv }`.
+- Auth: `src/server/profile/tailorAuth.ts` (constant-time compare, base64
+  validation). Returns `401` when missing/invalid; `503` when not configured.
+
+### Upload UI — `/admin/tailor`
+
+- **Private page** (noindex). No API key field in the form.
+- `GET /admin/tailor` checks `X-API-Key` server-side; without a valid header,
+  renders `TailorUnauthorized` (401) instead of the form.
+- The owner injects `X-API-Key` via a browser extension (e.g. Requestly) for
+  the site origin so page loads and `fetch("/api/cv/tailor")` both carry the
+  header automatically.
+- Copy on the form is written for non-technical users.
+
+### Storage
+
+- `src/server/profile/variantStore.ts` — KV keys under `["profile", "variants", slug]`.
+- Keep variant JSON under Deno KV's **64KB per-value limit**.
+- Do not commit `jobs/` (gitignored) or `.env`.
 
 ## Server / API guidelines
 
@@ -148,5 +185,8 @@ create commits when explicitly asked.
 - First request to a calendar year is slow (scrapes 12 month pages); subsequent
   requests hit the KV/in-memory cache.
 - After adding routes (e.g. `routes/cv/[slug].tsx`), run `deno task manifest`.
-- Genkit pulls npm deps on first `deno task tailor-cv` run; keep it out of
-  request handlers so Deno Deploy stays edge-compatible.
+- Tailored variants generated on Deploy persist in **Deno KV**, not the repo
+  filesystem. Committed files in `data/variants/` remain a fallback for static
+  variants shipped with the build.
+- `deno task tailor-cv` passes a literal `--` to the script; `scripts/tailor-cv.ts`
+  strips it before parsing args.

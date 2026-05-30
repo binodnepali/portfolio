@@ -1,7 +1,4 @@
-import {
-  AccomplishmentProject,
-  Experience,
-} from "../../types/Profile.ts";
+import { AccomplishmentProject, Experience } from "../../types/Profile.ts";
 
 export function slugify(value: string): string {
   return value

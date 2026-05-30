@@ -4,6 +4,8 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $admin_tailor from "./routes/admin/tailor.tsx";
+import * as $api_cv_tailor from "./routes/api/cv/tailor.ts";
 import * as $api_ical_year_ from "./routes/api/ical/[year].ts";
 import * as $api_ical_index from "./routes/api/ical/index.ts";
 import * as $api_profile from "./routes/api/profile.ts";
@@ -13,12 +15,15 @@ import * as $index from "./routes/index.tsx";
 import * as $CopyFeedUrl from "./islands/CopyFeedUrl.tsx";
 import * as $DownloadCv from "./islands/DownloadCv.tsx";
 import * as $Navbar from "./islands/Navbar.tsx";
+import * as $TailorCvForm from "./islands/TailorCvForm.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/admin/tailor.tsx": $admin_tailor,
+    "./routes/api/cv/tailor.ts": $api_cv_tailor,
     "./routes/api/ical/[year].ts": $api_ical_year_,
     "./routes/api/ical/index.ts": $api_ical_index,
     "./routes/api/profile.ts": $api_profile,
@@ -30,6 +35,7 @@ const manifest = {
     "./islands/CopyFeedUrl.tsx": $CopyFeedUrl,
     "./islands/DownloadCv.tsx": $DownloadCv,
     "./islands/Navbar.tsx": $Navbar,
+    "./islands/TailorCvForm.tsx": $TailorCvForm,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
