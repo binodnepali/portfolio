@@ -21,6 +21,8 @@ export const handler: Handlers<TailoredCvData | null> = {
         label: result.variant.label,
         target_company: result.variant.target_company,
         target_role: result.variant.target_role,
+        cover_letter: result.variant.cover_letter,
+        cover_letter_salutation: result.variant.cover_letter_salutation,
       },
     });
   },

@@ -16,6 +16,7 @@ interface TailorSuccess {
   slug: string;
   label: string;
   previewUrl: string;
+  coverLetterExportUrl: string;
   storedInKv: boolean;
 }
 
@@ -27,7 +28,8 @@ export const handler: Handlers = {
   async POST(req) {
     if (!isTailorApiConfigured()) {
       return json({
-        error: "TAILOR_CV_API_KEY is not configured on the server (expected base64 text)",
+        error:
+          "TAILOR_CV_API_KEY is not configured on the server (expected base64 text)",
       }, 503);
     }
     if (!authorizeTailorRequest(req)) {
@@ -79,6 +81,7 @@ export const handler: Handlers = {
         slug: variant.slug,
         label: variant.label,
         previewUrl: `/cv/${variant.slug}`,
+        coverLetterExportUrl: `/api/cv/export/cover-letter/${variant.slug}`,
         storedInKv: stored.kv,
       };
       return json(body, 201);

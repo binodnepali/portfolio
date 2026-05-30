@@ -25,4 +25,10 @@ export interface ProfileVariant {
 
   /** Soft skill / core strength names to include, in display order. */
   soft_skill_names?: string[];
+
+  /** Opening line, e.g. "Dear Hiring Team," */
+  cover_letter_salutation?: string;
+
+  /** Cover letter body paragraphs (no salutation or sign-off). */
+  cover_letter?: string;
 }

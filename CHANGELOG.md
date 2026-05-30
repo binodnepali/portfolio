@@ -1,22 +1,26 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See
+[commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version)
+for commit guidelines.
 
 ## [2.4.0](https://github-personal/binodnepali/portfolio/compare/v2.3.0...v2.4.0) (2026-05-30)
 
-
 ### Features
 
-* enhance CV layout and export functionality ([52c2096](https://github-personal/binodnepali/portfolio/commit/52c209614f58cf6662450fb5d351f933dc901c2c))
-* enhance CV sections with core strengths and languages ([66a9625](https://github-personal/binodnepali/portfolio/commit/66a9625e8987cb9b10ed351338663a48db78c0da))
-* refine CV tailoring logic and enhance prompt clarity ([02cbe41](https://github-personal/binodnepali/portfolio/commit/02cbe413b0a162f633a9f74ab24f9a65d092cfd2))
+- enhance CV layout and export functionality
+  ([52c2096](https://github-personal/binodnepali/portfolio/commit/52c209614f58cf6662450fb5d351f933dc901c2c))
+- enhance CV sections with core strengths and languages
+  ([66a9625](https://github-personal/binodnepali/portfolio/commit/66a9625e8987cb9b10ed351338663a48db78c0da))
+- refine CV tailoring logic and enhance prompt clarity
+  ([02cbe41](https://github-personal/binodnepali/portfolio/commit/02cbe413b0a162f633a9f74ab24f9a65d092cfd2))
 
 ## [2.3.0](https://github-personal/binodnepali/portfolio/compare/v2.2.1...v2.3.0) (2026-05-30)
 
-
 ### Features
 
-* enhance CV download functionality and improve print styles ([f131df1](https://github-personal/binodnepali/portfolio/commit/f131df1bfe23fdb79d12f9030520a21cf9646ab9))
+- enhance CV download functionality and improve print styles
+  ([f131df1](https://github-personal/binodnepali/portfolio/commit/f131df1bfe23fdb79d12f9030520a21cf9646ab9))
 
 ## [2.2.1](https://github-personal/binodnepali/portfolio/compare/v2.2.0...v2.2.1) (2026-05-30)
 

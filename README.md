@@ -10,8 +10,8 @@ This site is deployed using [deno deploy](https://docs.deno.com/deploy/manual).
 
 ## Before getting started
 
-Make sure you have installed [deno 2.4](https://docs.deno.com/runtime/manual)
-or higher in your machine.
+Make sure you have installed [deno 2.4](https://docs.deno.com/runtime/manual) or
+higher in your machine.
 
 ### Cloning repo
 
@@ -57,8 +57,9 @@ deno task preview
 deno task update
 ```
 
-Profile content lives in [`data/linkedin-profile.json`](data/linkedin-profile.json).
-Edit that file directly when you update your LinkedIn information.
+Profile content lives in
+[`data/linkedin-profile.json`](data/linkedin-profile.json). Edit that file
+directly when you update your LinkedIn information.
 
 #### Tailored CVs
 
@@ -71,9 +72,9 @@ PDF from the browser.
 cp .env.sample .env
 ```
 
-| Variable | Where to get it |
-|----------|-----------------|
-| `GEMINI_API_KEY` | [Google AI Studio](https://aistudio.google.com/apikey) |
+| Variable            | Where to get it                                                 |
+| ------------------- | --------------------------------------------------------------- |
+| `GEMINI_API_KEY`    | [Google AI Studio](https://aistudio.google.com/apikey)          |
 | `TAILOR_CV_API_KEY` | Run `openssl rand -base64 32` — store the output as base64 text |
 
 Set the same variables in the Deno Deploy dashboard for production.
@@ -91,14 +92,15 @@ Put job descriptions in `jobs/` (gitignored). Useful flags:
 
 **Browser upload** — `/admin/tailor`
 
-Private page (not linked from the site). Access is controlled by the
-`X-API-Key` header — there is no password field on the page.
+Private page (not linked from the site). Access is controlled by the `X-API-Key`
+header — there is no password field on the page.
 
 1. In a browser extension such as [Requestly](https://requestly.com/), add a
-   **Modify Headers** rule for your site URL (e.g. `http://localhost:8000/*`
-   and `https://binodnepali.me/*`).
+   **Modify Headers** rule for your site URL (e.g. `http://localhost:8000/*` and
+   `https://binodnepali.me/*`).
 2. Set header `X-API-Key` to your base64 `TAILOR_CV_API_KEY` value.
-3. Visit `/admin/tailor` — upload a `.txt` or `.md` job posting and create the CV.
+3. Visit `/admin/tailor` — upload a `.txt` or `.md` job posting and create the
+   CV.
 
 Without the header, the page shows an unauthorized message instead of the form.
 

@@ -15,7 +15,16 @@ Rules:
 - soft_skill_names MUST use exact strings from soft_skills in the catalog.
 - experience_descriptions and project_descriptions are arrays of { id, description }.
 - Prefer recent frontend/product work when the role is frontend-focused.
-- Omit irrelevant student or internship entries unless the job is junior-level.`;
+- Omit irrelevant student or internship entries unless the job is junior-level.
+
+Cover letter (same application as the CV):
+- Write cover_letter_salutation (e.g. "Dear Hiring Team,") and cover_letter body only.
+- cover_letter must NOT repeat the salutation, sign-off, or your name — only the body paragraphs.
+- cover_letter is 3–4 short paragraphs separated by blank lines. Prose only — no bullet lists.
+- Ground every claim in the master catalog and the experiences/projects you selected for experience_ids and project_ids.
+- Open with why this role and company; prove fit with 1–2 concrete examples from selected work; close with enthusiasm and availability.
+- Do not repeat the CV summary verbatim. Do not invent employers, dates, metrics, or technologies.
+- Warm, professional first person. No sign-off or signature — those are added at render time.`;
 }
 
 export function buildTailorUserPrompt(

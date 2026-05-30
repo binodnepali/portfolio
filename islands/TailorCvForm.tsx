@@ -4,6 +4,7 @@ interface TailorResult {
   slug: string;
   label: string;
   previewUrl: string;
+  coverLetterExportUrl: string;
 }
 
 export default function TailorCvForm() {
@@ -97,7 +98,7 @@ export default function TailorCvForm() {
         disabled={loading}
         class="w-full rounded-md bg-teal-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-teal-700 disabled:opacity-60 sm:w-auto"
       >
-        {loading ? "Creating your CV…" : "Create tailored CV"}
+        {loading ? "Creating your CV…" : "Create tailored CV + cover letter"}
       </button>
 
       {error && (
@@ -108,14 +109,21 @@ export default function TailorCvForm() {
 
       {result && (
         <div class="rounded-md border border-teal-200 bg-teal-50 px-4 py-3 text-sm text-teal-900 dark:border-teal-800 dark:bg-teal-950 dark:text-teal-100">
-          <p class="font-medium">Your tailored CV is ready</p>
+          <p class="font-medium">Your tailored CV and cover letter are ready</p>
           <p class="mt-1">{result.label}</p>
-          <p class="mt-3">
+          <p class="mt-3 flex flex-wrap gap-3">
             <a
               href={result.previewUrl}
               class="inline-block rounded-md bg-teal-700 px-3 py-1.5 text-white no-underline hover:bg-teal-800"
             >
-              View and print CV
+              View CV and cover letter
+            </a>
+            <a
+              href={result.coverLetterExportUrl}
+              download
+              class="inline-block rounded-md border border-teal-700 px-3 py-1.5 text-teal-900 no-underline hover:bg-teal-100 dark:text-teal-100 dark:hover:bg-teal-900"
+            >
+              Download cover letter (.doc)
             </a>
           </p>
         </div>

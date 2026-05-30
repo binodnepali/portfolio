@@ -1,5 +1,6 @@
 import { ProfileVariant } from "../../types/ProfileVariant.ts";
 import { buildProfileCatalog } from "./variant.ts";
+import { normalizeCoverLetterContent } from "../../utils/coverLetter.ts";
 
 const descriptionEntrySchema = {
   type: "object",
@@ -63,8 +64,17 @@ export const geminiVariantJsonSchema = {
       items: { type: "string" },
       description: "Exact core strength names from soft_skills in the catalog",
     },
+    cover_letter_salutation: {
+      type: "string",
+      description: 'Opening salutation, e.g. "Dear Hiring Team,"',
+    },
+    cover_letter: {
+      type: "string",
+      description:
+        "Cover letter body: 3–4 paragraphs separated by blank lines; no salutation or sign-off",
+    },
   },
-  required: ["label"],
+  required: ["label", "cover_letter"],
 } as const;
 
 export interface GeneratedProfileVariant {
@@ -79,6 +89,8 @@ export interface GeneratedProfileVariant {
   project_descriptions?: Array<{ id: string; description: string }>;
   skill_names?: string[];
   soft_skill_names?: string[];
+  cover_letter_salutation?: string;
+  cover_letter?: string;
 }
 
 function descriptionsToRecord(
@@ -94,6 +106,11 @@ export function normalizeGeneratedVariant(
   generated: GeneratedProfileVariant,
   slug: string,
 ): ProfileVariant {
+  const letter = normalizeCoverLetterContent(
+    generated.cover_letter_salutation,
+    generated.cover_letter,
+  );
+
   return {
     slug,
     label: generated.label,
@@ -111,6 +128,8 @@ export function normalizeGeneratedVariant(
     ),
     skill_names: generated.skill_names,
     soft_skill_names: generated.soft_skill_names,
+    cover_letter_salutation: letter.salutation,
+    cover_letter: letter.body,
   };
 }
 
@@ -120,6 +139,9 @@ export function validateVariant(
   catalog: ReturnType<typeof buildProfileCatalog>,
 ): ProfileVariant {
   if (!data.label) throw new Error("Variant missing label");
+  if (!data.cover_letter?.trim()) {
+    throw new Error("Variant missing cover_letter");
+  }
   data.slug = slug;
   data.created_at = data.created_at ?? new Date().toISOString();
 

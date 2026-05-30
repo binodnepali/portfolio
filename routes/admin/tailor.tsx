@@ -38,9 +38,9 @@ export default function AdminTailorPage({ data }: PageProps<AdminTailorData>) {
           Create a tailored CV
         </h1>
         <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-          Upload a job posting and we'll prepare a CV version matched to that
-          role. When it's ready, you can review it on screen and print or save
-          it as a PDF from your browser.
+          Upload a job posting and we'll prepare a CV and cover letter matched
+          to that role. Review both on screen, then download PDF, Word, or copy
+          the letter text.
         </p>
 
         <div class="mt-8">

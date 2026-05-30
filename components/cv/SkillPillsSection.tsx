@@ -9,7 +9,11 @@ export default function SkillPillsSection(
   const cvCount = skills.filter((s) => s.include_in_cv !== false).length;
 
   return (
-    <Section title={title} keepTogether class={cvCount === 0 ? "print:hidden" : ""}>
+    <Section
+      title={title}
+      keepTogether
+      class={cvCount === 0 ? "print:hidden" : ""}
+    >
       <ul class="cv-pill-list flex flex-wrap gap-2">
         {skills.map((skill) => {
           const hiddenInCv = skill.include_in_cv === false;

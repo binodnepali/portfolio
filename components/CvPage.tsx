@@ -1,6 +1,7 @@
 import { Head } from "$fresh/runtime.ts";
 
 import Navbar from "../islands/Navbar.tsx";
+import CoverLetterPreview from "../components/CoverLetterPreview.tsx";
 import BioSection from "../components/Bio.tsx";
 import ExperienceSection from "../components/Experience.tsx";
 import EducationSection from "../components/Education.tsx";
@@ -16,6 +17,8 @@ export interface CvVariantMeta {
   label: string;
   target_company?: string;
   target_role?: string;
+  cover_letter?: string;
+  cover_letter_salutation?: string;
 }
 
 export default function CvPage(
@@ -53,6 +56,21 @@ export default function CvPage(
               <a href="/" class="underline">View default CV</a>
             </div>
           </div>
+        )}
+
+        {variant?.cover_letter && (
+          <CoverLetterPreview
+            profile={profile}
+            salutation={variant.cover_letter_salutation}
+            body={variant.cover_letter}
+            exportHref={`/api/cv/export/cover-letter/${variant.slug}`}
+            pdfFileName={`${profile.full_name.replace(/\s+/g, "-")}${
+              variant.target_company
+                ? `-${variant.target_company.replace(/\s+/g, "-")}`
+                : ""
+            }-cover-letter`}
+            targetCompany={variant.target_company}
+          />
         )}
 
         <article class="cv-sheet mx-auto w-full max-w-3xl rounded-lg bg-white p-8 shadow-lg dark:bg-slate-800 sm:p-10 print:max-w-full print:rounded-none print:p-0 print:shadow-none">

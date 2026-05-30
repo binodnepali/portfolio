@@ -1,4 +1,5 @@
 import { Experience, Profile } from "../../types/Profile.ts";
+import { normalizeCoverLetterContent } from "../../utils/coverLetter.ts";
 import {
   formatDuration,
   formatMonthYear,
@@ -244,4 +245,86 @@ export function cvExportFilename(profile: Profile): string {
   const slug = profile.full_name.toLowerCase().replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
   return `${slug || "cv"}.doc`;
+}
+
+function coverLetterParagraphsHtml(body: string): string {
+  return body
+    .split(/\n\s*\n/)
+    .map((p) => p.trim())
+    .filter(Boolean)
+    .map((p) =>
+      `<p style="margin:0 0 12pt 0;text-align:justify;">${escapeHtml(p)}</p>`
+    )
+    .join("\n");
+}
+
+export interface CoverLetterContent {
+  salutation?: string;
+  body: string;
+}
+
+export function buildCoverLetterWordDocument(
+  profile: Profile,
+  letter: CoverLetterContent,
+): string {
+  const normalized = normalizeCoverLetterContent(
+    letter.salutation,
+    letter.body,
+  );
+  const salutation = normalized.salutation;
+  const letterBody = normalized.body;
+  const date = new Date().toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
+  const contact = [
+    profile.full_name,
+    `${profile.city}, ${profile.country_full_name}`,
+    profile.email,
+    stripProtocol(profile.extra.linkedin_profile_id),
+  ].map(escapeHtml);
+
+  const htmlBody = [
+    contact.map((line) => `<p style="margin:0;font-size:11pt;">${line}</p>`)
+      .join("\n"),
+    `<p style="margin:16pt 0 0 0;font-size:11pt;">${escapeHtml(date)}</p>`,
+    `<p style="margin:16pt 0 0 0;font-size:11pt;">${
+      escapeHtml(salutation)
+    }</p>`,
+    coverLetterParagraphsHtml(letterBody),
+    `<p style="margin:16pt 0 0 0;font-size:11pt;">Kind regards,</p>`,
+    `<p style="margin:8pt 0 0 0;font-size:11pt;">${
+      escapeHtml(profile.full_name)
+    }</p>`,
+  ].join("\n");
+
+  return `<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="utf-8">
+<title>${escapeHtml(profile.full_name)} — Cover letter</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom></w:WordDocument></xml><![endif]-->
+<style>
+  body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; color: #111; line-height: 1.4; }
+</style>
+</head>
+<body>${htmlBody}</body>
+</html>`;
+}
+
+export function coverLetterExportFilename(
+  profile: Profile,
+  company?: string,
+): string {
+  const name = profile.full_name.toLowerCase().replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "cover-letter";
+  const co = company?.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(
+    /^-+|-+$/g,
+    "",
+  );
+  return co ? `${name}-${co}-cover-letter.doc` : `${name}-cover-letter.doc`;
 }

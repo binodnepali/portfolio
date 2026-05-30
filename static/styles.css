@@ -138,85 +138,34 @@
   .cv-pill-list li.print\:hidden::after {
     content: none !important;
   }
-}
 
-/* Same CV layout when generating a PDF in the browser (html2pdf.js). */
-html.cv-export-mode .print\:hidden {
-  display: none !important;
-}
+  /* Cover letter only (Save as PDF from cover letter section) */
+  html.cover-letter-print-mode .cv-sheet {
+    display: none !important;
+  }
 
-html.cv-export-mode .cv-sheet,
-html.cv-export-mode .cv-sheet * {
-  color: #111827 !important;
-  box-shadow: none !important;
-  border-color: #d1d5db !important;
-}
+  html.cover-letter-print-mode .cover-letter-preview {
+    display: block !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
-html.cv-export-mode .cv-sheet,
-html.cv-export-mode .cv-sheet *:not(.cv-pill-list li) {
-  background: transparent !important;
-}
+  html.cover-letter-print-mode .cover-letter-preview .rounded-lg {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
 
-html.cv-export-mode .cv-sheet {
-  max-width: 100% !important;
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-}
+  html.cover-letter-print-mode .cover-letter-sheet,
+  html.cover-letter-print-mode .cover-letter-sheet * {
+    color: #111827 !important;
+  }
 
-html.cv-export-mode .cv-sheet a {
-  text-decoration: none !important;
-}
-
-html.cv-export-mode .cv-bio {
-  margin-top: 0 !important;
-}
-
-html.cv-export-mode .cv-bio .cv-section {
-  margin-top: 0.65rem !important;
-}
-
-html.cv-export-mode .cv-sheet > .cv-section {
-  margin-top: 0.75rem !important;
-}
-
-html.cv-export-mode .cv-section-body {
-  margin-top: 0.35rem !important;
-}
-
-html.cv-export-mode .cv-section-heading h2 {
-  margin: 0 !important;
-  line-height: 1.2 !important;
-}
-
-html.cv-export-mode .cv-company-group > .cv-entry + .cv-entry {
-  margin-top: 0.65rem;
-}
-
-html.cv-export-mode .cv-experience-list > .cv-company-group + .cv-company-group {
-  margin-top: 0.75rem;
-}
-
-html.cv-export-mode .cv-pill-list {
-  display: block !important;
-  line-height: 1.75;
-}
-
-html.cv-export-mode .cv-pill-list li {
-  display: inline !important;
-  border: none !important;
-  background: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  font-size: 0.8125rem !important;
-}
-
-html.cv-export-mode .cv-pill-list li:not(:last-child)::after {
-  content: " · ";
-  color: #6b7280 !important;
-}
-
-html.cv-export-mode .cv-pill-list li.print\:hidden::after {
-  content: none !important;
+  html.cover-letter-print-mode .cover-letter-sheet {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border: none !important;
+  }
 }

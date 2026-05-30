@@ -84,7 +84,8 @@ if (import.meta.main) {
   const path = await writeVariant(variant);
   console.log(`Wrote ${path}`);
   console.log(`Preview: /cv/${slug}`);
+  console.log(`Cover letter export: /api/cv/export/cover-letter/${slug}`);
   console.log(
-    `Review the JSON, adjust if needed, then print PDF from the page.`,
+    `Review the JSON, adjust if needed, then download PDF or cover letter from the preview page.`,
   );
 }

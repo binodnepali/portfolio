@@ -84,7 +84,7 @@ export default function BioSection(
             </li>
           </ul>
 
-          <div class="mt-4">
+          <div class="print:hidden mt-4">
             <CvActions
               exportHref={exportHref}
               pdfFileName={`${full_name.replace(/\s+/g, "-")}-CV`}

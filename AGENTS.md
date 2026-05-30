@@ -66,7 +66,8 @@ When verifying your own edits, prefer scoping `deno fmt` / `deno lint` /
 - `src/utils/` — shared helpers (e.g. `src/utils/date.ts`).
 - `data/` — static JSON data.
   - `data/linkedin-profile.json` — master profile (source of truth).
-  - `data/variants/*.json` — optional committed variants (fallback if not in KV).
+  - `data/variants/*.json` — optional committed variants (fallback if not in
+    KV).
 - `jobs/` — local job-description inputs for the CLI (gitignored).
 - `static/` — static assets served at the web root.
 
@@ -90,9 +91,9 @@ When verifying your own edits, prefer scoping `deno fmt` / `deno lint` /
   updating LinkedIn-style content; there is no runtime PDF import or admin UI.
 - `include_in_cv: false` on skills or projects hides them in **print/PDF only**
   (`print:hidden`); they remain visible on the live site.
-- Experience/project **ids** are computed at runtime in `src/server/profile/ids.ts`
-  (or optional explicit `id` fields in JSON). Use `deno task tailor-cv -- --catalog`
-  to list stable ids for LLM output.
+- Experience/project **ids** are computed at runtime in
+  `src/server/profile/ids.ts` (or optional explicit `id` fields in JSON). Use
+  `deno task tailor-cv -- --catalog` to list stable ids for LLM output.
 - Default CV: `/` via `routes/index.tsx` + `components/CvPage.tsx`.
 - Tailored CV: `/cv/<slug>` merges a saved variant onto the master profile
   (`src/server/profile/variant.ts`). `loadVariant()` reads **Deno KV first**,
@@ -109,10 +110,10 @@ HTTP API.
 
 ### Environment
 
-| Variable | Purpose |
-|----------|---------|
-| `GEMINI_API_KEY` | Google AI Studio key (or `GOOGLE_API_KEY`) |
-| `GEMINI_MODEL` | Optional; default `gemini-2.5-flash` |
+| Variable            | Purpose                                                              |
+| ------------------- | -------------------------------------------------------------------- |
+| `GEMINI_API_KEY`    | Google AI Studio key (or `GOOGLE_API_KEY`)                           |
+| `GEMINI_MODEL`      | Optional; default `gemini-2.5-flash`                                 |
 | `TAILOR_CV_API_KEY` | Base64 text for HTTP/admin auth. Generate: `openssl rand -base64 32` |
 
 Set all required vars in `.env` locally and in the Deno Deploy dashboard for
@@ -121,7 +122,8 @@ production.
 ### CLI
 
 `scripts/tailor-cv.ts` → validate ids against catalog → save to Deno KV and
-`data/variants/<slug>.json` (file write may fail on Deploy; KV is primary in prod).
+`data/variants/<slug>.json` (file write may fail on Deploy; KV is primary in
+prod).
 
 Flags: `--catalog`, `--dry-run`, `--job <file>`, `--job-text "..."`.
 
@@ -139,14 +141,15 @@ Flags: `--catalog`, `--dry-run`, `--job <file>`, `--job-text "..."`.
 - **Private page** (noindex). No API key field in the form.
 - `GET /admin/tailor` checks `X-API-Key` server-side; without a valid header,
   renders `TailorUnauthorized` (401) instead of the form.
-- The owner injects `X-API-Key` via a browser extension (e.g. Requestly) for
-  the site origin so page loads and `fetch("/api/cv/tailor")` both carry the
-  header automatically.
+- The owner injects `X-API-Key` via a browser extension (e.g. Requestly) for the
+  site origin so page loads and `fetch("/api/cv/tailor")` both carry the header
+  automatically.
 - Copy on the form is written for non-technical users.
 
 ### Storage
 
-- `src/server/profile/variantStore.ts` — KV keys under `["profile", "variants", slug]`.
+- `src/server/profile/variantStore.ts` — KV keys under
+  `["profile", "variants", slug]`.
 - Keep variant JSON under Deno KV's **64KB per-value limit**.
 - Do not commit `jobs/` (gitignored) or `.env`.
 
@@ -188,5 +191,5 @@ create commits when explicitly asked.
 - Tailored variants generated on Deploy persist in **Deno KV**, not the repo
   filesystem. Committed files in `data/variants/` remain a fallback for static
   variants shipped with the build.
-- `deno task tailor-cv` passes a literal `--` to the script; `scripts/tailor-cv.ts`
-  strips it before parsing args.
+- `deno task tailor-cv` passes a literal `--` to the script;
+  `scripts/tailor-cv.ts` strips it before parsing args.
