@@ -31,7 +31,7 @@
       "company_linkedin_profile_url": "https://www.linkedin.com/company/adidas/",
       "title": "Software Engineer II",
       "employment_type": "Full-time",
-      "description": null,
+      "description": "- Own the in-house CMS, Latte (Layout Template Engine): consolidate duplicate components, unify shared building blocks, and deliver features that let markets publish campaign content and cross-platform experiences.\n- Migrate legacy Express services to NestJS—address inefficient database queries and trim oversized JSON responses for faster, more dependable APIs.\n- Maintain legacy Runtastic web (Ruby, Ember.js) alongside the modern Next.js platform, keeping both stacks stable as we improve the product.\n- Contribute to the Adidas Digital Audience Builder (ADAB), internal tooling that helps protect newsletter operations worth €400M annually and eases the load on Salesforce Marketing Cloud automations.",
       "skills": [
         "React",
         "Next.js",
@@ -62,7 +62,7 @@
       "company_linkedin_profile_url": "https://www.linkedin.com/company/adidas/",
       "title": "Software Engineer",
       "employment_type": "Full-time",
-      "description": "- Build and maintain customer-facing web applications with React and Next.js.\n- Write and extend automated tests with Playwright and Vitest to keep releases dependable.\n- Contribute to Node.js services (Fastify) when product features need backend support.\n- Work closely with designers and engineers in an agile setup (Bitbucket, Jira, Confluence).",
+      "description": "- Built an internal tool to manage feedback from the Confirmed iOS and Android apps, so QA can prioritise bug reports and product teams can triage feature requests from users.\n- Shipped Confirmed web product detail pages with buy-now flows for markets where the app is not live, helping drive sales through the web platform.\n- Continued building customer-facing web applications with React and Next.js, with automated coverage in Playwright and Vitest.\n- Contributed to Node.js services (Fastify) when frontend work needed reliable backend support.",
       "skills": [
         "React",
         "Next.js",
@@ -92,11 +92,12 @@
       "company_linkedin_profile_url": "https://www.linkedin.com/company/adidas/",
       "title": "Software Developer",
       "employment_type": "Full-time",
-      "description": "- Developed product features for web applications using React.\n- Added and maintained end-to-end and unit tests with Cypress and Jest.\n- Built and extended Node.js APIs with Express to support frontend functionality.\n- Collaborated with cross-functional teammates to deliver iteratively and improve quality.",
+      "description": "- Worked on Confirmed web to grow app adoption, starting with product detail pages that paired QR codes and download CTAs, backed by Playwright tests.\n- Maintained the Collection web app—fixed bugs, kept releases steady, and added Cypress coverage to catch regressions early.\n- Developed React features for customer-facing web applications and extended Node.js APIs with Express where the frontend needed backend support.",
       "skills": [
         "React",
         "Cypress",
         "Jest",
+        "Playwright",
         "Node.js",
         "Express",
         "Bitbucket",
@@ -543,6 +544,15 @@
     { "name": ".NET Framework", "include_in_cv": false },
     { "name": "Google Cloud Platform (GCP)" },
     { "name": "Nuxt.js" }
+  ],
+  "soft_skills": [
+    { "name": "Communication" },
+    { "name": "Cross-functional collaboration" },
+    { "name": "Ownership" },
+    { "name": "Problem-solving" },
+    { "name": "Mentoring" },
+    { "name": "Agile teamwork" },
+    { "name": "Stakeholder alignment" }
   ],
   "gender": "Male",
   "birth_date": {

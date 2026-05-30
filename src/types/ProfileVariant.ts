@@ -20,6 +20,9 @@ export interface ProfileVariant {
   project_ids?: string[];
   project_descriptions?: Record<string, string>;
 
-  /** Skill names to include, in display order (matched case-insensitively). */
+  /** Technical skill names to include, in display order. */
   skill_names?: string[];
+
+  /** Soft skill / core strength names to include, in display order. */
+  soft_skill_names?: string[];
 }

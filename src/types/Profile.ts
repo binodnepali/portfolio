@@ -21,6 +21,7 @@ export interface Profile {
   accomplishment_courses: AccomplishmentCourse[];
   accomplishment_projects: AccomplishmentProject[];
   skills: Skill[];
+  soft_skills?: Skill[];
   gender: string;
   birth_date: BirthDate;
   extra: Extra;

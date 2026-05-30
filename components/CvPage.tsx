@@ -5,6 +5,8 @@ import BioSection from "../components/Bio.tsx";
 import ExperienceSection from "../components/Experience.tsx";
 import EducationSection from "../components/Education.tsx";
 import ProjectsSection from "../components/Projects.tsx";
+import CoreStrengthsSection from "../components/CoreStrengths.tsx";
+import LanguagesSection from "../components/Languages.tsx";
 import SkillsSection from "../components/Skills.tsx";
 import SiteFooter from "../components/SiteFooter.tsx";
 import { Profile } from "../src/types/Profile.ts";
@@ -75,6 +77,10 @@ export default function CvPage(
           <ProjectsSection projects={profile.accomplishment_projects} />
 
           <SkillsSection skills={profile.skills} />
+
+          <CoreStrengthsSection softSkills={profile.soft_skills ?? []} />
+
+          <LanguagesSection languages={profile.languages} />
         </article>
       </main>
 

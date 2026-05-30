@@ -22,6 +22,7 @@ export interface ProfileCatalog {
   experiences: ProfileCatalogItem[];
   projects: ProfileCatalogItem[];
   skills: string[];
+  soft_skills: string[];
 }
 
 export function buildProfileCatalog(profile: Profile): ProfileCatalog {
@@ -39,6 +40,7 @@ export function buildProfileCatalog(profile: Profile): ProfileCatalog {
         undefined,
     })),
     skills: profile.skills.map((s) => s.name.trim()),
+    soft_skills: (profile.soft_skills ?? []).map((s) => s.name.trim()),
   };
 }
 
@@ -109,18 +111,32 @@ function filterByIds<T>(
   );
 }
 
-function filterSkills(
-  profile: Profile,
+function filterNamedSkills(
+  items: Profile["skills"],
   skillNames: string[] | undefined,
 ): Profile["skills"] {
-  if (!skillNames || skillNames.length === 0) return profile.skills;
+  if (!skillNames || skillNames.length === 0) return items;
   const byName = new Map(
-    profile.skills.map((s) => [s.name.trim().toLowerCase(), s]),
+    items.map((s) => [s.name.trim().toLowerCase(), s]),
   );
   return skillNames
     .map((name) => byName.get(name.trim().toLowerCase()))
     .filter((s): s is Profile["skills"][number] => s != null)
     .map((s) => ({ ...s, include_in_cv: true }));
+}
+
+function filterSkills(
+  profile: Profile,
+  skillNames: string[] | undefined,
+): Profile["skills"] {
+  return filterNamedSkills(profile.skills, skillNames);
+}
+
+function filterSoftSkills(
+  profile: Profile,
+  skillNames: string[] | undefined,
+): Profile["skills"] {
+  return filterNamedSkills(profile.soft_skills ?? [], skillNames);
 }
 
 export function applyVariant(
@@ -154,6 +170,7 @@ export function applyVariant(
   });
 
   profile.skills = filterSkills(profile, variant.skill_names);
+  profile.soft_skills = filterSoftSkills(profile, variant.soft_skill_names);
 
   return profile;
 }

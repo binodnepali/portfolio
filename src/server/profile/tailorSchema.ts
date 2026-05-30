@@ -55,7 +55,13 @@ export const geminiVariantJsonSchema = {
     skill_names: {
       type: "array",
       items: { type: "string" },
-      description: "Exact skill names from the catalog, in display order",
+      description:
+        "Exact technical skill names from the catalog, in display order",
+    },
+    soft_skill_names: {
+      type: "array",
+      items: { type: "string" },
+      description: "Exact core strength names from soft_skills in the catalog",
     },
   },
   required: ["label"],
@@ -72,6 +78,7 @@ export interface GeneratedProfileVariant {
   project_ids?: string[];
   project_descriptions?: Array<{ id: string; description: string }>;
   skill_names?: string[];
+  soft_skill_names?: string[];
 }
 
 function descriptionsToRecord(
@@ -103,6 +110,7 @@ export function normalizeGeneratedVariant(
       generated.project_descriptions,
     ),
     skill_names: generated.skill_names,
+    soft_skill_names: generated.soft_skill_names,
   };
 }
 
@@ -118,6 +126,9 @@ export function validateVariant(
   const expIds = new Set(catalog.experiences.map((e) => e.id));
   const projIds = new Set(catalog.projects.map((p) => p.id));
   const skillNames = new Set(catalog.skills.map((s) => s.toLowerCase()));
+  const softSkillNames = new Set(
+    catalog.soft_skills.map((s) => s.toLowerCase()),
+  );
 
   for (const id of data.experience_ids ?? []) {
     if (!expIds.has(id)) {
@@ -132,6 +143,11 @@ export function validateVariant(
   for (const name of data.skill_names ?? []) {
     if (!skillNames.has(name.trim().toLowerCase())) {
       throw new Error(`Unknown skill "${name}" in LLM output`);
+    }
+  }
+  for (const name of data.soft_skill_names ?? []) {
+    if (!softSkillNames.has(name.trim().toLowerCase())) {
+      throw new Error(`Unknown soft skill "${name}" in LLM output`);
     }
   }
 

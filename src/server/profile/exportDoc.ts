@@ -161,13 +161,31 @@ function buildProjectsSection(profile: Profile): string {
   return sectionHeading("Projects") + entries;
 }
 
-function buildSkillsSection(profile: Profile): string {
-  const skills = cvSkills(profile);
-  if (skills.length === 0) return "";
+function cvSoftSkills(profile: Profile) {
+  return (profile.soft_skills ?? []).filter((s) => s.include_in_cv !== false);
+}
 
+function namedSkillList(
+  title: string,
+  skills: Profile["skills"],
+): string {
+  if (skills.length === 0) return "";
   const list = skills.map((s) => escapeHtml(s.name.trim())).join(", ");
-  return sectionHeading("Skills") +
-    `<p style="margin:0;">${list}</p>`;
+  return sectionHeading(title) + `<p style="margin:0;">${list}</p>`;
+}
+
+function buildSkillsSection(profile: Profile): string {
+  return namedSkillList("Technical skills", cvSkills(profile));
+}
+
+function buildCoreStrengthsSection(profile: Profile): string {
+  return namedSkillList("Core strengths", cvSoftSkills(profile));
+}
+
+function buildLanguagesSection(profile: Profile): string {
+  if (profile.languages.length === 0) return "";
+  const list = profile.languages.map(escapeHtml).join(" · ");
+  return sectionHeading("Languages") + `<p style="margin:0;">${list}</p>`;
 }
 
 export function buildCvWordDocument(profile: Profile): string {
@@ -199,6 +217,8 @@ export function buildCvWordDocument(profile: Profile): string {
     buildEducationSection(profile),
     buildProjectsSection(profile),
     buildSkillsSection(profile),
+    buildCoreStrengthsSection(profile),
+    buildLanguagesSection(profile),
   ].join("\n");
 
   return `<!DOCTYPE html>

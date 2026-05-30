@@ -10,7 +10,8 @@ Rules:
 - Use bullet lines starting with "- " (hyphen space) in description fields.
 - Return structured output matching the ProfileVariant schema.
 - experience_ids and project_ids MUST use exact id values from the catalog.
-- skill_names MUST use exact skill strings from the catalog.
+- skill_names MUST use exact technical skill strings from skills in the catalog.
+- soft_skill_names MUST use exact strings from soft_skills in the catalog.
 - experience_descriptions and project_descriptions are arrays of { id, description }.
 - Prefer recent frontend/product work when the role is frontend-focused.
 - Omit irrelevant student or internship entries unless the job is junior-level.`;
