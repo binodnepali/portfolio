@@ -73,33 +73,35 @@ export default function CvPage(
           />
         )}
 
-        <article class="cv-sheet mx-auto w-full max-w-3xl rounded-lg bg-white p-8 shadow-lg dark:bg-slate-800 sm:p-10 print:max-w-full print:rounded-none print:p-0 print:shadow-none">
-          <BioSection
-            job_start_date={profile.job_start_date}
-            profile_pic_url={profile.profile_pic_url}
-            full_name={profile.full_name}
-            occupation={profile.occupation}
-            city={profile.city}
-            country_full_name={profile.country_full_name}
-            email={profile.email}
-            github_profile_id={profile.extra.github_profile_id}
-            linkedin_profile_id={profile.extra.linkedin_profile_id}
-            summary={profile.summary}
-            exportHref={exportHref}
-          />
+        <div class="mx-auto w-full max-w-3xl px-4 sm:px-0 print:px-0">
+          <article class="cv-sheet rounded-lg bg-white p-6 shadow-lg dark:bg-slate-800 sm:p-8 print:max-w-full print:rounded-none print:p-0 print:shadow-none">
+            <BioSection
+              job_start_date={profile.job_start_date}
+              profile_pic_url={profile.profile_pic_url}
+              full_name={profile.full_name}
+              occupation={profile.occupation}
+              city={profile.city}
+              country_full_name={profile.country_full_name}
+              email={profile.email}
+              github_profile_id={profile.extra.github_profile_id}
+              linkedin_profile_id={profile.extra.linkedin_profile_id}
+              summary={profile.summary}
+              exportHref={exportHref}
+            />
 
-          <ExperienceSection experiences={profile.experiences} />
+            <ExperienceSection experiences={profile.experiences} />
 
-          <EducationSection educations={profile.education} />
+            <EducationSection educations={profile.education} />
 
-          <ProjectsSection projects={profile.accomplishment_projects} />
+            <ProjectsSection projects={profile.accomplishment_projects} />
 
-          <SkillsSection skills={profile.skills} />
+            <SkillsSection skills={profile.skills} />
 
-          <CoreStrengthsSection softSkills={profile.soft_skills ?? []} />
+            <CoreStrengthsSection softSkills={profile.soft_skills ?? []} />
 
-          <LanguagesSection languages={profile.languages} />
-        </article>
+            <LanguagesSection languages={profile.languages} />
+          </article>
+        </div>
       </main>
 
       <div class="print:hidden">
