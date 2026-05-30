@@ -2,6 +2,7 @@ import Navbar from "../islands/Navbar.tsx";
 import BioSection from "../components/Bio.tsx";
 import ExperienceSection from "../components/Experience.tsx";
 import EducationSection from "../components/Education.tsx";
+import SiteFooter from "../components/SiteFooter.tsx";
 
 import data from "../data/linkedin-profile.json" with {
   type: "json",
@@ -44,13 +45,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="mt-auto">
-        <div className="container mx-auto p-4">
-          <p className="text-center">
-            &copy; {new Date().getFullYear()} Binod Nepali
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

@@ -216,6 +216,7 @@ export interface SubscriptionFeed {
   currentYear: number;
   nextYear: number;
   hasNext: boolean;
+  eventCount: number;
 }
 
 // Builds the stable subscription feed: the current Nepali year plus the next
@@ -250,5 +251,11 @@ export async function getSubscriptionIcs(): Promise<SubscriptionFeed> {
       `(${currentYear}${nextDays.length > 0 ? `+${nextYear}` : ""}) ` +
       `served in ${Date.now() - start}ms`,
   );
-  return { ics, currentYear, nextYear, hasNext: nextDays.length > 0 };
+  return {
+    ics,
+    currentYear,
+    nextYear,
+    hasNext: nextDays.length > 0,
+    eventCount,
+  };
 }

@@ -7,7 +7,9 @@ import * as $_app from "./routes/_app.tsx";
 import * as $api_ical_year_ from "./routes/api/ical/[year].ts";
 import * as $api_ical_index from "./routes/api/ical/index.ts";
 import * as $api_profile from "./routes/api/profile.ts";
+import * as $calendar from "./routes/calendar.tsx";
 import * as $index from "./routes/index.tsx";
+import * as $CopyFeedUrl from "./islands/CopyFeedUrl.tsx";
 import * as $Navbar from "./islands/Navbar.tsx";
 import * as $SeeMoreExperiences from "./islands/SeeMoreExperiences.tsx";
 import { type Manifest } from "$fresh/server.ts";
@@ -19,9 +21,11 @@ const manifest = {
     "./routes/api/ical/[year].ts": $api_ical_year_,
     "./routes/api/ical/index.ts": $api_ical_index,
     "./routes/api/profile.ts": $api_profile,
+    "./routes/calendar.tsx": $calendar,
     "./routes/index.tsx": $index,
   },
   islands: {
+    "./islands/CopyFeedUrl.tsx": $CopyFeedUrl,
     "./islands/Navbar.tsx": $Navbar,
     "./islands/SeeMoreExperiences.tsx": $SeeMoreExperiences,
   },
