@@ -25,9 +25,11 @@ export function formatYearRange(
   starts_at: BirthDate,
   ends_at: BirthDate | null,
 ): string {
-  const end = ends_at ? `${ends_at.year}` : "Present";
-  if (ends_at && starts_at.year === ends_at.year) return `${starts_at.year}`;
-  return `${starts_at.year} – ${end}`;
+  const start = formatMonthYear(starts_at);
+  if (!ends_at) return `${start} – Present`;
+  const end = formatMonthYear(ends_at);
+  if (start === end) return start;
+  return `${start} – ${end}`;
 }
 
 export function formatDuration(

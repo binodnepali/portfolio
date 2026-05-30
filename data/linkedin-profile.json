@@ -12,9 +12,9 @@
     "month": 2,
     "year": 2019
   },
-  "occupation": "Software Engineer at adidas",
-  "headline": "Frontend Software Engineer | React | Next.js | Vue | Nuxt.js | Cypress | Playwright | Jest/Vitest | Write code | Test code | Refactor with confidence | Ship with confidence",
-  "summary": "I've been working as a Frontend Software Engineer for over {{year_of_experience}} years. I love making websites that look great and work well, using the newest web tools. Whether I'm working alone or with a team, I enjoy solving problems and doing top-notch work. I like helping out the community too, and you can see some of my projects on GitHub where I share templates and packages for the community.\n\nOn my portfolio website and in my open-source projects, I show off my skills in frameworks like React, Next.js, Vue, Nuxt, and Fresh (a Deno fullstack web framework). I'm always eager to learn new things and take on challenges. I work well with others and I'm always looking to improve.",
+  "occupation": "Software Engineer II at adidas",
+  "headline": "Software Engineer II | React | Next.js | Vue | Nuxt.js | Cypress | Playwright | Jest/Vitest | Write code | Test code | Refactor with confidence | Ship with confidence",
+  "summary": "I've been a frontend engineer for over {{year_of_experience}} years, building web applications that are a pleasure to use and straightforward to maintain. I care about thoughtful UI, reliable testing, and shipping work I'm proud of—whether I'm collaborating with a team or owning a feature end to end.\n\nI work mainly with React, Next.js, and Vue/Nuxt, and I'm comfortable across the stack when it helps move things forward. I also share templates and small open-source packages on GitHub, and I'm always keen to learn, improve, and help others along the way.",
   "country": "NL",
   "country_full_name": "the Netherlands",
   "city": "Sittard-Geleen",
@@ -23,15 +23,46 @@
     {
       "starts_at": {
         "day": 1,
-        "month": 6,
-        "year": 2023
+        "month": 12,
+        "year": 2024
       },
       "ends_at": null,
       "company": "adidas",
       "company_linkedin_profile_url": "https://www.linkedin.com/company/adidas/",
-      "title": "Software Engineer",
+      "title": "Software Engineer II",
       "employment_type": "Full-time",
       "description": null,
+      "skills": [
+        "React",
+        "Next.js",
+        "Playwright",
+        "Vitest",
+        "Node.js",
+        "NestJS",
+        "GitHub",
+        "Bitbucket",
+        "Jira",
+        "Confluence"
+      ],
+      "location": "Amsterdam, North Holland, the Netherlands",
+      "logo_url": "https://s3.us-west-000.backblazeb2.com/proxycurl/company/adidas/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20230425%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20230425T203124Z&X-Amz-Expires=1800&X-Amz-SignedHeaders=host&X-Amz-Signature=c1647197713b255f4769959d2318c5d97f7c8d1b8e211355d50315fb394793a6"
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 6,
+        "year": 2023
+      },
+      "ends_at": {
+        "day": 1,
+        "month": 11,
+        "year": 2024
+      },
+      "company": "adidas",
+      "company_linkedin_profile_url": "https://www.linkedin.com/company/adidas/",
+      "title": "Software Engineer",
+      "employment_type": "Full-time",
+      "description": "- Build and maintain customer-facing web applications with React and Next.js.\n- Write and extend automated tests with Playwright and Vitest to keep releases dependable.\n- Contribute to Node.js services (Fastify) when product features need backend support.\n- Work closely with designers and engineers in an agile setup (Bitbucket, Jira, Confluence).",
       "skills": [
         "React",
         "Next.js",
@@ -61,7 +92,7 @@
       "company_linkedin_profile_url": "https://www.linkedin.com/company/adidas/",
       "title": "Software Developer",
       "employment_type": "Full-time",
-      "description": null,
+      "description": "- Developed product features for web applications using React.\n- Added and maintained end-to-end and unit tests with Cypress and Jest.\n- Built and extended Node.js APIs with Express to support frontend functionality.\n- Collaborated with cross-functional teammates to deliver iteratively and improve quality.",
       "skills": [
         "React",
         "Cypress",
@@ -90,7 +121,7 @@
       "company_linkedin_profile_url": "https://www.linkedin.com/company/smartservant/",
       "title": "Fullstack Software Developer",
       "employment_type": "Full-time",
-      "description": "Worked as a full-stack developer focused on developing IoT solutions for delivery and room service robots. Developed a progressive web app (PWA) where a user interacts with the robots and nodejs backend API which handles interaction between the app and the robots.",
+      "description": "- Built full-stack features for IoT delivery and in-room service robots.\n- Developed a progressive web app (PWA) so users could interact with robots in daily operations.\n- Implemented Node.js/Express APIs to connect the app, backend services, and robot hardware.",
       "skills": [
         "Vue",
         "Vuetify",
@@ -106,8 +137,8 @@
     {
       "starts_at": {
         "day": 1,
-        "month": 9,
-        "year": 2020
+        "month": 2,
+        "year": 2019
       },
       "ends_at": {
         "day": 1,
@@ -118,10 +149,11 @@
       "company_linkedin_profile_url": "https://www.linkedin.com/company/no1robotics/",
       "title": "Fullstack Software Developer",
       "employment_type": "Full-time",
-      "description": "Migration and Improvements of Geriatrie Project: The project aims to migrate “Geriatrie Pepper” web app into Geriatrie android application with some improvements in design. And decoupling “Geriatrie Admin” from a pepper robot platform and rewriting of “Geriatrie Admin” web app into Geriatrie Content Management System (CMS) by making responsive design and improving designs.",
+      "description": "- Built and evolved healthcare apps for the Pepper humanoid robot, including PiPo (KinderPoli) and Geriatrie.\n- Delivered clinician-facing web apps and admin CMS tools so care teams could run sessions and manage content without developer support.\n- Migrated Pepper web apps to Android (Kotlin) with improved UI, and rebuilt admin panels as standalone, responsive CMS products.\n- Iterated on design, workflows, and features based on feedback from healthcare professionals and end users.",
       "skills": [
         "Vue",
         "Vuetify",
+        "Bootstrap-Vue",
         "Android Studio",
         "Kotlin",
         "Google Material Design",
@@ -130,90 +162,7 @@
         "Bit",
         "Bitbucket",
         "Jira",
-        "Confluence"
-      ],
-      "location": "De Maas 8, Best",
-      "logo_url": "https://media.licdn.com/dms/image/C560BAQHxgcD0Vxiu1g/company-logo_400_400/0/1578487845162?e=1689811200&v=beta&t=tl7Jc33FY0b2sAK5JwjtwNCy7o8iw82VDGougNyKVRw"
-    },
-    {
-      "starts_at": {
-        "day": 1,
-        "month": 6,
-        "year": 2020
-      },
-      "ends_at": {
-        "day": 1,
-        "month": 8,
-        "year": 2020
-      },
-      "company": "No1Robotics B.V",
-      "company_linkedin_profile_url": "https://www.linkedin.com/company/no1robotics/",
-      "title": "Fullstack Software Developer",
-      "employment_type": "Full-time",
-      "description": "Migration, Improvements and Extensions of KinderPoli (PiPo) Project: The project aims to migrate “PiPo Pepper” web app into KinderPoli android application with some improvements in the design and addition of new functionalities. And decoupling “PiPo Admin” from pepper robot platform and rewriting of “PiPo Admin” web app into KinderPoli Content Management System (CMS) by making responsive design with some new functionalities.",
-      "skills": [
-        "Vue",
-        "Vuetify",
-        "Android Studio",
-        "Kotlin",
-        "Google Material Design",
-        "Firebase",
-        "Google Cloud Platform",
-        "Bit",
-        "Bitbucket",
-        "Jira",
-        "Confluence"
-      ],
-      "location": "Best, North Brabant, the Netherlands",
-      "logo_url": "https://media.licdn.com/dms/image/C560BAQHxgcD0Vxiu1g/company-logo_400_400/0/1578487845162?e=1689811200&v=beta&t=tl7Jc33FY0b2sAK5JwjtwNCy7o8iw82VDGougNyKVRw"
-    },
-    {
-      "starts_at": {
-        "day": 1,
-        "month": 1,
-        "year": 2020
-      },
-      "ends_at": {
-        "day": 1,
-        "month": 5,
-        "year": 2020
-      },
-      "company": "No1Robotics B.V",
-      "company_linkedin_profile_url": "https://www.linkedin.com/company/no1robotics/",
-      "title": "Fullstack Software Developer",
-      "employment_type": "Full-time",
-      "description": "Migration, Improvements and Extensions of Geriatrie Project: The project aims to migrate “Geriatrie” app, which was developed during the Graduation Project, improving development workflow & designs and adding some new functionalities.",
-      "skills": [
-        "Vue",
-        "Bootstrap-Vue",
-        "Firebase",
-        "Google Cloud Platform",
-        "Trello"
-      ],
-      "location": "Best, North Brabant, the Netherlands",
-      "logo_url": "https://media.licdn.com/dms/image/C560BAQHxgcD0Vxiu1g/company-logo_400_400/0/1578487845162?e=1689811200&v=beta&t=tl7Jc33FY0b2sAK5JwjtwNCy7o8iw82VDGougNyKVRw"
-    },
-    {
-      "starts_at": {
-        "day": 1,
-        "month": 2,
-        "year": 2019
-      },
-      "ends_at": {
-        "day": 1,
-        "month": 12,
-        "year": 2019
-      },
-      "company": "No1Robotics B.V",
-      "company_linkedin_profile_url": "https://www.linkedin.com/company/no1robotics/",
-      "title": "Fullstack Software Developer",
-      "employment_type": "Full-time",
-      "description": "Project PiPo: The project aims to develop two web apps. First, “PiPo Pepper” an app which is used by a health care professional during a training session about pee and poo problems to a kid.  Second, “PiPo Admin” an app which is used by the health care professional to manage the contents that are used during the training session.",
-      "skills": [
-        "Vue",
-        "Bootstrap-Vue",
-        "Firebase",
-        "Google Cloud Platform",
+        "Confluence",
         "Trello"
       ],
       "location": "Best, North Brabant, the Netherlands",
@@ -234,7 +183,7 @@
       "company_linkedin_profile_url": "https://www.linkedin.com/company/no1robotics/",
       "title": "Fullstack Software Developer",
       "employment_type": "Internship",
-      "description": "Health care, Maxima Medisch Centrum (MMC) wants to put the social humanoid robot \"Pepper\" into their working environment to solve the problems of elderly people being frustrated during the stay in health care and their care professionals were not able to be with the patients more time to make them engaged.  \nTherefore, an assignment was to develop a web-based application for pepper robot which helps them to keep their patients (especially old people) entertained and engaged during the stay in health care by introducing pepper robot onto their working environment. The pepper will be a colleague of the health care professional and work with them together.",
+      "description": "- Built a web application for the Pepper humanoid robot used at Maxima Medisch Centrum (MMC).\n- Helped care teams keep elderly patients engaged and entertained during longer hospital stays.\n- Designed the experience so Pepper felt like a helpful colleague alongside healthcare staff—not a gimmick.",
       "skills": [
         "Angular",
         "Bootstrap",
@@ -260,7 +209,7 @@
       "company_linkedin_profile_url": "https://www.linkedin.com/company/bosch-security-systems/",
       "title": "Software Developer",
       "employment_type": "Internship",
-      "description": "Developing a prototype algorithm for OMNEO platform which can differentiate network quality based on the amount of jitter accumulated in the network system.",
+      "description": "- Prototyped an algorithm for Bosch's OMNEO platform to assess network quality.\n- Used accumulated jitter metrics to distinguish stable vs. degraded network conditions.\n- Worked in C# and .NET as part of an R&D internship team.",
       "skills": [
         "C#",
         ".NET Framework",
@@ -403,16 +352,34 @@
     {
       "starts_at": {
         "day": 1,
-        "month": 12,
-        "year": 2022
+        "month": 5,
+        "year": 2024
       },
-      "ends_at": {
+      "ends_at": null,
+      "title": "YatraLink",
+      "description": "- Building a digital, tech-enabled transit service for Nepal's public transportation network.\n- Connecting different modes of transport so commuters get a smoother, more reliable travel experience.\n- Focused on using software to improve how people plan, access, and move through everyday public transit.",
+      "url": null
+    },
+    {
+      "starts_at": {
+        "day": 1,
+        "month": 7,
+        "year": 2023
+      },
+      "ends_at": null,
+      "title": "React Nepali Datetime Picker",
+      "description": "- Open-source React component library for Bikram Sambat (Nepali) calendar dates and times.\n- Provides date, time, and datetime pickers—mobile-first and straightforward to integrate into existing apps.\n- Built with React and Tailwind CSS, focused on a small API and reusable components.",
+      "url": null
+    },
+    {
+      "starts_at": {
         "day": 1,
         "month": 12,
         "year": 2022
       },
+      "ends_at": null,
       "title": "Khajahuis website",
-      "description": "Website development for start up Nepalese restaurant in Eindhoven, the Netherlands.\n\nBuild using nuxt3 and tailwindcss.",
+      "description": "- Designed and built the website for Khajahuis, a Nepalese restaurant startup in Eindhoven.\n- Implemented the site with Nuxt 3 and Tailwind CSS for a fast, mobile-friendly experience.",
       "url": null
     },
     {
@@ -421,13 +388,9 @@
         "month": 8,
         "year": 2021
       },
-      "ends_at": {
-        "day": 1,
-        "month": 1,
-        "year": 2023
-      },
+      "ends_at": null,
       "title": "Tapovumi Website",
-      "description": "Website development of saving and credit organization of Nepal.\n\nBuild using nuxt2 and vuetify2.",
+      "description": "- Built the public website for Tapovumi, a savings and credit cooperative in Nepal.\n- Used Nuxt 2 and Vuetify 2 to deliver a clear, accessible site for members and visitors.",
       "url": null
     },
     {
@@ -442,8 +405,9 @@
         "year": 2022
       },
       "title": "Stadspartij Website",
-      "description": "Website development for Sittard-Geleen city political party, the Netherlands.\n\nBuild using nextjs and material ui.",
-      "url": null
+      "description": "- Created the website for Stadspartij, a local political party in Sittard-Geleen.\n- Built with Next.js and Material UI, with a focus on readability and straightforward content updates.",
+      "url": null,
+      "include_in_cv": false
     },
     {
       "starts_at": {
