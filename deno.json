@@ -7,6 +7,7 @@
     "start": "deno run -A --unstable-kv --watch=static/,routes/ dev.ts",
     "build": "deno run -A --unstable-kv dev.ts build",
     "preview": "deno run -A --unstable-kv main.ts",
+    "tailor-cv": "deno run -A --env scripts/tailor-cv.ts",
     "update": "deno run -A -r https://fresh.deno.dev/update ."
   },
   "unstable": ["kv"],
@@ -22,7 +23,9 @@
     "tailwindcss/": "npm:/tailwindcss@3.4.1/",
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
     "$std/": "https://deno.land/std@0.216.0/",
-    "deno_dom": "https://deno.land/x/deno_dom@v0.1.45/deno-dom-wasm.ts"
+    "deno_dom": "https://deno.land/x/deno_dom@v0.1.45/deno-dom-wasm.ts",
+    "genkit": "npm:genkit@1",
+    "@genkit-ai/google-genai": "npm:@genkit-ai/google-genai@1"
   },
   "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "nodeModulesDir": "auto"

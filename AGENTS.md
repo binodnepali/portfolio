@@ -5,8 +5,9 @@ Guidance for AI agents working in this repository.
 ## Project overview
 
 Personal portfolio website (https://binodnepali.me) built with **Deno Fresh**
-(server-side rendering + islands), **Preact**, and **Tailwind CSS**. It also
-exposes a few JSON/ICS API endpoints under `routes/api/`.
+(server-side rendering + islands), **Preact**, and **Tailwind CSS**. The
+homepage is an ATS-style CV with print-to-PDF. The site also exposes JSON/ICS
+API endpoints under `routes/api/`.
 
 ## Tech stack
 
@@ -34,6 +35,9 @@ Run from the repo root:
 - `deno task check` — **run before finishing changes**:
   `deno fmt --check && deno lint && deno check` over `.ts`/`.tsx`.
 - `deno task manifest` — regenerate `fresh.gen.ts`.
+- `deno task tailor-cv` — generate a job-specific CV variant JSON via Gemini
+  (Genkit). Requires `GEMINI_API_KEY` in `.env`. Example:
+  `deno task tailor-cv -- --slug acme-senior-frontend --job ./job.txt`
 
 When verifying your own edits, prefer scoping `deno fmt` / `deno lint` /
 `deno check` to the files you touched, since unrelated files (e.g.
@@ -43,16 +47,24 @@ When verifying your own edits, prefer scoping `deno fmt` / `deno lint` /
 
 - `routes/` — Fresh file-based routing.
   - `routes/index.tsx`, `_app.tsx`, `_404.tsx` — pages/layout.
+  - `routes/cv/[slug].tsx` — tailored CV pages (reads `data/variants/`).
+  - `routes/calendar.tsx` — human-facing calendar page.
   - `routes/api/**` — API handlers exporting `handler` (e.g. `profile.ts`,
     `ical/index.ts`, `ical/[year].ts`).
 - `islands/` — interactive client components (hydrated; only place
   `useState`/event handlers belong).
 - `components/` — server-rendered presentational components; shared primitives
-  in `components/ui/`.
+  in `components/ui/`, CV layout in `components/CvPage.tsx`, section helper in
+  `components/cv/Section.tsx`.
+- `scripts/` — CLI entrypoints (e.g. `scripts/tailor-cv.ts`).
 - `src/server/` — server-only logic (no JSX), e.g. `src/server/calendar/`
-  (scraping, ICS building, caching).
+  (scraping, ICS building, caching) and `src/server/profile/` (profile loading,
+  variant merge, Genkit/Gemini tailoring).
 - `src/types/` — shared TypeScript types/interfaces.
-- `data/` — static JSON data (e.g. `linkedin-profile.json`).
+- `src/utils/` — shared helpers (e.g. `src/utils/date.ts`).
+- `data/` — static JSON data.
+  - `data/linkedin-profile.json` — master profile (source of truth).
+  - `data/variants/*.json` — job-specific CV variants (generated or hand-edited).
 - `static/` — static assets served at the web root.
 
 `fresh.gen.ts` is auto-generated — never edit it by hand; it updates on
@@ -69,6 +81,38 @@ When verifying your own edits, prefer scoping `deno fmt` / `deno lint` /
 - Types: import shared types from `src/types/`; avoid `any`.
 - Don't add narrating comments; only comment non-obvious intent.
 
+## Profile & CV content
+
+- Master profile lives in `data/linkedin-profile.json`. Edit it directly when
+  updating LinkedIn-style content; there is no runtime PDF import or admin UI.
+- `include_in_cv: false` on skills or projects hides them in **print/PDF only**
+  (`print:hidden`); they remain visible on the live site.
+- Experience/project **ids** are computed at runtime in `src/server/profile/ids.ts`
+  (or optional explicit `id` fields in JSON). Use `deno task tailor-cv -- --catalog`
+  to list stable ids for LLM output.
+- Default CV: `/` via `routes/index.tsx` + `components/CvPage.tsx`.
+- Tailored CV: `/cv/<slug>` merges a variant from `data/variants/<slug>.json`
+  onto the master profile (`src/server/profile/variant.ts`). Tailored pages set
+  `noindex` and are not linked from the public nav.
+- Print/PDF: `islands/DownloadCv.tsx` calls `window.print()`; styles in
+  `static/styles.css` (`.cv-sheet`, `@media print`).
+
+## Tailor CV (Gemini + Genkit)
+
+Local CLI only — **do not import Genkit from Fresh routes or other deployed
+server code**. Genkit (`genkit`, `@genkit-ai/google-genai`) is listed in
+`deno.json` for the tailor script; the production site reads pre-generated
+variant JSON files only.
+
+- Env: `GEMINI_API_KEY` (or `GOOGLE_API_KEY`), optional `GEMINI_MODEL`
+  (default `gemini-2.5-flash`). See `.env.sample`.
+- Flow: `scripts/tailor-cv.ts` → `src/server/profile/tailorLlm.ts` → Genkit
+  structured output → validate ids against catalog → write
+  `data/variants/<slug>.json`.
+- Flags: `--catalog`, `--dry-run`, `--job <file>`, `--job-text "..."`.
+- Commit generated variants when they should be live on deploy (Deno Deploy
+  serves them as static bundled JSON at build time).
+
 ## Server / API guidelines
 
 - This deploys to **Deno Deploy edge isolates**: use Web APIs (`fetch`,
@@ -81,6 +125,7 @@ When verifying your own edits, prefer scoping `deno fmt` / `deno lint` /
   and fall back to an in-memory cache (see `src/server/calendar/service.ts`).
 - ICS/all-day dates: use `DTSTART;VALUE=DATE:YYYYMMDD` and read **local** date
   components (not UTC) to avoid off-by-one day shifts.
+- Calendar canonical URLs: set `SITE_ORIGIN` in `.env` (see `.env.sample`).
 
 ## Deployment
 
@@ -102,3 +147,6 @@ create commits when explicitly asked.
   restart.
 - First request to a calendar year is slow (scrapes 12 month pages); subsequent
   requests hit the KV/in-memory cache.
+- After adding routes (e.g. `routes/cv/[slug].tsx`), run `deno task manifest`.
+- Genkit pulls npm deps on first `deno task tailor-cv` run; keep it out of
+  request handlers so Deno Deploy stays edge-compatible.

@@ -8,6 +8,7 @@ import * as $api_ical_year_ from "./routes/api/ical/[year].ts";
 import * as $api_ical_index from "./routes/api/ical/index.ts";
 import * as $api_profile from "./routes/api/profile.ts";
 import * as $calendar from "./routes/calendar.tsx";
+import * as $cv_slug_ from "./routes/cv/[slug].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $CopyFeedUrl from "./islands/CopyFeedUrl.tsx";
 import * as $DownloadCv from "./islands/DownloadCv.tsx";
@@ -22,6 +23,7 @@ const manifest = {
     "./routes/api/ical/index.ts": $api_ical_index,
     "./routes/api/profile.ts": $api_profile,
     "./routes/calendar.tsx": $calendar,
+    "./routes/cv/[slug].tsx": $cv_slug_,
     "./routes/index.tsx": $index,
   },
   islands: {

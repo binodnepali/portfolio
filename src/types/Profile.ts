@@ -39,6 +39,7 @@ export interface Skill {
 }
 
 export interface AccomplishmentProject {
+  id?: string;
   starts_at: BirthDate;
   ends_at: BirthDate;
   title: string;
@@ -69,6 +70,7 @@ export interface Education {
 }
 
 export interface Experience {
+  id?: string;
   starts_at: BirthDate;
   ends_at: BirthDate | null;
   company: string;

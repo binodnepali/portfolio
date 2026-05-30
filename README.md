@@ -61,6 +61,22 @@ Profile content lives in [`data/linkedin-profile.json`](data/linkedin-profile.js
 Edit that file directly (or replace it from an external export) when you update
 your LinkedIn information.
 
+#### Tailored CVs
+
+Generate a job-specific variant with Gemini (via Genkit), then preview it at
+`/cv/<slug>`:
+
+```bash
+cp .env.sample .env   # set GEMINI_API_KEY from Google AI Studio
+deno task tailor-cv -- --slug acme-senior-frontend --job ./job.txt
+```
+
+Use `--catalog` to print stable experience/project/skill ids from the master
+profile. Use `--dry-run` to print JSON without writing `data/variants/<slug>.json`.
+Review and edit the variant file if needed, then open `/cv/<slug>` and print to PDF.
+
+Tailored pages are marked `noindex` and are not linked from the public site.
+
 #### Generate release
 
 > Make sure you have npm version 5.2.0 or higher
