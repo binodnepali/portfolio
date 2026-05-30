@@ -21,7 +21,7 @@
     max-width: 100% !important;
     width: 100% !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 1.4cm !important;
     border-radius: 0 !important;
   }
 
@@ -41,6 +41,18 @@
   }
 
   @page {
-    margin: 1.4cm;
+    /* Chrome/Edge drop built-in headers & footers when page margin is zero. */
+    margin: 0;
+    size: auto;
+  }
+
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  main {
+    padding: 0 !important;
   }
 }
