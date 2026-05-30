@@ -1,8 +1,8 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See
-[commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version)
-for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [2.2.1](https://github-personal/binodnepali/portfolio/compare/v2.2.0...v2.2.1) (2026-05-30)
 
 ## [2.2.0](https://github-personal/binodnepali/portfolio/compare/v2.1.3...v2.2.0) (2026-05-30)
 
