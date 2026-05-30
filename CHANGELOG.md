@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.3.0](https://github-personal/binodnepali/portfolio/compare/v2.2.1...v2.3.0) (2026-05-30)
+
+
+### Features
+
+* enhance CV download functionality and improve print styles ([f131df1](https://github-personal/binodnepali/portfolio/commit/f131df1bfe23fdb79d12f9030520a21cf9646ab9))
+
 ## [2.2.1](https://github-personal/binodnepali/portfolio/compare/v2.2.0...v2.2.1) (2026-05-30)
 
 ## [2.2.0](https://github-personal/binodnepali/portfolio/compare/v2.1.3...v2.2.0) (2026-05-30)
